@@ -150,8 +150,8 @@ export default function HeroSection({ onOpenQuote }) {
               </motion.div>
             </motion.div>
 
-            {/* Right Column: Floating Glassmorphism Service Cards */}
-            <div className="lg:col-span-5 relative mt-4 lg:mt-0">
+            {/* Right Column: Floating Glassmorphism Service Cards (Desktop Only) */}
+            <div className="hidden lg:block lg:col-span-5 relative mt-4 lg:mt-0">
               
               {/* Soft Ambient Background Glow */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 lg:w-80 lg:h-80 bg-blue-500/20 rounded-full blur-3xl pointer-events-none" />
