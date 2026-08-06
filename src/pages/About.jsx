@@ -38,17 +38,17 @@ export default function About() {
   return (
     <div className="bg-[#FAF5FF] text-[#111827] min-h-screen">
       
-      {/* 1. Header Hero Banner (Matched 1-to-1 with Home Page Hero Fade) */}
-      <section className="relative min-h-[85vh] sm:min-h-screen flex flex-col justify-center items-center pt-28 pb-16 overflow-hidden border-b border-purple-100 bg-gradient-to-b from-[#F3E8FF] via-[#FAF5FF] to-[#FAF5FF]">
-        {/* Background Image: Matched Home Page Opacity & Filter */}
+      {/* 1. Header Hero Banner (Natural Luxury Corporate Photography Theme) */}
+      <section className="relative min-h-[85vh] sm:min-h-screen flex flex-col justify-center items-center pt-28 pb-16 overflow-hidden border-b border-purple-100 bg-[#FAF5FF]">
+        {/* Background Image: Natural Photography (Modern Luxury Corporate Office Interior & Team Meeting) */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src="/images/about_hero_bg.png"
-            alt="TOMTOP SOLUTIONS Corporate Innovation Office"
-            className="w-full h-full object-cover object-center opacity-65 filter contrast-115 brightness-105 saturate-120 pointer-events-none transition-all duration-700"
+            alt="Modern luxury corporate office interior with diverse professional team discussion"
+            className="w-full h-full object-cover object-center opacity-90 filter brightness-100 contrast-105 saturate-100 pointer-events-none transition-all duration-700"
           />
-          {/* Soft Violet Overlay Matched to Home Page */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF5FF]/20 via-[#FAF5FF]/40 to-[#FAF5FF] z-10 pointer-events-none" />
+          {/* Neutral Soft Fade Overlay: Preserves true white & grey photography colors while keeping text readable */}
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/35 via-slate-900/15 to-[#FAF5FF] pointer-events-none" />
         </div>
 
         {/* Soft Radial Spotlight Behind Hero Text (Matched to Home Page) */}
