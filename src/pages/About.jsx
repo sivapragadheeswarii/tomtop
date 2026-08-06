@@ -42,9 +42,9 @@ export default function About() {
           <img
             src="/images/about_hero_bg.png"
             alt="TOMTOP SOLUTIONS Corporate Innovation"
-            className="w-full h-full object-cover object-center opacity-65 filter contrast-115 brightness-105 saturate-120 pointer-events-none"
+            className="w-full h-full object-cover object-center opacity-70 filter contrast-110 brightness-100 saturate-120 pointer-events-none transition-all duration-700"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF5FF]/20 via-[#FAF5FF]/40 to-[#FAF5FF] pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#4C1D95]/20 via-[#FAF5FF]/40 to-[#FAF5FF] pointer-events-none" />
         </div>
 
         {/* Soft Radial Spotlight Behind Hero Text */}
