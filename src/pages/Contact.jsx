@@ -34,12 +34,6 @@ export default function Contact() {
     { icon: MapPin, label: 'Office Address', value: companyInfo.address, href: null, color: 'text-amber-600', bg: 'bg-amber-50 border-amber-200' },
   ];
 
-  const guarantees = [
-    { icon: Zap, label: 'Reply within 24 hours' },
-    { icon: Shield, label: 'Bank-grade data privacy' },
-    { icon: Users, label: 'Direct founder contact' },
-  ];
-
   return (
     <div className="bg-[#FAF5FF] text-[#111827] min-h-screen">
 
@@ -90,7 +84,7 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="text-3xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.15] text-[#111827] max-w-4xl mx-auto drop-shadow-sm"
           >
-            Start Your Software <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7C3AED] to-[#A855F7]">Project Today</span>
+            Start Your Software <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4C1D95] via-[#6D28D9] to-[#7C3AED]">Project Today</span>
           </motion.h1>
 
           {/* Short Subtitle Paragraph */}
@@ -126,21 +120,6 @@ export default function Contact() {
               <Phone className="w-4 h-4 text-[#7C3AED]" />
               <span>Call Tech Team</span>
             </a>
-          </motion.div>
-
-          {/* Guarantees */}
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.45 }}
-            className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:gap-6"
-          >
-            {guarantees.map((g, i) => (
-              <div key={i} className="flex items-center space-x-1.5 text-[10px] sm:text-xs font-semibold text-[#111827] bg-white/90 px-3 py-1.5 rounded-full border border-purple-200 shadow-sm backdrop-blur-md">
-                <g.icon className="w-3.5 h-3.5 text-[#7C3AED]" />
-                <span>{g.label}</span>
-              </div>
-            ))}
           </motion.div>
         </div>
 

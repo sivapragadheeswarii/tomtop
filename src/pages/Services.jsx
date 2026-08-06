@@ -81,7 +81,7 @@ export default function Services() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="text-3xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.15] text-[#111827] max-w-4xl mx-auto drop-shadow-sm"
           >
-            Custom Web, Mobile & <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7C3AED] to-[#A855F7]">Cloud ERP Solutions</span>
+            Custom Web, Mobile & <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4C1D95] via-[#6D28D9] to-[#7C3AED]">Cloud ERP Solutions</span>
           </motion.h1>
 
           {/* Short Subtitle Paragraph */}
