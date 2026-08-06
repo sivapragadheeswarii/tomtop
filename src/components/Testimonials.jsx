@@ -59,7 +59,7 @@ export default function Testimonials() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="p-6 sm:p-8 rounded-3xl bg-white border border-purple-100 hover:border-[#C084FC] flex flex-col justify-between relative group shadow-lg shadow-purple-900/5 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-purple-600/15 overflow-hidden"
+                className="p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-white border border-purple-100 hover:border-[#C084FC] flex flex-col justify-between relative group shadow-lg shadow-purple-900/5 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl hover:shadow-purple-600/15 overflow-hidden"
               >
                 {/* Glowing Top Beam */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#C084FC] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-t-3xl" />

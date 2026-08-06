@@ -97,10 +97,10 @@ export default function HeroSection({ onOpenQuote }) {
               animate="visible"
               className="lg:col-span-7 text-center lg:text-left space-y-4 sm:space-y-6"
             >
-              {/* Animated Studio Badge */}
+              {/* Animated Studio Badge (Desktop/Tablet Only) */}
               <motion.div
                 variants={itemVariants}
-                className="inline-flex items-center space-x-2 bg-white/90 border border-purple-300 px-3.5 py-1.5 rounded-full text-[10px] sm:text-xs font-bold text-[#7C3AED] shadow-md backdrop-blur-sm"
+                className="hidden sm:inline-flex items-center space-x-2 bg-white/95 border border-purple-300 px-4 py-1.5 rounded-full text-xs font-bold text-[#7C3AED] shadow-md backdrop-blur-sm"
               >
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
@@ -112,7 +112,7 @@ export default function HeroSection({ onOpenQuote }) {
               {/* Business-Focused SEO Headline */}
               <motion.h1
                 variants={itemVariants}
-                className="text-[2.1rem] sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0F172A] leading-[1.15] drop-shadow-[0_1px_3px_rgba(255,255,255,0.9)]"
+                className="text-2xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0F172A] leading-snug sm:leading-[1.15] drop-shadow-[0_1px_3px_rgba(255,255,255,0.9)]"
               >
                 Building Scalable{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4C1D95] via-[#6D28D9] to-[#7C3AED]">
@@ -137,14 +137,14 @@ export default function HeroSection({ onOpenQuote }) {
                   onClick={() => onOpenQuote()}
                   className="w-full sm:w-auto px-6 sm:px-7 py-3.5 sm:py-4 bg-gradient-to-r from-[#7C3AED] via-[#A855F7] to-[#C084FC] hover:from-[#6D28D9] hover:to-[#7C3AED] text-white font-bold rounded-2xl shadow-[0_10px_25px_-5px_rgba(124,58,237,0.35)] flex items-center justify-center space-x-2 text-sm sm:text-base group transition-all transform hover:-translate-y-0.5 active:scale-95 border border-purple-300/40"
                 >
-                  <Sparkles className="w-4 h-4 text-amber-300" />
+                  <Sparkles className="w-4 h-4 text-amber-300 animate-pulse" />
                   <span>Request Free Proposal</span>
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1.5 transition-transform" />
                 </button>
 
                 <Link
                   to="/contact"
-                  className="w-full sm:w-auto px-6 sm:px-7 py-3.5 sm:py-4 bg-white hover:bg-purple-50 border border-purple-200 text-[#111827] font-semibold rounded-2xl transition-all text-center flex items-center justify-center space-x-2 text-sm sm:text-base hover:border-[#C084FC] hover:text-[#7C3AED] active:scale-95 shadow-sm"
+                  className="w-full sm:w-auto px-6 sm:px-7 py-3.5 sm:py-4 bg-white/90 hover:bg-purple-50 border border-purple-200 text-[#111827] font-semibold rounded-2xl transition-all text-center flex items-center justify-center space-x-2 text-sm sm:text-base hover:border-[#C084FC] hover:text-[#7C3AED] active:scale-95 shadow-sm backdrop-blur-sm"
                 >
                   <PhoneCall className="w-4 h-4 text-[#7C3AED]" />
                   <span>Contact Technical Team</span>
@@ -152,7 +152,7 @@ export default function HeroSection({ onOpenQuote }) {
               </motion.div>
             </motion.div>
 
-            {/* Right Column: Floating White Service Cards */}
+            {/* Right Column: Floating White Service Cards (Desktop View) */}
             <div className="hidden lg:block lg:col-span-5 relative mt-4 lg:mt-0">
               
               {/* Soft Ambient Background Glow */}

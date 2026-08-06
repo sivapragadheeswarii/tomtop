@@ -133,13 +133,13 @@ export default function ServicesSection({ onOpenQuote }) {
                   <Layers className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   <span>Engineering Capabilities</span>
                 </h4>
-                <div className="grid grid-cols-2 gap-2 sm:gap-3.5 mb-4 sm:mb-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3.5 mb-4 sm:mb-8">
                   {activeService.features.map((feat, idx) => (
                     <div
                       key={idx}
-                      className="p-2 sm:p-3.5 rounded-lg sm:rounded-xl bg-purple-50/60 border border-purple-100 flex items-center space-x-2 text-[11px] sm:text-sm font-semibold text-[#111827]"
+                      className="p-2.5 sm:p-3.5 rounded-lg sm:rounded-xl bg-purple-50/60 border border-purple-100 flex items-center space-x-2 text-xs sm:text-sm font-semibold text-[#111827]"
                     >
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#7C3AED] shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-[#7C3AED] shrink-0" />
                       <span className="truncate">{feat}</span>
                     </div>
                   ))}
