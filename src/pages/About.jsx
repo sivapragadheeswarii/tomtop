@@ -38,15 +38,39 @@ export default function About() {
   return (
     <div className="bg-[#FAF5FF] text-[#111827] min-h-screen">
       
-      {/* 1. Header Hero Banner (Natural Luxury Corporate Photography Theme) */}
-      <section className="relative min-h-[85vh] sm:min-h-screen flex flex-col justify-center items-center pt-28 pb-16 overflow-hidden border-b border-purple-100 bg-[#FAF5FF]">
-        {/* Background Image: Natural Photography (Modern Luxury Corporate Office Interior & Team Meeting) */}
+      {/* 1. Header Hero Banner (3D Glass Architecture & Digital Connections Theme) */}
+      <section className="relative min-h-[85vh] sm:min-h-screen flex flex-col justify-center items-center pt-28 pb-16 overflow-hidden border-b border-purple-100 bg-gradient-to-b from-[#F8FAFC] via-[#FAF5FF] to-[#FAF5FF]">
+        {/* Background Image: 3D Architectural Glass & Modern Office Structure */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src="/images/about_hero_bg.png"
-            alt="Business leaders discussing technology strategy in modern glass office meeting room"
-            className="w-full h-full object-cover object-center opacity-90 filter brightness-100 contrast-105 saturate-105 pointer-events-none transition-all duration-700"
+            alt="3D Architectural Glass Shapes, Modern Architecture, Digital Network Connections"
+            className="w-full h-full object-cover object-center opacity-85 filter brightness-100 contrast-105 saturate-100 pointer-events-none transition-all duration-700"
           />
+          
+          {/* Realistic 3D Glass Shapes & Data Flow Network Overlay */}
+          <div className="absolute inset-0 pointer-events-none opacity-30">
+            <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <pattern id="about-glass-grid" width="80" height="80" patternUnits="userSpaceOnUse">
+                  <polygon points="40,0 80,40 40,80 0,40" fill="none" stroke="rgba(71, 85, 105, 0.12)" strokeWidth="1" />
+                  <circle cx="40" cy="40" r="2" fill="rgba(148, 163, 184, 0.5)" />
+                </pattern>
+                <linearGradient id="glass-fade" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="rgba(255, 255, 255, 0.6)" />
+                  <stop offset="50%" stopColor="rgba(241, 245, 249, 0.3)" />
+                  <stop offset="100%" stopColor="rgba(15, 23, 42, 0.4)" />
+                </linearGradient>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#about-glass-grid)" />
+              <rect width="100%" height="100%" fill="url(#glass-fade)" />
+            </svg>
+          </div>
+
+          {/* Minimal Neutral Architectural Light Highlights (White, Grey, Slate Black) */}
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-slate-200/50 blur-3xl rounded-full pointer-events-none" />
+          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-slate-300/30 blur-3xl rounded-full pointer-events-none" />
+
           {/* Neutral Soft Fade Overlay: Preserves true white & grey photography colors while keeping text readable */}
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/35 via-slate-900/15 to-[#FAF5FF] pointer-events-none" />
         </div>
