@@ -47,9 +47,6 @@ export default function About() {
           <div className="absolute inset-0 bg-gradient-to-b from-[#FAF5FF]/20 via-[#FAF5FF]/40 to-[#FAF5FF] pointer-events-none" />
         </div>
 
-        {/* Soft Radial Spotlight Behind Hero Text */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92%] max-w-4xl h-[350px] bg-white/75 blur-[70px] rounded-full pointer-events-none z-0"></div>
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center justify-center my-auto w-full">
           {/* Live Studio Badge */}
           <motion.div
