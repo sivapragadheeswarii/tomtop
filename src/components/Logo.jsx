@@ -9,7 +9,7 @@ export default function Logo({ dark = false, onClick }) {
       className="flex items-center space-x-2.5 sm:space-x-3 group cursor-pointer shrink-0"
     >
       {/* Shield & Circuit Nodes SVG Icon */}
-      <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-[#0B1F4D] via-[#1D4ED8] to-[#38BDF8] flex items-center justify-center shadow-lg shadow-blue-600/30 group-hover:scale-105 transition-transform p-1.5 shrink-0">
+      <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-[#7C3AED] via-[#A855F7] to-[#C084FC] flex items-center justify-center shadow-lg shadow-purple-600/30 group-hover:scale-105 transition-transform p-1.5 shrink-0">
         <svg
           viewBox="0 0 100 120"
           className="w-full h-full text-white fill-none stroke-current"
@@ -42,12 +42,12 @@ export default function Logo({ dark = false, onClick }) {
       <div className="flex flex-col">
         <span
           className={`font-extrabold text-base sm:text-xl tracking-tight leading-none ${
-            dark ? 'text-[#0B1F4D]' : 'text-white'
+            dark ? 'text-[#111827]' : 'text-white'
           }`}
         >
           TOMTOP
         </span>
-        <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.18em] sm:tracking-[0.2em] text-[#38BDF8] uppercase">
+        <span className="text-[9px] sm:text-[10px] font-bold tracking-[0.18em] sm:tracking-[0.2em] text-[#7C3AED] uppercase">
           SOLUTIONS
         </span>
       </div>

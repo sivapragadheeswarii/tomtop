@@ -66,9 +66,8 @@ export default function HeroSection({ onOpenQuote }) {
   ];
 
   return (
-    <>
-      {/* 1. Main Clean Hero Viewport */}
-      <section className="relative min-h-screen pt-28 pb-16 lg:pt-44 lg:pb-20 text-white overflow-hidden flex items-center justify-center bg-[#0B1F4D]">
+    <section className="relative min-h-screen pt-28 pb-16 lg:pt-44 lg:pb-20 text-[#111827] overflow-hidden flex items-center justify-center bg-gradient-to-b from-[#F3E8FF] via-[#FAF5FF] to-[#FAF5FF]">
+      {/* 1. Main Clean Hero Viewport - Soft Violet Gradient Background */}
         
         {/* Background Video */}
         <video
@@ -76,13 +75,16 @@ export default function HeroSection({ onOpenQuote }) {
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none opacity-90"
+          className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none opacity-65 filter contrast-115 brightness-105 saturate-120"
         >
-          <source src="/videos/hero.mp4" type="video/mp4" />
+          <source src="/videos/home.mp4" type="video/mp4" />
         </video>
 
-        {/* Overlay — stronger on mobile for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0B1F4D]/95 via-[#0B1F4D]/80 to-[#070A11]/70 lg:bg-gradient-to-r lg:from-[#0B1F4D]/90 lg:via-[#0B1F4D]/70 lg:to-[#070A11]/60 z-10 pointer-events-none" />
+        {/* Soft Violet Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#FAF5FF]/20 via-[#FAF5FF]/40 to-[#FAF5FF] z-10 pointer-events-none" />
+
+        {/* Soft Radial Spotlight Behind Left Column Hero Text */}
+        <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl h-[380px] bg-white/75 blur-[75px] rounded-full pointer-events-none z-10 hidden lg:block"></div>
 
         {/* Hero Content Container */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
@@ -98,32 +100,32 @@ export default function HeroSection({ onOpenQuote }) {
               {/* Animated Studio Badge */}
               <motion.div
                 variants={itemVariants}
-                className="inline-flex items-center space-x-2 bg-blue-950/80 border border-blue-400/30 px-3.5 py-1.5 rounded-full text-[10px] sm:text-xs font-bold text-[#38BDF8] shadow-[0_0_20px_rgba(56,189,248,0.2)] backdrop-blur-md"
+                className="inline-flex items-center space-x-2 bg-white/90 border border-purple-300 px-3.5 py-1.5 rounded-full text-[10px] sm:text-xs font-bold text-[#7C3AED] shadow-md backdrop-blur-sm"
               >
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#38BDF8]"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#7C3AED]"></span>
                 </span>
-                <span>Enterprise Software Studio • Madurai HQ</span>
+                <span>Top Software Company in Madurai</span>
               </motion.div>
 
-              {/* Business-Focused Headline */}
+              {/* Business-Focused SEO Headline */}
               <motion.h1
                 variants={itemVariants}
-                className="text-[2.1rem] sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15] drop-shadow-md"
+                className="text-[2.1rem] sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0F172A] leading-[1.15] drop-shadow-[0_1px_3px_rgba(255,255,255,0.9)]"
               >
-                Transforming Ideas Into{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#38BDF8] via-[#60A5FA] to-cyan-200">
-                  Powerful Digital Solutions
+                Building Scalable{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4C1D95] via-[#6D28D9] to-[#7C3AED]">
+                  Web Apps, ERP & Cloud
                 </span>
               </motion.h1>
 
-              {/* Concise Description */}
+              {/* Concise SEO Subtitle */}
               <motion.p
                 variants={itemVariants}
-                className="text-slate-200 text-xs sm:text-base lg:text-lg max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed text-slate-300/90"
+                className="text-[#1E293B] text-xs sm:text-base lg:text-lg max-w-xl mx-auto lg:mx-0 font-bold leading-relaxed drop-shadow-[0_1px_2px_rgba(255,255,255,1)]"
               >
-                {companyInfo.shortDesc}
+                Engineering high-performance web applications, custom ERP software, mobile apps, and NVMe cloud hosting for modern businesses.
               </motion.p>
 
               {/* CTA Buttons */}
@@ -133,7 +135,7 @@ export default function HeroSection({ onOpenQuote }) {
               >
                 <button
                   onClick={() => onOpenQuote()}
-                  className="w-full sm:w-auto px-6 sm:px-7 py-3.5 sm:py-4 bg-gradient-to-r from-[#1D4ED8] via-[#2563EB] to-[#06B6D4] hover:from-[#2563EB] hover:to-[#38BDF8] text-white font-bold rounded-2xl shadow-[0_10px_30px_rgba(37,99,235,0.4)] flex items-center justify-center space-x-2 text-sm sm:text-base group transition-all transform hover:-translate-y-0.5 active:scale-95"
+                  className="w-full sm:w-auto px-6 sm:px-7 py-3.5 sm:py-4 bg-gradient-to-r from-[#7C3AED] via-[#A855F7] to-[#C084FC] hover:from-[#6D28D9] hover:to-[#7C3AED] text-white font-bold rounded-2xl shadow-[0_10px_25px_-5px_rgba(124,58,237,0.35)] flex items-center justify-center space-x-2 text-sm sm:text-base group transition-all transform hover:-translate-y-0.5 active:scale-95 border border-purple-300/40"
                 >
                   <Sparkles className="w-4 h-4 text-amber-300" />
                   <span>Request Free Proposal</span>
@@ -142,19 +144,19 @@ export default function HeroSection({ onOpenQuote }) {
 
                 <Link
                   to="/contact"
-                  className="w-full sm:w-auto px-6 sm:px-7 py-3.5 sm:py-4 bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-xl text-white font-semibold rounded-2xl transition-all text-center flex items-center justify-center space-x-2 text-sm sm:text-base hover:border-[#38BDF8] active:scale-95"
+                  className="w-full sm:w-auto px-6 sm:px-7 py-3.5 sm:py-4 bg-white hover:bg-purple-50 border border-purple-200 text-[#111827] font-semibold rounded-2xl transition-all text-center flex items-center justify-center space-x-2 text-sm sm:text-base hover:border-[#C084FC] hover:text-[#7C3AED] active:scale-95 shadow-sm"
                 >
-                  <PhoneCall className="w-4 h-4 text-[#38BDF8]" />
+                  <PhoneCall className="w-4 h-4 text-[#7C3AED]" />
                   <span>Contact Technical Team</span>
                 </Link>
               </motion.div>
             </motion.div>
 
-            {/* Right Column: Floating Glassmorphism Service Cards (Desktop Only) */}
+            {/* Right Column: Floating White Service Cards */}
             <div className="hidden lg:block lg:col-span-5 relative mt-4 lg:mt-0">
               
               {/* Soft Ambient Background Glow */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 lg:w-80 lg:h-80 bg-blue-500/20 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 lg:w-80 lg:h-80 bg-purple-500/15 rounded-full blur-3xl pointer-events-none" />
 
               <div className="space-y-2.5 sm:space-y-3.5 max-w-sm sm:max-w-md mx-auto lg:max-w-none relative z-20">
                 {floatingCards.map((card, idx) => {
@@ -174,29 +176,29 @@ export default function HeroSection({ onOpenQuote }) {
                       whileHover={{ scale: 1.02, y: -4 }}
                       whileTap={{ scale: 0.98 }}
                       onClick={() => onOpenQuote(card.title)}
-                      className={`p-3.5 sm:p-5 rounded-2xl border border-white/15 bg-[#0B1F4D]/85 backdrop-blur-2xl shadow-lg hover:shadow-2xl hover:shadow-blue-500/20 ${card.hoverBorder} transition-all duration-300 cursor-pointer group flex items-center justify-between`}
+                      className="p-3.5 sm:p-5 rounded-2xl border border-purple-100 bg-white shadow-xl shadow-purple-900/5 hover:shadow-2xl hover:shadow-purple-600/15 hover:border-[#C084FC] transition-all duration-300 cursor-pointer group flex items-center justify-between"
                     >
                       <div className="flex items-center space-x-3 sm:space-x-4">
-                        <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center shrink-0 group-hover:bg-[#2563EB] transition-colors duration-300">
-                          <IconComponent className={`w-4 h-4 sm:w-5 sm:h-5 ${card.color} group-hover:text-white transition-colors`} />
+                        <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-purple-50 border border-purple-200 flex items-center justify-center shrink-0 group-hover:bg-[#7C3AED] transition-colors duration-300">
+                          <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 text-[#7C3AED] group-hover:text-white transition-colors" />
                         </div>
 
                         <div>
                           <div className="flex items-center space-x-2 flex-wrap gap-y-0.5">
-                            <h4 className="font-extrabold text-white text-xs sm:text-sm group-hover:text-[#38BDF8] transition-colors">
+                            <h4 className="font-extrabold text-[#111827] text-xs sm:text-sm group-hover:text-[#7C3AED] transition-colors">
                               {card.title}
                             </h4>
-                            <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full border ${card.badgeBg}`}>
+                            <span className="text-[9px] font-bold px-2 py-0.5 rounded-full border bg-purple-50 text-[#7C3AED] border-purple-200">
                               {card.tag}
                             </span>
                           </div>
-                          <p className="text-[11px] sm:text-xs text-slate-300 font-medium mt-0.5">
+                          <p className="text-[11px] sm:text-xs text-slate-500 font-medium mt-0.5">
                             {card.subtitle}
                           </p>
                         </div>
                       </div>
 
-                      <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#38BDF8] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0 ml-1.5" />
+                      <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#7C3AED] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0 ml-1.5" />
                     </motion.div>
                   );
                 })}
@@ -206,30 +208,28 @@ export default function HeroSection({ onOpenQuote }) {
           </div>
         </div>
 
-        {/* Scroll Indicator — visible on all screens */}
+        {/* Scroll Indicator */}
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
           className="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center space-y-1"
           onClick={() => window.scrollTo({ top: window.innerHeight - 80, behavior: 'smooth' })}
         >
-          <span className="text-[9px] font-bold uppercase tracking-widest text-slate-400 hidden sm:block">Scroll</span>
-          <div className="w-8 h-8 rounded-full bg-white/5 border border-white/15 flex items-center justify-center hover:border-[#38BDF8] cursor-pointer">
-            <ChevronDown className="w-4 h-4 text-[#38BDF8]" />
+          <span className="text-[9px] font-bold uppercase tracking-widest text-purple-700/70 hidden sm:block">Scroll</span>
+          <div className="w-8 h-8 rounded-full bg-white border border-purple-200 flex items-center justify-center hover:border-[#7C3AED] shadow-sm cursor-pointer">
+            <ChevronDown className="w-4 h-4 text-[#7C3AED]" />
           </div>
         </motion.div>
       </section>
-    </>
   );
 }
 
 export function TechStackMarquee() {
   return (
-    <section className="py-10 sm:py-14 bg-gradient-to-r from-[#070A11] via-[#0B162C] to-[#070A11] border-y border-white/10 relative overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[200px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+    <section className="py-10 sm:py-14 bg-[#F5F3FF] border-y border-purple-100 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-6 sm:mb-8">
-          <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#38BDF8] bg-blue-950/80 px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full border border-blue-500/30 shadow-lg">
+          <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#7C3AED] bg-purple-100/90 px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full border border-purple-200 shadow-sm">
             Powered by Enterprise Technical Stacks
           </span>
         </div>
@@ -242,10 +242,10 @@ export function TechStackMarquee() {
             {[...technologies, ...technologies].map((tech, idx) => (
               <div
                 key={idx}
-                className="flex items-center space-x-2 sm:space-x-3 text-slate-300 hover:text-white filter grayscale hover:grayscale-0 transition-all duration-300 cursor-pointer group"
+                className="flex items-center space-x-2 sm:space-x-3 text-slate-600 hover:text-[#111827] transition-all duration-300 cursor-pointer group"
               >
                 <span className="text-xl sm:text-2xl group-hover:scale-125 transition-transform duration-300">{tech.icon}</span>
-                <span className="text-xs sm:text-sm font-extrabold tracking-tight text-slate-200 group-hover:text-[#38BDF8] transition-colors">
+                <span className="text-xs sm:text-sm font-extrabold tracking-tight text-[#111827] group-hover:text-[#7C3AED] transition-colors">
                   {tech.name}
                 </span>
               </div>

@@ -4,9 +4,9 @@ import { ArrowRight, MessageSquare } from 'lucide-react';
 
 export default function CTASection({ onOpenQuote }) {
   return (
-    <section className="py-20 bg-gradient-to-b from-[#070A11] via-[#0B162C] to-[#070A11] text-white relative overflow-hidden border-t border-white/10 text-center">
+    <section className="py-20 bg-[#FAF5FF] text-[#111827] relative overflow-hidden border-t border-purple-100 text-center">
       {/* Background Radial Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-blue-600/10 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-purple-500/10 rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
@@ -16,15 +16,15 @@ export default function CTASection({ onOpenQuote }) {
           transition={{ duration: 0.5 }}
         >
           {/* Main Title */}
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight mb-4">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#111827] tracking-tight leading-tight mb-4">
             Ready to Transform Your{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#38BDF8] via-[#60A5FA] to-cyan-200">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7C3AED] via-[#A855F7] to-[#C084FC]">
               Business?
             </span>
           </h2>
 
           {/* Subtitle */}
-          <p className="text-slate-300 text-base sm:text-lg max-w-xl mx-auto mb-8 leading-relaxed font-normal">
+          <p className="text-slate-600 text-base sm:text-lg max-w-xl mx-auto mb-8 leading-relaxed font-normal">
             Let's build innovative, scalable digital solutions together.
           </p>
 
@@ -32,7 +32,7 @@ export default function CTASection({ onOpenQuote }) {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={() => onOpenQuote()}
-              className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#1D4ED8] via-[#2563EB] to-[#06B6D4] hover:from-[#2563EB] hover:to-[#38BDF8] text-white font-extrabold text-sm rounded-xl shadow-xl flex items-center justify-center space-x-2.5 group transition-all transform hover:-translate-y-0.5"
+              className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#7C3AED] via-[#A855F7] to-[#C084FC] hover:from-[#6D28D9] hover:to-[#7C3AED] text-white font-extrabold text-sm rounded-xl shadow-lg shadow-purple-600/30 flex items-center justify-center space-x-2.5 group transition-all transform hover:-translate-y-0.5"
             >
               <span>Get Free Proposal</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

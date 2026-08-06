@@ -31,7 +31,7 @@ export default function ProjectModal({ project, onClose, onOpenQuote }) {
             </button>
 
             <div className="absolute bottom-6 left-6 right-6 text-white">
-              <span className="px-3 py-1 bg-[#2563EB] text-xs font-bold uppercase tracking-wider rounded-full">
+              <span className="px-3 py-1 bg-[#7C3AED] text-xs font-bold uppercase tracking-wider rounded-full shadow-md">
                 {project.category}
               </span>
               <h3 className="text-2xl sm:text-3xl font-extrabold mt-2">
@@ -42,25 +42,25 @@ export default function ProjectModal({ project, onClose, onOpenQuote }) {
 
           {/* Scrollable Content */}
           <div className="p-6 sm:p-8 overflow-y-auto space-y-6 flex-1">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-200">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-purple-50/50 p-4 rounded-2xl border border-purple-100">
               <div className="flex items-center space-x-3 text-slate-700 text-sm">
-                <Building className="w-5 h-5 text-[#2563EB]" />
+                <Building className="w-5 h-5 text-[#7C3AED]" />
                 <div>
                   <div className="text-xs text-slate-500 font-semibold">Client</div>
-                  <div className="font-bold">{project.client}</div>
+                  <div className="font-bold text-[#111827]">{project.client}</div>
                 </div>
               </div>
               <div className="flex items-center space-x-3 text-slate-700 text-sm">
-                <Clock className="w-5 h-5 text-[#2563EB]" />
+                <Clock className="w-5 h-5 text-[#7C3AED]" />
                 <div>
                   <div className="text-xs text-slate-500 font-semibold">Development Duration</div>
-                  <div className="font-bold">{project.timeline}</div>
+                  <div className="font-bold text-[#111827]">{project.timeline}</div>
                 </div>
               </div>
             </div>
 
             <div>
-              <h4 className="text-sm font-bold text-[#0B1F4D] uppercase tracking-wider mb-2">
+              <h4 className="text-sm font-bold text-[#111827] uppercase tracking-wider mb-2">
                 Project Overview
               </h4>
               <p className="text-slate-600 text-base leading-relaxed">
@@ -69,23 +69,23 @@ export default function ProjectModal({ project, onClose, onOpenQuote }) {
             </div>
 
             <div>
-              <h4 className="text-sm font-bold text-[#0B1F4D] uppercase tracking-wider mb-2">
+              <h4 className="text-sm font-bold text-[#111827] uppercase tracking-wider mb-2">
                 Key Deliverables & Architectural Highlights
               </h4>
-              <p className="text-slate-600 text-sm leading-relaxed bg-blue-50/50 p-4 rounded-xl border border-blue-100">
+              <p className="text-slate-600 text-sm leading-relaxed bg-purple-50/50 p-4 rounded-xl border border-purple-100">
                 {project.details}
               </p>
             </div>
 
             <div>
-              <h4 className="text-sm font-bold text-[#0B1F4D] uppercase tracking-wider mb-2">
+              <h4 className="text-sm font-bold text-[#111827] uppercase tracking-wider mb-2">
                 Technologies Used
               </h4>
               <div className="flex flex-wrap gap-2">
                 {project.tech.map((t, idx) => (
                   <span
                     key={idx}
-                    className="px-3 py-1.5 bg-[#0B1F4D] text-white font-semibold text-xs rounded-xl"
+                    className="px-3 py-1.5 bg-purple-50 text-[#7C3AED] border border-purple-200 font-bold text-xs rounded-xl"
                   >
                     {t}
                   </span>
@@ -95,13 +95,13 @@ export default function ProjectModal({ project, onClose, onOpenQuote }) {
           </div>
 
           {/* Modal Footer */}
-          <div className="p-6 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="p-6 bg-slate-50 border-t border-purple-100 flex flex-col sm:flex-row items-center justify-between gap-4">
             <button
               onClick={() => {
                 onClose();
                 onOpenQuote(`Project Inquiry: ${project.title}`);
               }}
-              className="w-full sm:w-auto gradient-btn text-white px-6 py-3 rounded-xl text-sm font-bold shadow-md flex items-center justify-center space-x-2"
+              className="w-full sm:w-auto bg-gradient-to-r from-[#7C3AED] via-[#A855F7] to-[#C084FC] hover:from-[#6D28D9] hover:to-[#7C3AED] text-white px-6 py-3 rounded-xl text-sm font-bold shadow-lg shadow-purple-600/25 flex items-center justify-center space-x-2 transition-all active:scale-95"
             >
               <span>Build a Similar Solution</span>
               <ArrowRight className="w-4 h-4" />

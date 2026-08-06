@@ -27,14 +27,13 @@ const ROW_TWO_CAPABILITIES = [
 
 export default function TechStackShowcase() {
   return (
-    <section className="py-12 sm:py-28 bg-gradient-to-b from-[#070A11] via-[#0B162C] to-[#070A11] border-b border-white/10 relative overflow-hidden text-white">
-      {/* Background Radial Glow & Cyber Grid */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[650px] bg-blue-600/10 rounded-full blur-[240px] pointer-events-none" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#38bdf806_1px,transparent_1px),linear-gradient(to_bottom,#38bdf806_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+    <section className="py-12 sm:py-28 bg-[#FAF5FF] border-b border-purple-100 relative overflow-hidden text-[#111827]">
+      {/* Background Radial Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[650px] bg-purple-500/10 rounded-full blur-[240px] pointer-events-none" />
 
       {/* Edge Gradient Fades for Infinite Marquee Smoothness */}
-      <div className="absolute top-0 bottom-0 left-0 w-8 sm:w-48 bg-gradient-to-r from-[#070A11] to-transparent z-20 pointer-events-none" />
-      <div className="absolute top-0 bottom-0 right-0 w-8 sm:w-48 bg-gradient-to-l from-[#070A11] to-transparent z-20 pointer-events-none" />
+      <div className="absolute top-0 bottom-0 left-0 w-8 sm:w-48 bg-gradient-to-r from-[#FAF5FF] to-transparent z-20 pointer-events-none" />
+      <div className="absolute top-0 bottom-0 right-0 w-8 sm:w-48 bg-gradient-to-l from-[#FAF5FF] to-transparent z-20 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-8 sm:mb-14">
         {/* Section Header */}
@@ -43,9 +42,9 @@ export default function TechStackShowcase() {
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center space-x-2 bg-blue-950/90 border border-blue-500/30 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold text-[#38BDF8] mb-3 sm:mb-4 shadow-xl backdrop-blur-md"
+            className="inline-flex items-center space-x-2 bg-purple-100 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold text-[#7C3AED] mb-3 sm:mb-4 shadow-sm"
           >
-            <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-300 animate-pulse" />
+            <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-500 animate-pulse" />
             <span className="uppercase tracking-widest">Kinetic Tech Ecosystem</span>
           </motion.div>
 
@@ -54,10 +53,10 @@ export default function TechStackShowcase() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight"
+            className="text-xl sm:text-5xl font-extrabold text-[#111827] tracking-tight leading-tight"
           >
             Technologies We{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#38BDF8] via-[#60A5FA] to-cyan-200">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7C3AED] via-[#A855F7] to-[#C084FC]">
               Engineer With
             </span>
           </motion.h2>
@@ -67,7 +66,7 @@ export default function TechStackShowcase() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="mt-2.5 sm:mt-4 text-slate-300 text-xs sm:text-lg leading-relaxed"
+            className="mt-2.5 sm:mt-4 text-slate-600 text-xs sm:text-lg leading-relaxed"
           >
             A continuous, enterprise-grade technological flow powering high-availability systems with sub-second performance SLAs.
           </motion.p>
@@ -80,26 +79,26 @@ export default function TechStackShowcase() {
           {[...ROW_ONE_TECHS, ...ROW_ONE_TECHS].map((tech, idx) => (
             <div
               key={idx}
-              className="px-4 py-3 sm:px-6 sm:py-4 rounded-xl sm:rounded-2xl bg-[#0B1A38]/90 border border-white/15 backdrop-blur-2xl shadow-xl flex items-center space-x-3 sm:space-x-4 shrink-0 hover:border-[#38BDF8] hover:bg-white/[0.08] transition-all duration-300 group cursor-pointer"
+              className="px-4 py-3 sm:px-6 sm:py-4 rounded-xl sm:rounded-2xl bg-white border border-purple-100 shadow-md shadow-purple-900/5 flex items-center space-x-3 sm:space-x-4 shrink-0 hover:border-[#C084FC] hover:shadow-lg transition-all duration-300 group cursor-pointer"
             >
-              <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-lg sm:text-2xl shrink-0 group-hover:scale-105 transition-transform">
+              <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-purple-50 border border-purple-200 flex items-center justify-center text-lg sm:text-2xl shrink-0 group-hover:scale-105 transition-transform">
                 {tech.symbol}
               </div>
 
               <div>
                 <div className="flex items-center space-x-1.5 sm:space-x-2">
-                  <h4 className="text-xs sm:text-base font-extrabold text-white group-hover:text-[#38BDF8] transition-colors">
+                  <h4 className="text-xs sm:text-base font-extrabold text-[#111827] group-hover:text-[#7C3AED] transition-colors">
                     {tech.name}
                   </h4>
-                  <span className="text-[8px] sm:text-[10px] font-extrabold px-1.5 py-0.5 sm:px-2 sm:py-0.5 bg-blue-950 text-[#38BDF8] rounded-md border border-blue-500/30 uppercase tracking-wider">
+                  <span className="text-[8px] sm:text-[10px] font-extrabold px-1.5 py-0.5 sm:px-2 sm:py-0.5 bg-purple-50 text-[#7C3AED] rounded-md border border-purple-200 uppercase tracking-wider">
                     {tech.tag}
                   </span>
                 </div>
                 
-                <div className="flex items-center space-x-2 sm:space-x-3 text-[10px] sm:text-xs text-slate-400 mt-0.5 sm:mt-1">
+                <div className="flex items-center space-x-2 sm:space-x-3 text-[10px] sm:text-xs text-slate-500 mt-0.5 sm:mt-1">
                   <span>{tech.category}</span>
-                  <span className="w-1 h-1 rounded-full bg-cyan-400" />
-                  <span className="font-mono text-emerald-400 font-bold">{tech.metric}</span>
+                  <span className="w-1 h-1 rounded-full bg-purple-400" />
+                  <span className="font-mono text-emerald-600 font-bold">{tech.metric}</span>
                 </div>
               </div>
             </div>
@@ -116,17 +115,17 @@ export default function TechStackShowcase() {
             return (
               <div
                 key={idx}
-                className="px-4 py-3 sm:px-6 sm:py-4 rounded-xl sm:rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-2xl shadow-lg flex items-center space-x-3 sm:space-x-4 shrink-0 hover:border-cyan-400 hover:bg-white/[0.07] transition-all duration-300 group cursor-pointer"
+                className="px-4 py-3 sm:px-6 sm:py-4 rounded-xl sm:rounded-2xl bg-white border border-purple-100 shadow-sm flex items-center space-x-3 sm:space-x-4 shrink-0 hover:border-[#C084FC] hover:shadow-md transition-all duration-300 group cursor-pointer"
               >
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-cyan-500/20 text-[#38BDF8] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-purple-100 text-[#7C3AED] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
                   <IconComp className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
 
                 <div>
-                  <span className="text-[8px] sm:text-[9px] font-extrabold font-mono text-cyan-300 uppercase tracking-widest block mb-0.5">
+                  <span className="text-[8px] sm:text-[9px] font-extrabold font-mono text-[#7C3AED] uppercase tracking-widest block mb-0.5">
                     {cap.badge}
                   </span>
-                  <h4 className="text-xs sm:text-sm font-semibold text-slate-200 group-hover:text-white transition-colors">
+                  <h4 className="text-xs sm:text-sm font-semibold text-[#111827] group-hover:text-[#7C3AED] transition-colors">
                     {cap.title}
                   </h4>
                 </div>

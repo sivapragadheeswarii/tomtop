@@ -164,22 +164,19 @@ function IndustriesCarousel() {
   const totalDots = TOTAL;
 
   return (
-    <section className="py-12 sm:py-24 bg-gradient-to-b from-[#070A11] via-[#0B162C] to-[#070A11] border-b border-white/10 relative overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[550px] bg-blue-600/10 rounded-full blur-[200px] pointer-events-none" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#38bdf806_1px,transparent_1px),linear-gradient(to_bottom,#38bdf806_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
-
+    <section className="py-12 sm:py-24 bg-white border-b border-purple-100 relative overflow-hidden text-[#111827]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14">
-          <span className="text-[#38BDF8] font-bold text-[10px] sm:text-xs uppercase tracking-widest bg-blue-950/80 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full border border-blue-500/30 shadow-lg inline-flex items-center gap-2 mb-3 sm:mb-4">
-            <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-300 animate-pulse" />
+          <span className="text-[#7C3AED] font-bold text-[10px] sm:text-xs uppercase tracking-widest bg-purple-100 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full border border-purple-200 shadow-sm inline-flex items-center gap-2 mb-3 sm:mb-4">
+            <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-500 animate-pulse" />
             Domain Experience
           </span>
-          <h2 className="text-xl sm:text-5xl font-extrabold text-white tracking-tight mt-1">
-            Industries We <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#38BDF8] via-[#60A5FA] to-cyan-200">Serve</span>
+          <h2 className="text-xl sm:text-5xl font-extrabold text-[#111827] tracking-tight mt-1">
+            Industries We <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7C3AED] via-[#A855F7] to-[#C084FC]">Serve</span>
           </h2>
-          <p className="mt-2 sm:mt-3 text-slate-400 text-xs sm:text-base">
+          <p className="mt-2 sm:mt-3 text-slate-600 text-xs sm:text-base">
             Precision-engineered software for 10 specialized enterprise verticals.
           </p>
         </div>
@@ -202,32 +199,32 @@ function IndustriesCarousel() {
                 <div
                   key={`${activeIdx}-${i}`}
                   onClick={() => setActiveCardIdx(isRevealed ? null : i)}
-                  className={`group relative overflow-hidden rounded-2xl sm:rounded-3xl border backdrop-blur-xl shadow-xl transition-all duration-500 cursor-pointer ${
+                  className={`group relative overflow-hidden rounded-2xl sm:rounded-3xl border backdrop-blur-xl shadow-lg shadow-purple-900/5 transition-all duration-500 cursor-pointer ${
                     isRevealed
-                      ? 'border-[#38BDF8] shadow-[0_20px_60px_rgba(56,189,248,0.25)] bg-[#0B1A38]'
-                      : 'border-white/15 bg-[#0B1A38]/90 hover:shadow-[0_20px_60px_rgba(56,189,248,0.25)] hover:border-[#38BDF8]/60'
+                      ? 'border-[#7C3AED] shadow-xl bg-purple-50'
+                      : 'border-purple-100 bg-[#FAF5FF] hover:shadow-xl hover:border-[#C084FC]'
                   }`}
                 >
                   {/* Hover & Tap reveal background image */}
                   <div
                     className={`absolute inset-0 bg-cover bg-center transition-all duration-600 ${
-                      isRevealed ? 'opacity-100 scale-105' : 'opacity-0 group-hover:opacity-100 group-hover:scale-105'
+                      isRevealed ? 'opacity-90 scale-105' : 'opacity-0 group-hover:opacity-90 group-hover:scale-105'
                     }`}
                     style={{ backgroundImage: `url(${ind.img})` }}
                   />
 
-                  {/* Dark overlay */}
+                  {/* Overlay */}
                   <div
                     className={`absolute inset-0 bg-gradient-to-t transition-all duration-500 ${
                       isRevealed
-                        ? 'from-[#070A11]/90 via-[#0B1A38]/60 to-[#0B1A38]/30'
-                        : 'from-[#070A11]/95 via-[#070A11]/65 to-[#0B1A38]/40 group-hover:from-[#070A11]/85 group-hover:via-[#0B1A38]/50 group-hover:to-[#0B1A38]/20'
+                        ? 'from-[#111827]/90 via-[#111827]/60 to-[#111827]/30'
+                        : 'from-[#FAF5FF] via-[#FAF5FF]/80 to-[#FAF5FF]/40 group-hover:from-[#111827]/90 group-hover:via-[#111827]/60 group-hover:to-[#111827]/30'
                     }`}
                   />
 
-                  {/* Top cyan accent */}
+                  {/* Top accent */}
                   <div
-                    className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#38BDF8]/70 to-transparent transition-opacity duration-500 ${
+                    className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#7C3AED] to-transparent transition-opacity duration-500 ${
                       isRevealed ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
                     }`}
                   />
@@ -236,10 +233,10 @@ function IndustriesCarousel() {
                   <div className="relative z-10 flex flex-col items-center justify-center text-center p-4 sm:p-7 h-full min-h-[200px] sm:min-h-[280px]">
                     {/* Icon circle */}
                     <div
-                      className={`w-11 h-11 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-[#1D4ED8] to-[#2563EB] border-2 border-[#38BDF8]/40 flex items-center justify-center mb-3 sm:mb-5 transition-all duration-400 ${
+                      className={`w-11 h-11 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-[#7C3AED] to-[#A855F7] border-2 border-white flex items-center justify-center mb-3 sm:mb-5 transition-all duration-400 shadow-md ${
                         isRevealed
-                          ? 'scale-110 shadow-[0_0_40px_rgba(56,189,248,0.6)]'
-                          : 'shadow-[0_0_25px_rgba(56,189,248,0.4)] group-hover:scale-110 group-hover:shadow-[0_0_40px_rgba(56,189,248,0.6)]'
+                          ? 'scale-110 shadow-lg shadow-purple-600/40'
+                          : 'group-hover:scale-110 group-hover:shadow-lg'
                       }`}
                     >
                       <IconComp className="w-5 h-5 sm:w-7 sm:h-7 text-white" />
@@ -247,7 +244,7 @@ function IndustriesCarousel() {
 
                     <h3
                       className={`text-xs sm:text-base font-extrabold transition-colors duration-300 mb-1 sm:mb-2 ${
-                        isRevealed ? 'text-[#38BDF8]' : 'text-white group-hover:text-[#38BDF8]'
+                        isRevealed ? 'text-white' : 'text-[#111827] group-hover:text-white'
                       }`}
                     >
                       {ind.name}
@@ -255,7 +252,7 @@ function IndustriesCarousel() {
 
                     <p
                       className={`text-[10px] sm:text-xs leading-relaxed transition-colors duration-300 max-w-[140px] sm:max-w-[170px] ${
-                        isRevealed ? 'text-slate-200' : 'text-slate-400 group-hover:text-slate-200'
+                        isRevealed ? 'text-purple-200' : 'text-slate-600 group-hover:text-purple-200'
                       }`}
                     >
                       {ind.desc}
@@ -275,8 +272,8 @@ function IndustriesCarousel() {
               onClick={() => { setActiveIdx(i); startTimer(); }}
               className={`transition-all duration-300 rounded-full ${
                 i === activeIdx
-                  ? "w-6 sm:w-8 h-1.5 sm:h-2 bg-[#38BDF8] shadow-[0_0_8px_rgba(56,189,248,0.7)]"
-                  : "w-1.5 sm:w-2 h-1.5 sm:h-2 bg-white/20 hover:bg-white/40"
+                  ? "w-6 sm:w-8 h-1.5 sm:h-2 bg-[#7C3AED] shadow-sm"
+                  : "w-1.5 sm:w-2 h-1.5 sm:h-2 bg-purple-200 hover:bg-purple-300"
               }`}
             />
           ))}
@@ -302,55 +299,55 @@ export default function Portfolio() {
   ];
 
   return (
-    <div className="bg-[#070A11] text-white min-h-screen">
+    <div className="bg-[#FAF5FF] text-[#111827] min-h-screen">
 
-      {/* ─────────────────────────────────────────────────────
-          SECTION 1 — HEADER & INTRO (Full-Screen Viewport Hero Banner)
-      ───────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex flex-col justify-center items-center pt-28 pb-16 overflow-hidden border-b border-white/10 bg-[#070A11]">
-        {/* Generated High-Contrast Software Portfolio Background Image */}
+      {/* 1. SECTION 1 — HEADER & INTRO (Soft Violet Gradient) */}
+      <section className="relative min-h-screen flex flex-col justify-center items-center pt-28 pb-16 overflow-hidden border-b border-purple-100 bg-gradient-to-b from-[#FAF5FF] via-[#F3E8FF] to-[#FAF5FF]">
+        {/* Background Image */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src="/images/portfolio_hero_bg.png"
             alt="Enterprise Software Portfolio"
-            className="w-full h-full object-cover object-center opacity-75 filter contrast-125 brightness-110 saturate-125"
+            className="w-full h-full object-cover object-center opacity-65 filter contrast-115 brightness-105 saturate-120 pointer-events-none"
           />
-          {/* Smooth Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#070A11]/80 via-[#0B1528]/50 to-[#070A11]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_65%_at_50%_45%,rgba(147,51,234,0.25),transparent)]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF5FF]/20 via-[#FAF5FF]/40 to-[#FAF5FF] pointer-events-none" />
         </div>
 
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[700px] h-[350px] sm:h-[700px] bg-blue-600/15 rounded-full blur-[100px] sm:blur-[150px] pointer-events-none"></div>
+        {/* Soft Radial Spotlight Behind Hero Text */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92%] max-w-4xl h-[350px] bg-white/75 blur-[70px] rounded-full pointer-events-none z-0"></div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center justify-center my-auto">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center justify-center my-auto w-full">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center space-x-2 bg-blue-950/80 border border-blue-500/30 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold text-[#38BDF8] mb-4 sm:mb-6 shadow-xl backdrop-blur-md"
+            className="inline-flex items-center space-x-2 bg-white/90 border border-purple-300 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold text-[#7C3AED] mb-4 sm:mb-6 shadow-md backdrop-blur-sm"
           >
-            <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-300 animate-pulse" />
-            <span className="uppercase tracking-widest">Enterprise Software Showcase</span>
+            <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-500 animate-pulse" />
+            <span className="uppercase tracking-widest">Client Success & Case Studies</span>
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-3xl sm:text-7xl font-extrabold tracking-tight leading-snug sm:leading-[1.1] text-white max-w-4xl mx-auto"
+            className="text-3xl sm:text-7xl font-extrabold tracking-tight leading-snug sm:leading-[1.1] text-[#0F172A] max-w-4xl mx-auto drop-shadow-[0_1px_3px_rgba(255,255,255,0.9)]"
           >
-            Our Featured Work
+            Engineered For{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4C1D95] via-[#6D28D9] to-[#7C3AED]">
+              Impact & Scale
+            </span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.12 }}
-            className="mt-3 sm:mt-5 text-slate-200/90 text-xs sm:text-xl max-w-2xl mx-auto font-normal leading-relaxed"
+            className="mt-3 sm:mt-5 text-[#1E293B] text-xs sm:text-xl max-w-xl mx-auto font-bold leading-relaxed drop-shadow-[0_1px_2px_rgba(255,255,255,1)]"
           >
-            Real digital solutions built for businesses across multiple industries.
+            Explore our portfolio of industrial ERPs, mobile applications, and web platforms delivered for global clients.
           </motion.p>
         </div>
 
-        {/* Animated Clickable Scroll Down Indicator */}
+        {/* Scroll Down Indicator */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -358,22 +355,17 @@ export default function Portfolio() {
           onClick={() => window.scrollTo({ top: window.innerHeight - 80, behavior: 'smooth' })}
           className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-1 z-10 cursor-pointer"
         >
-          <span className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-widest hidden sm:block">
+          <span className="text-[9px] sm:text-xs font-bold text-slate-500 uppercase tracking-widest hidden sm:block">
             Scroll to Explore Portfolio
           </span>
-          <div className="w-8 h-8 rounded-full bg-white/5 border border-white/15 flex items-center justify-center hover:border-[#38BDF8]">
-            <ChevronDown className="w-4 h-4 text-[#38BDF8] animate-bounce" />
+          <div className="w-8 h-8 rounded-full bg-white border border-purple-200 flex items-center justify-center shadow-sm hover:border-[#7C3AED]">
+            <ChevronDown className="w-4 h-4 text-[#7C3AED] animate-bounce" />
           </div>
         </motion.div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────
-          SECTION 2 — 4 LARGE FEATURED CASE STUDY CARDS (ALTERNATING)
-      ───────────────────────────────────────────────────── */}
-      <section className="py-12 sm:py-20 lg:py-28 bg-gradient-to-b from-[#070A11] via-[#0B162C] to-[#070A11] border-b border-white/10 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[550px] bg-blue-600/10 rounded-full blur-[200px] pointer-events-none" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#38bdf806_1px,transparent_1px),linear-gradient(to_bottom,#38bdf806_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
-
+      {/* 2. SECTION 2 — 4 LARGE FEATURED CASE STUDY CARDS (White Section) */}
+      <section className="py-12 sm:py-20 lg:py-28 bg-white border-b border-purple-100 relative overflow-hidden text-[#111827]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-20 relative z-10">
           
           {FEATURED_CASE_STUDIES.map((study, index) => {
@@ -386,9 +378,9 @@ export default function Portfolio() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="bg-[#0B1F4D]/60 rounded-2xl sm:rounded-[32px] border border-white/15 backdrop-blur-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-0 shadow-2xl hover:border-[#38BDF8] transition-all duration-500 group"
+                className="bg-white rounded-2xl sm:rounded-[32px] border border-purple-100 overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-0 shadow-xl shadow-purple-900/5 hover:border-[#C084FC] transition-all duration-500 group"
               >
-                {/* Image Panel (16:9 Aspect) */}
+                {/* Image Panel */}
                 <div
                   className={`lg:col-span-6 relative overflow-hidden aspect-[16/9] lg:aspect-auto ${
                     isImageLeft ? 'lg:order-1' : 'lg:order-2'
@@ -397,11 +389,11 @@ export default function Portfolio() {
                   <img
                     src={study.image}
                     alt={study.title}
-                    className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out opacity-90 group-hover:opacity-100"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out opacity-95 group-hover:opacity-100"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#070A11] via-transparent to-transparent opacity-60" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent" />
 
-                  <span className="absolute top-3.5 left-3.5 sm:top-6 sm:left-6 text-[10px] sm:text-xs font-bold px-2.5 py-1 sm:px-3.5 sm:py-1.5 bg-[#070A11]/90 backdrop-blur-md text-[#38BDF8] rounded-full border border-white/15 uppercase tracking-widest shadow-lg">
+                  <span className="absolute top-3.5 left-3.5 sm:top-6 sm:left-6 text-[10px] sm:text-xs font-bold px-2.5 py-1 sm:px-3.5 sm:py-1.5 bg-white/90 backdrop-blur-md text-[#7C3AED] rounded-full border border-purple-200 uppercase tracking-widest shadow-md">
                     {study.badge}
                   </span>
                 </div>
@@ -414,19 +406,19 @@ export default function Portfolio() {
                 >
                   <div className="space-y-3 sm:space-y-4">
                     <div className="flex items-center justify-between">
-                      <span className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-widest font-mono">
+                      <span className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-widest font-mono">
                         Client: {study.client}
                       </span>
-                      <span className="text-[10px] sm:text-xs font-bold text-[#38BDF8] px-2.5 py-0.5 sm:px-3 sm:py-1 bg-blue-500/20 rounded-full border border-blue-500/30">
+                      <span className="text-[10px] sm:text-xs font-bold text-[#7C3AED] px-2.5 py-0.5 sm:px-3 sm:py-1 bg-purple-50 rounded-full border border-purple-200">
                         {study.category}
                       </span>
                     </div>
 
-                    <h2 className="text-xl sm:text-3xl font-extrabold text-white tracking-tight leading-snug group-hover:text-[#38BDF8] transition-colors">
+                    <h2 className="text-xl sm:text-3xl font-extrabold text-[#111827] tracking-tight leading-snug group-hover:text-[#7C3AED] transition-colors">
                       {study.title}
                     </h2>
 
-                    <p className="text-slate-300 text-xs sm:text-base leading-relaxed">
+                    <p className="text-slate-600 text-xs sm:text-base leading-relaxed">
                       {study.overview}
                     </p>
 
@@ -435,7 +427,7 @@ export default function Portfolio() {
                       {study.tech.map((t, idx) => (
                         <span
                           key={idx}
-                          className="text-[10px] sm:text-xs font-semibold px-2.5 py-0.5 sm:px-3 sm:py-1 bg-white/10 text-slate-200 rounded-lg border border-white/10"
+                          className="text-[10px] sm:text-xs font-semibold px-2.5 py-0.5 sm:px-3 sm:py-1 bg-purple-50 text-[#7C3AED] rounded-lg border border-purple-200"
                         >
                           {t}
                         </span>
@@ -443,21 +435,21 @@ export default function Portfolio() {
                     </div>
 
                     {/* Challenge & Solution Grid */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-3 sm:pt-4 border-t border-white/10 text-xs">
-                      <div className="space-y-1 p-3 sm:p-3.5 rounded-xl bg-white/5 border border-white/10">
-                        <span className="font-bold text-amber-300 uppercase tracking-wider block text-[10px] sm:text-xs">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-3 sm:pt-4 border-t border-purple-100 text-xs">
+                      <div className="space-y-1 p-3 sm:p-3.5 rounded-xl bg-purple-50/50 border border-purple-100">
+                        <span className="font-bold text-amber-600 uppercase tracking-wider block text-[10px] sm:text-xs">
                           The Challenge
                         </span>
-                        <p className="text-slate-300 text-xs leading-relaxed">
+                        <p className="text-slate-600 text-xs leading-relaxed">
                           {study.challenge}
                         </p>
                       </div>
 
-                      <div className="space-y-1 p-3 sm:p-3.5 rounded-xl bg-white/5 border border-white/10">
-                        <span className="font-bold text-emerald-400 uppercase tracking-wider block text-[10px] sm:text-xs">
+                      <div className="space-y-1 p-3 sm:p-3.5 rounded-xl bg-purple-50/50 border border-purple-100">
+                        <span className="font-bold text-emerald-600 uppercase tracking-wider block text-[10px] sm:text-xs">
                           Our Solution
                         </span>
-                        <p className="text-slate-300 text-xs leading-relaxed">
+                        <p className="text-slate-600 text-xs leading-relaxed">
                           {study.solution}
                         </p>
                       </div>
@@ -466,13 +458,13 @@ export default function Portfolio() {
 
                   {/* Key Results */}
                   <div className="space-y-2 pt-1 sm:pt-2">
-                    <span className="text-[10px] sm:text-xs font-bold text-slate-300 uppercase tracking-wider block">
+                    <span className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider block">
                       Key Results Delivered
                     </span>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-1.5 sm:gap-2">
                       {study.results.map((res, idx) => (
-                        <div key={idx} className="flex items-center space-x-1.5 text-[10px] sm:text-xs font-bold text-emerald-300 p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
-                          <CheckCircle2 className="w-3.5 h-3.5 shrink-0 text-emerald-400" />
+                        <div key={idx} className="flex items-center space-x-1.5 text-[10px] sm:text-xs font-bold text-emerald-700 p-2 rounded-lg bg-emerald-50 border border-emerald-200">
+                          <CheckCircle2 className="w-3.5 h-3.5 shrink-0 text-emerald-600" />
                           <span className="truncate">{res}</span>
                         </div>
                       ))}
@@ -480,10 +472,10 @@ export default function Portfolio() {
                   </div>
 
                   {/* View Case Study Button */}
-                  <div className="pt-3 sm:pt-4 border-t border-white/10">
+                  <div className="pt-3 sm:pt-4 border-t border-purple-100">
                     <button
                       onClick={() => onOpenQuote(study.title)}
-                      className="w-full sm:w-auto px-5 py-3 sm:px-7 sm:py-3.5 bg-gradient-to-r from-[#1D4ED8] via-[#2563EB] to-[#06B6D4] hover:from-[#2563EB] hover:to-[#38BDF8] text-white font-bold rounded-xl sm:rounded-2xl shadow-xl flex items-center justify-center space-x-2 text-xs sm:text-sm group/btn transition-all transform hover:-translate-y-0.5 active:scale-95"
+                      className="w-full sm:w-auto px-5 py-3 sm:px-7 sm:py-3.5 bg-gradient-to-r from-[#7C3AED] via-[#A855F7] to-[#C084FC] hover:from-[#6D28D9] hover:to-[#7C3AED] text-white font-bold rounded-xl sm:rounded-2xl shadow-lg shadow-purple-600/30 flex items-center justify-center space-x-2 text-xs sm:text-sm group/btn transition-all transform hover:-translate-y-0.5 active:scale-95"
                     >
                       <span>Request Case Study & Proposal</span>
                       <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1.5 transition-transform" />
@@ -497,23 +489,18 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────
-          SECTION 3 — RECENT PROJECTS (BENTO GRID LAYOUT)
-      ───────────────────────────────────────────────────── */}
-      <section className="py-12 sm:py-24 bg-gradient-to-b from-[#070A11] via-[#0B162C] to-[#070A11] border-b border-white/10 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[550px] bg-blue-600/10 rounded-full blur-[200px] pointer-events-none" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#38bdf806_1px,transparent_1px),linear-gradient(to_bottom,#38bdf806_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
-
+      {/* 3. SECTION 3 — RECENT PROJECTS (Soft Violet Background) */}
+      <section className="py-12 sm:py-24 bg-[#FAF5FF] border-b border-purple-100 relative overflow-hidden text-[#111827]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
-            <span className="text-[#38BDF8] font-bold text-[10px] sm:text-xs uppercase tracking-widest bg-blue-950 px-3.5 py-1 rounded-full border border-blue-500/30">
+            <span className="text-[#7C3AED] font-bold text-[10px] sm:text-xs uppercase tracking-widest bg-purple-100 px-3.5 py-1 rounded-full border border-purple-200 shadow-sm">
               Recent Engineering Works
             </span>
-            <h2 className="text-xl sm:text-5xl font-extrabold text-white mt-2.5 sm:mt-3">
+            <h2 className="text-xl sm:text-5xl font-extrabold text-[#111827] mt-2.5 sm:mt-3">
               Recent Projects
             </h2>
-            <p className="mt-2 sm:mt-3 text-slate-400 text-xs sm:text-base">
+            <p className="mt-2 sm:mt-3 text-slate-600 text-xs sm:text-base">
               Explore our recent software, web, and mobile app deployments.
             </p>
           </div>
@@ -529,44 +516,44 @@ export default function Portfolio() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.08 }}
-                  whileHover={{ y: -8 }}
+                  whileHover={{ y: -6 }}
                   onClick={() => setSelectedProject(project)}
-                  className={`${spanClass} bg-[#0B1F4D]/70 rounded-2xl sm:rounded-[28px] border border-white/15 backdrop-blur-2xl overflow-hidden group hover:border-[#38BDF8] hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 cursor-pointer flex flex-col justify-between shadow-xl`}
+                  className={`${spanClass} bg-white rounded-2xl sm:rounded-[28px] border border-purple-100 overflow-hidden group hover:border-[#C084FC] hover:shadow-xl shadow-lg shadow-purple-900/5 transition-all duration-300 cursor-pointer flex flex-col justify-between`}
                 >
-                  <div className="relative aspect-[16/9] overflow-hidden bg-slate-950">
+                  <div className="relative aspect-[16/9] overflow-hidden bg-purple-50">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 opacity-85 group-hover:opacity-100"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#070A11] via-[#070A11]/40 to-transparent opacity-85 group-hover:opacity-60 transition-opacity" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent" />
 
-                    <span className="absolute top-3.5 left-3.5 sm:top-4 sm:left-4 text-[9px] sm:text-[10px] font-bold px-2.5 py-0.5 sm:px-3 sm:py-1 bg-[#070A11]/90 backdrop-blur-md text-[#38BDF8] rounded-full border border-white/15 uppercase tracking-widest">
+                    <span className="absolute top-3.5 left-3.5 sm:top-4 sm:left-4 text-[9px] sm:text-[10px] font-bold px-2.5 py-0.5 sm:px-3 sm:py-1 bg-white/90 backdrop-blur-md text-[#7C3AED] rounded-full border border-purple-200 uppercase tracking-widest shadow-sm">
                       {project.category}
                     </span>
                   </div>
 
                   <div className="p-5 sm:p-8 space-y-2.5 sm:space-y-3">
-                    <h3 className="text-lg sm:text-xl font-extrabold text-white group-hover:text-[#38BDF8] transition-colors leading-snug">
+                    <h3 className="text-lg sm:text-xl font-extrabold text-[#111827] group-hover:text-[#7C3AED] transition-colors leading-snug">
                       {project.title}
                     </h3>
 
-                    <p className="text-slate-300 text-xs sm:text-sm leading-relaxed line-clamp-2">
+                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed line-clamp-2">
                       {project.description}
                     </p>
 
                     <div className="flex flex-wrap gap-1.5 pt-1">
                       {project.tech.map((t, idx) => (
-                        <span key={idx} className="text-[9px] sm:text-[10px] font-bold px-2 py-0.5 sm:px-2.5 sm:py-1 bg-white/10 text-slate-200 rounded-md border border-white/10">
+                        <span key={idx} className="text-[9px] sm:text-[10px] font-bold px-2 py-0.5 sm:px-2.5 sm:py-1 bg-purple-50 text-[#7C3AED] rounded-md border border-purple-200">
                           {t}
                         </span>
                       ))}
                     </div>
                   </div>
 
-                  <div className="px-5 py-3 sm:px-6 sm:py-4 border-t border-white/10 flex items-center justify-between bg-white/[0.02]">
-                    <span className="text-[10px] sm:text-xs font-semibold text-slate-400">Client: {project.client}</span>
-                    <button className="text-[10px] sm:text-xs font-bold text-[#38BDF8] group-hover:text-white flex items-center space-x-1 transition-colors">
+                  <div className="px-5 py-3 sm:px-6 sm:py-4 border-t border-purple-100 flex items-center justify-between bg-purple-50/50">
+                    <span className="text-[10px] sm:text-xs font-semibold text-slate-500">Client: {project.client}</span>
+                    <button className="text-[10px] sm:text-xs font-bold text-[#7C3AED] group-hover:text-[#6D28D9] flex items-center space-x-1 transition-colors">
                       <span>View Details</span>
                       <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform" />
                     </button>
@@ -579,29 +566,20 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────
-          SECTION 4 — INDUSTRIES WE SERVE (AUTO-SLIDE CAROUSEL)
-      ───────────────────────────────────────────────────── */}
+      {/* 4. SECTION 4 — INDUSTRIES WE SERVE (AUTO-SLIDE CAROUSEL) */}
       <IndustriesCarousel />
 
-
-
-      {/* ─────────────────────────────────────────────────────
-          SECTION 6 — CLIENT SUCCESS STORIES & PROJECT OUTCOMES (PAGE ENDING)
-      ───────────────────────────────────────────────────── */}
-      <section className="py-12 sm:py-24 bg-gradient-to-b from-[#070A11] via-[#0B162C] to-[#070A11] relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[550px] bg-blue-600/10 rounded-full blur-[200px] pointer-events-none" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#38bdf806_1px,transparent_1px),linear-gradient(to_bottom,#38bdf806_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
-
+      {/* 5. SECTION 6 — CLIENT SUCCESS STORIES & PROJECT OUTCOMES (Soft Violet Background) */}
+      <section className="py-12 sm:py-24 bg-[#FAF5FF] border-b border-purple-100 relative overflow-hidden text-[#111827]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
-            <span className="text-[#38BDF8] font-bold text-[10px] sm:text-xs uppercase tracking-widest bg-blue-950 px-3.5 py-1 rounded-full border border-blue-500/30">
+            <span className="text-[#7C3AED] font-bold text-[10px] sm:text-xs uppercase tracking-widest bg-purple-100 px-3.5 py-1 rounded-full border border-purple-200 shadow-sm">
               Proven ROI & Impact
             </span>
-            <h2 className="text-xl sm:text-5xl font-extrabold text-white mt-2.5 sm:mt-3">
+            <h2 className="text-xl sm:text-5xl font-extrabold text-[#111827] mt-2.5 sm:mt-3">
               Client Success Stories & Outcomes
             </h2>
-            <p className="mt-2 sm:mt-3 text-slate-400 text-xs sm:text-base">
+            <p className="mt-2 sm:mt-3 text-slate-600 text-xs sm:text-base">
               Real metrics and executive testimonials from businesses transformed by TOMTOP software.
             </p>
           </div>
@@ -612,13 +590,13 @@ export default function Portfolio() {
               <motion.div
                 key={idx}
                 whileHover={{ y: -4 }}
-                className="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-[#0B1F4D]/60 border border-white/15 backdrop-blur-2xl text-center shadow-xl"
+                className="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white border border-purple-100 backdrop-blur-2xl text-center shadow-lg shadow-purple-900/5"
               >
-                <span className="text-2xl sm:text-4xl font-extrabold text-[#38BDF8] font-mono block mb-1">
+                <span className="text-2xl sm:text-4xl font-extrabold text-[#7C3AED] font-mono block mb-1">
                   {met.value}
                 </span>
-                <h4 className="text-xs sm:text-base font-extrabold text-white mb-1 sm:mb-2">{met.label}</h4>
-                <p className="text-slate-400 text-[10px] sm:text-xs leading-relaxed">{met.desc}</p>
+                <h4 className="text-xs sm:text-base font-extrabold text-[#111827] mb-1 sm:mb-2">{met.label}</h4>
+                <p className="text-slate-600 text-[10px] sm:text-xs leading-relaxed">{met.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -629,25 +607,25 @@ export default function Portfolio() {
               <motion.div
                 key={idx}
                 whileHover={{ y: -6 }}
-                className="p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-[#0B1F4D]/80 border border-white/15 backdrop-blur-2xl flex flex-col justify-between group hover:border-[#38BDF8] transition-all shadow-xl relative"
+                className="p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-white border border-purple-100 backdrop-blur-2xl flex flex-col justify-between group hover:border-[#C084FC] transition-all shadow-lg shadow-purple-900/5 relative"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4 sm:mb-6">
-                    <Quote className="w-6 h-6 sm:w-8 sm:h-8 text-[#38BDF8] opacity-60" />
-                    <span className="text-[10px] sm:text-xs font-bold text-emerald-400 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-emerald-500/10 rounded-full border border-emerald-500/20">
+                    <Quote className="w-6 h-6 sm:w-8 sm:h-8 text-[#7C3AED] opacity-80" />
+                    <span className="text-[10px] sm:text-xs font-bold text-emerald-700 px-2.5 py-0.5 sm:px-3 sm:py-1 bg-emerald-50 rounded-full border border-emerald-200">
                       {t.metric}
                     </span>
                   </div>
 
-                  <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 italic">
+                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 italic">
                     "{t.quote}"
                   </p>
                 </div>
 
-                <div className="pt-3.5 sm:pt-4 border-t border-white/10 flex items-center justify-between">
+                <div className="pt-3.5 sm:pt-4 border-t border-purple-100 flex items-center justify-between">
                   <div>
-                    <h5 className="font-extrabold text-white text-xs sm:text-sm">{t.clientName}</h5>
-                    <p className="text-[10px] sm:text-xs text-[#38BDF8] font-medium">{t.role} • {t.company}</p>
+                    <h5 className="font-extrabold text-[#111827] text-xs sm:text-sm">{t.clientName}</h5>
+                    <p className="text-[10px] sm:text-xs text-[#7C3AED] font-medium">{t.role} • {t.company}</p>
                   </div>
                   <div className="flex text-amber-400">
                     {[...Array(5)].map((_, i) => (
