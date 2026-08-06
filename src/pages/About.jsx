@@ -44,8 +44,8 @@ export default function About() {
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src="/images/about_hero_bg.png"
-            alt="Modern luxury corporate office interior with diverse professional team discussion"
-            className="w-full h-full object-cover object-center opacity-90 filter brightness-100 contrast-105 saturate-100 pointer-events-none transition-all duration-700"
+            alt="Business leaders discussing technology strategy in modern glass office meeting room"
+            className="w-full h-full object-cover object-center opacity-90 filter brightness-100 contrast-105 saturate-105 pointer-events-none transition-all duration-700"
           />
           {/* Neutral Soft Fade Overlay: Preserves true white & grey photography colors while keeping text readable */}
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/35 via-slate-900/15 to-[#FAF5FF] pointer-events-none" />
