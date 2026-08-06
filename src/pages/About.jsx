@@ -1,6 +1,7 @@
 import React from 'react';
+import { useOutletContext, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Target, Compass, Sparkles, UserCheck, MapPin, CheckCircle2, Award, ShieldCheck, Zap, HeartHandshake, Lightbulb, Clock, ChevronDown, Building2, Server, Phone, Mail, Globe, Navigation } from 'lucide-react';
+import { Target, Compass, Sparkles, UserCheck, MapPin, CheckCircle2, Award, ShieldCheck, Zap, HeartHandshake, Lightbulb, Clock, ChevronDown, Building2, Server, Phone, Mail, Globe, Navigation, ArrowRight } from 'lucide-react';
 import { companyInfo } from '../data/companyData';
 import WhyChooseUs from '../components/WhyChooseUs';
 
@@ -19,6 +20,8 @@ const coreValues = [
 ];
 
 export default function About() {
+  const context = useOutletContext();
+  const onOpenQuote = context?.onOpenQuote || (() => {});
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -35,76 +38,89 @@ export default function About() {
   return (
     <div className="bg-[#FAF5FF] text-[#111827] min-h-screen">
       
-      {/* 1. Header Hero Banner (Soft Violet Gradient) */}
-      <section className="relative min-h-screen flex flex-col justify-center items-center pt-28 pb-16 overflow-hidden border-b border-purple-100 bg-gradient-to-b from-[#FAF5FF] via-[#F3E8FF] to-[#FAF5FF]">
-        {/* Background Overlay */}
+      {/* 1. Header Hero Banner (Enterprise SaaS Theme - High Contrast) */}
+      <section className="relative min-h-[85vh] sm:min-h-screen flex flex-col justify-center items-center pt-28 pb-16 overflow-hidden border-b border-purple-100 bg-[#FAF5FF]">
+        {/* Background Image Overlay: Reduced Brightness/Saturation + Dark Navy-Violet Contrast Overlay */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src="/images/about_hero_bg.png"
-            alt="TOMTOP SOLUTIONS Corporate Innovation"
-            className="w-full h-full object-cover object-center opacity-65 filter contrast-115 brightness-105 saturate-120 pointer-events-none transition-all duration-700"
+            alt="TOMTOP SOLUTIONS Corporate Innovation Office"
+            className="w-full h-full object-cover object-center opacity-70 filter brightness-75 saturate-60 contrast-110 pointer-events-none transition-all duration-700"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF5FF]/20 via-[#FAF5FF]/40 to-[#FAF5FF] pointer-events-none" />
+          {/* Dual Overlay: Dark Navy/Violet top for 100% heading contrast blending to #FAF5FF */}
+           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 lg:w-80 lg:h-80 bg-purple-500/15 rounded-full blur-3xl pointer-events-none" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center justify-center my-auto w-full">
-          {/* Live Studio Badge */}
+          {/* Glassmorphism Top Badge */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center space-x-2 bg-white/90 border border-purple-300 px-3.5 py-1.5 rounded-full text-[10px] sm:text-xs font-bold text-[#7C3AED] mb-5 sm:mb-6 shadow-md backdrop-blur-sm"
+            initial={{ opacity: 0, y: -15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center space-x-2 bg-white/95 border border-purple-300/80 px-4 py-1.5 rounded-full text-xs font-bold text-[#7C3AED] mb-4 shadow-xl backdrop-blur-md"
           >
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#7C3AED]"></span>
             </span>
-            <span className="uppercase tracking-widest">Engineering Tech Excellence</span>
+            <span className="uppercase tracking-widest text-[11px]">Engineering Tech Excellence</span>
           </motion.div>
 
-          {/* SEO Headline */}
+          {/* Breadcrumb Navigation */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="flex items-center space-x-2 text-xs font-semibold text-slate-300 mb-5 bg-black/40 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/15 shadow-md"
+          >
+            <Link to="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="text-purple-400">/</span>
+            <span className="text-white font-bold">About Us</span>
+          </motion.div>
+
+          {/* Large Bold Heading: Pure White (#FFFFFF) with #C084FC Keyword Highlight & Soft Shadow */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-2xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-[#0F172A] max-w-4xl mx-auto drop-shadow-[0_1px_3px_rgba(255,255,255,0.9)]"
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="text-3xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.15] text-[#FFFFFF] max-w-4xl mx-auto drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)]"
           >
-            Trusted Partner For <br className="hidden sm:inline" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4C1D95] via-[#6D28D9] to-[#7C3AED]">
-              Enterprise Software & Growth
-            </span>
+            Pioneering <span className="text-[#C084FC] font-extrabold drop-shadow-[0_2px_10px_rgba(168,85,247,0.5)]">Digital Innovation</span> & Enterprise Scale
           </motion.h1>
 
-          {/* Concise SEO Subtitle */}
+          {/* Short Subtitle Paragraph */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15 }}
-            className="mt-4 sm:mt-6 text-[#1E293B] text-xs sm:text-lg max-w-xl mx-auto font-bold leading-relaxed drop-shadow-[0_1px_2px_rgba(255,255,255,1)]"
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="mt-4 sm:mt-6 text-slate-100 text-sm sm:text-xl max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]"
           >
-            We build custom ERP systems, modern web applications, and high-performance cloud solutions for growing businesses.
+            We engineer high-concurrency ERP systems, custom web portals, and cloud infrastructure for modern corporate enterprises.
           </motion.p>
 
-          {/* Action Buttons */}
+          {/* Two CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.25 }}
-            className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto"
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto"
           >
             <button
-              onClick={() => window.scrollTo({ top: window.innerHeight - 80, behavior: 'smooth' })}
-              className="w-full sm:w-auto px-6 sm:px-7 py-3 sm:py-3.5 bg-gradient-to-r from-[#7C3AED] via-[#A855F7] to-[#C084FC] hover:from-[#6D28D9] hover:to-[#7C3AED] text-white font-bold rounded-2xl shadow-lg shadow-purple-600/30 flex items-center justify-center space-x-2 text-xs sm:text-sm group transition-all transform hover:-translate-y-0.5 active:scale-95"
+              onClick={() => onOpenQuote()}
+              className="w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-[#7C3AED] via-[#A855F7] to-[#C084FC] hover:from-[#6D28D9] hover:to-[#7C3AED] text-white font-bold rounded-2xl shadow-xl shadow-purple-950/40 flex items-center justify-center space-x-2 text-sm group transition-all transform hover:-translate-y-0.5 active:scale-95 border border-purple-300/30"
             >
-              <span>Explore Our Story</span>
-              <ChevronDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
+              <Sparkles className="w-4 h-4 text-amber-300 animate-pulse" />
+              <span>Request Free Proposal</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
 
-            <a
-              href={`tel:${companyInfo.phone}`}
-              className="hidden sm:flex w-full sm:w-auto px-6 sm:px-7 py-3 sm:py-3.5 bg-white border border-purple-200 text-[#7C3AED] hover:border-[#7C3AED] font-semibold rounded-2xl transition-all text-center items-center justify-center space-x-2 text-xs sm:text-sm shadow-sm active:scale-95"
+            <button
+              onClick={() => window.scrollTo({ top: window.innerHeight - 80, behavior: 'smooth' })}
+              className="w-full sm:w-auto px-7 py-3.5 bg-white/95 hover:bg-white text-[#111827] hover:text-[#7C3AED] border border-purple-200 font-semibold rounded-2xl transition-all text-center flex items-center justify-center space-x-2 text-sm shadow-md backdrop-blur-md active:scale-95"
             >
-              <Phone className="w-4 h-4 text-[#7C3AED]" />
-              <span>Contact Madurai HQ</span>
-            </a>
+              <span>Explore Our Story</span>
+              <ChevronDown className="w-4 h-4 text-[#7C3AED]" />
+            </button>
           </motion.div>
         </div>
 

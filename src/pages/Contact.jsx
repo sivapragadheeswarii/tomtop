@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useOutletContext } from 'react-router-dom';
+import { useOutletContext, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Mail, Phone, MapPin, Globe, Send, CheckCircle,
@@ -22,10 +22,9 @@ export default function Contact() {
   };
 
   const inputClass = (field) =>
-    `w-full px-3.5 py-3 sm:px-4 sm:py-3.5 rounded-xl bg-purple-50/50 text-[#111827] outline-none text-xs sm:text-sm font-medium placeholder:text-slate-400 transition-all duration-300 ${
-      focused === field
-        ? 'border-[#7C3AED] border-2 shadow-sm bg-white'
-        : 'border border-purple-200 hover:border-purple-300'
+    `w-full px-3.5 py-3 sm:px-4 sm:py-3.5 rounded-xl bg-purple-50/50 text-[#111827] outline-none text-xs sm:text-sm font-medium placeholder:text-slate-400 transition-all duration-300 ${focused === field
+      ? 'border-[#7C3AED] border-2 shadow-sm bg-white'
+      : 'border border-purple-200 hover:border-purple-300'
     }`;
 
   const contactItems = [
@@ -44,59 +43,98 @@ export default function Contact() {
   return (
     <div className="bg-[#FAF5FF] text-[#111827] min-h-screen">
 
-      {/* 1. SECTION 1 — CINEMATIC HERO (Soft Violet Gradient) */}
-      <section className="relative min-h-screen flex flex-col justify-center items-center pt-28 pb-16 overflow-hidden border-b border-purple-100 bg-gradient-to-b from-[#FAF5FF] via-[#F3E8FF] to-[#FAF5FF]">
-        {/* Background Image */}
+      {/* 1. SECTION 1 — CINEMATIC HERO (Enterprise SaaS Theme) */}
+      <section className="relative min-h-[85vh] sm:min-h-screen flex flex-col justify-center items-center pt-28 pb-16 overflow-hidden border-b border-purple-100 bg-[#FAF5FF]">
+        {/* Background Image Overlay: Matched Color Tone & Contrast to About Page */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src="/images/contact_hero_bg.png"
-            alt="TOMTOP SOLUTIONS Connectivity Network"
-            className="w-full h-full object-cover object-center opacity-55 filter contrast-105 brightness-100 saturate-115 pointer-events-none transition-opacity duration-700"
+            alt="TOMTOP SOLUTIONS Corporate Office Support Network"
+            className="w-full h-full object-cover object-center opacity-70 filter brightness-75 saturate-60 contrast-110 pointer-events-none transition-all duration-700"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF5FF]/30 via-[#FAF5FF]/50 to-[#FAF5FF] pointer-events-none" />
+          {/* Dual Overlay: Matched Dark Navy/Violet tone blending to #FAF5FF */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/85 via-[#1E1B4B]/75 to-[#FAF5FF] pointer-events-none" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center justify-center my-auto w-full">
+          {/* Glassmorphism Top Badge */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.85 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-flex items-center space-x-2 bg-white/90 border border-purple-300 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold text-[#7C3AED] mb-4 sm:mb-8 backdrop-blur-sm shadow-md"
+            initial={{ opacity: 0, y: -15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center space-x-2 bg-white/95 border border-purple-300/80 px-4 py-1.5 rounded-full text-xs font-bold text-[#7C3AED] mb-4 shadow-xl backdrop-blur-md"
           >
-            <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-500 animate-pulse" />
-            <span className="uppercase tracking-widest">Free Project Consultation</span>
+            <Sparkles className="w-3.5 h-3.5 text-amber-500 animate-pulse" />
+            <span className="uppercase tracking-widest text-[11px]">Free Project Consultation</span>
           </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 32 }}
+          {/* Breadcrumb Navigation */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.08, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-            className="text-2xl sm:text-6xl font-extrabold tracking-tight leading-snug sm:leading-[1.12] text-[#0F172A] max-w-4xl mx-auto drop-shadow-[0_1px_3px_rgba(255,255,255,0.9)]"
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="flex items-center space-x-2 text-xs font-semibold text-slate-300 mb-5 bg-black/40 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/15 shadow-md"
           >
-            Start Your Software{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4C1D95] via-[#6D28D9] to-[#7C3AED]">
-              Project Today
-            </span>
+            <Link to="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="text-purple-400">/</span>
+            <span className="text-white font-bold">Contact Us</span>
+          </motion.div>
+
+          {/* Large Bold Heading: Pure White (#FFFFFF) with #C084FC Keyword Highlight & Soft Shadow */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="text-3xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.15] text-[#FFFFFF] max-w-4xl mx-auto drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)]"
+          >
+            Start Your Software <span className="text-[#C084FC] font-extrabold drop-shadow-[0_2px_10px_rgba(168,85,247,0.5)]">Project Today</span>
           </motion.h1>
 
+          {/* Short Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="mt-3 sm:mt-6 text-[#1E293B] text-xs sm:text-xl max-w-xl mx-auto leading-relaxed font-bold drop-shadow-[0_1px_2px_rgba(255,255,255,1)]"
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="mt-4 sm:mt-6 text-slate-100 text-sm sm:text-xl max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]"
           >
-            Connect with Madurai’s senior software engineers. Get a free proposal and architecture roadmap within 24 hours.
+            Connect with Madurai’s senior software engineers & cloud architects. Get a free custom project proposal and architecture roadmap within 24 hours.
           </motion.p>
 
+          {/* Two CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto"
+          >
+            <button
+              onClick={() => window.scrollTo({ top: window.innerHeight - 80, behavior: 'smooth' })}
+              className="w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-[#7C3AED] via-[#A855F7] to-[#C084FC] hover:from-[#6D28D9] hover:to-[#7C3AED] text-white font-bold rounded-2xl shadow-xl shadow-purple-950/30 flex items-center justify-center space-x-2 text-sm group transition-all transform hover:-translate-y-0.5 active:scale-95 border border-purple-300/30"
+            >
+              <Send className="w-4 h-4 text-white" />
+              <span>Fill Inquiry Form</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
+
+            <a
+              href={`tel:${companyInfo.phone}`}
+              className="w-full sm:w-auto px-7 py-3.5 bg-white/95 hover:bg-white text-[#111827] hover:text-[#7C3AED] border border-purple-200 font-semibold rounded-2xl transition-all text-center flex items-center justify-center space-x-2 text-sm shadow-md backdrop-blur-md active:scale-95"
+            >
+              <Phone className="w-4 h-4 text-[#7C3AED]" />
+              <span>Call Tech Team</span>
+            </a>
+          </motion.div>
+
+          {/* Guarantees */}
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.32 }}
-            className="mt-5 sm:mt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-6"
+            transition={{ delay: 0.45 }}
+            className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:gap-6"
           >
             {guarantees.map((g, i) => (
-              <div key={i} className="flex items-center space-x-1.5 text-[10px] sm:text-xs font-semibold text-[#111827] bg-white px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-full border border-purple-100 shadow-sm">
-                <g.icon className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#7C3AED]" />
+              <div key={i} className="flex items-center space-x-1.5 text-[10px] sm:text-xs font-semibold text-[#111827] bg-white/90 px-3 py-1.5 rounded-full border border-purple-200 shadow-sm backdrop-blur-md">
+                <g.icon className="w-3.5 h-3.5 text-[#7C3AED]" />
                 <span>{g.label}</span>
               </div>
             ))}
@@ -334,11 +372,10 @@ export default function Contact() {
             {faqData.map((faq, i) => (
               <div
                 key={i}
-                className={`rounded-xl sm:rounded-2xl border transition-all duration-300 overflow-hidden ${
-                  openFaq === i
+                className={`rounded-xl sm:rounded-2xl border transition-all duration-300 overflow-hidden ${openFaq === i
                     ? 'border-[#7C3AED] bg-white shadow-md'
                     : 'border-purple-100 bg-white hover:border-purple-200'
-                }`}
+                  }`}
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}

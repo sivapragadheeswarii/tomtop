@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useOutletContext } from 'react-router-dom';
+import { useOutletContext, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Globe, Smartphone, Layers, Server, ArrowRight, CheckCircle2, Sparkles, HelpCircle, ChevronDown } from 'lucide-react';
 import { servicesData, techStackData, faqData } from '../data/companyData';
@@ -13,7 +13,8 @@ const iconMap = {
 };
 
 export default function Services() {
-  const { onOpenQuote } = useOutletContext();
+  const context = useOutletContext();
+  const onOpenQuote = context?.onOpenQuote || (() => {});
   const [openFaq, setOpenFaq] = useState(null);
 
   const containerVariants = {
@@ -32,47 +33,87 @@ export default function Services() {
   return (
     <div className="bg-[#FAF5FF] text-[#111827] min-h-screen">
       
-      {/* 1. Viewport Hero Banner (Soft Violet Gradient) */}
-      <section className="relative min-h-screen flex flex-col justify-center items-center pt-24 pb-16 overflow-hidden border-b border-purple-100 bg-gradient-to-b from-[#FAF5FF] via-[#F3E8FF] to-[#FAF5FF]">
-        {/* Background Image Overlay */}
+      {/* 1. Viewport Hero Banner (Enterprise SaaS Theme) */}
+      <section className="relative min-h-[85vh] sm:min-h-screen flex flex-col justify-center items-center pt-28 pb-16 overflow-hidden border-b border-purple-100 bg-[#FAF5FF]">
+        {/* Background Image Overlay: Cloud, AI, Servers & Enterprise Digital Infrastructure */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
-            src="/images/services_hero_contrast_bg.png"
-            alt="Enterprise Cloud & Software Architecture"
-            className="w-full h-full object-cover object-center opacity-65 filter contrast-115 brightness-105 saturate-120 pointer-events-none"
+            src="/images/services_hero_bg.png"
+            alt="Cloud computing, AI technology, software development, servers, enterprise digital infrastructure"
+            className="w-full h-full object-cover object-center opacity-70 filter brightness-75 saturate-60 contrast-110 pointer-events-none transition-all duration-700"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF5FF]/20 via-[#FAF5FF]/40 to-[#FAF5FF] pointer-events-none" />
+          {/* Dual Overlay: Matched Dark Navy/Violet tone blending to #FAF5FF */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/85 via-[#1E1B4B]/75 to-[#FAF5FF] pointer-events-none" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center justify-center my-auto w-full">
+          {/* Glassmorphism Top Badge */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center space-x-2 bg-white/90 border border-purple-300 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold text-[#7C3AED] mb-4 sm:mb-6 shadow-md backdrop-blur-sm"
+            initial={{ opacity: 0, y: -15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center space-x-2 bg-white/95 border border-purple-300/80 px-4 py-1.5 rounded-full text-xs font-bold text-[#7C3AED] mb-4 shadow-xl backdrop-blur-md"
           >
-            <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-500 animate-pulse" />
-            <span className="uppercase tracking-widest">Enterprise IT & Software Services</span>
+            <Sparkles className="w-3.5 h-3.5 text-amber-500 animate-pulse" />
+            <span className="uppercase tracking-widest text-[11px]">Enterprise IT & Software Services</span>
           </motion.div>
 
+          {/* Breadcrumb Navigation */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="flex items-center space-x-2 text-xs font-semibold text-slate-300 mb-5 bg-black/40 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/15 shadow-md"
+          >
+            <Link to="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="text-purple-400">/</span>
+            <span className="text-white font-bold">Services</span>
+          </motion.div>
+
+          {/* Large Bold Heading: Pure White (#FFFFFF) with #C084FC Keyword Highlight & Soft Shadow */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-2xl sm:text-6xl font-extrabold tracking-tight leading-snug sm:leading-[1.12] text-[#0F172A] max-w-4xl mx-auto drop-shadow-[0_1px_3px_rgba(255,255,255,0.9)]"
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="text-3xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.15] text-[#FFFFFF] max-w-4xl mx-auto drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)]"
           >
-            Custom Web, Mobile & <br className="hidden sm:inline" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4C1D95] via-[#6D28D9] to-[#7C3AED]">
-              Cloud ERP Solutions
-            </span>
+            Custom Web, Mobile & <span className="text-[#C084FC] font-extrabold drop-shadow-[0_2px_10px_rgba(168,85,247,0.5)]">Cloud ERP Solutions</span>
           </motion.h1>
 
+          {/* Short Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15 }}
-            className="mt-3 sm:mt-6 text-[#1E293B] text-xs sm:text-xl max-w-xl mx-auto font-bold leading-relaxed drop-shadow-[0_1px_2px_rgba(255,255,255,1)]"
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="mt-4 sm:mt-6 text-slate-100 text-sm sm:text-xl max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-md"
           >
-            End-to-end software development: custom web portals, cross-platform mobile apps, billing ERPs, and fast NVMe cloud servers.
+            End-to-end software engineering: custom web portals, cross-platform mobile apps, industrial ERP platforms, and 99.9% uptime NVMe cloud servers.
           </motion.p>
+
+          {/* Two CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto"
+          >
+            <button
+              onClick={() => onOpenQuote()}
+              className="w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-[#7C3AED] via-[#A855F7] to-[#C084FC] hover:from-[#6D28D9] hover:to-[#7C3AED] text-white font-bold rounded-2xl shadow-xl shadow-purple-950/30 flex items-center justify-center space-x-2 text-sm group transition-all transform hover:-translate-y-0.5 active:scale-95 border border-purple-300/30"
+            >
+              <Sparkles className="w-4 h-4 text-amber-300 animate-pulse" />
+              <span>Get Started & Proposal</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
+
+            <button
+              onClick={() => window.scrollTo({ top: window.innerHeight - 80, behavior: 'smooth' })}
+              className="w-full sm:w-auto px-7 py-3.5 bg-white/95 hover:bg-white text-[#111827] hover:text-[#7C3AED] border border-purple-200 font-semibold rounded-2xl transition-all text-center flex items-center justify-center space-x-2 text-sm shadow-md backdrop-blur-md active:scale-95"
+            >
+              <span>Explore Capabilities</span>
+              <ChevronDown className="w-4 h-4 text-[#7C3AED]" />
+            </button>
+          </motion.div>
         </div>
 
         {/* Animated Clickable Scroll Down Indicator */}
