@@ -33,26 +33,30 @@ export default function Services() {
   return (
     <div className="bg-[#FAF5FF] text-[#111827] min-h-screen">
       
-      {/* 1. Viewport Hero Banner (Enterprise SaaS Theme) */}
+      {/* 1. Viewport Hero Banner (Natural Realistic Photography Theme) */}
       <section className="relative min-h-[85vh] sm:min-h-screen flex flex-col justify-center items-center pt-28 pb-16 overflow-hidden border-b border-purple-100 bg-[#FAF5FF]">
-        {/* Background Image Overlay: Cloud, AI, Servers & Enterprise Digital Infrastructure */}
+        {/* Background Image: Natural Photography (Cloud Data Center, White & Grey Neutral Lighting) */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src="/images/services_hero_bg.png"
-            alt="Cloud computing, AI technology, software development, servers, enterprise digital infrastructure"
-            className="w-full h-full object-cover object-center opacity-70 filter brightness-75 saturate-60 contrast-110 pointer-events-none transition-all duration-700"
+            alt="Professional developers working in modern software engineering office workspace"
+            className="w-full h-full object-cover object-center opacity-90 filter brightness-100 contrast-105 saturate-105 pointer-events-none transition-all duration-700"
           />
-          {/* Dual Overlay: Matched Dark Navy/Violet tone blending to #FAF5FF */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/85 via-[#1E1B4B]/75 to-[#FAF5FF] pointer-events-none" />
+          
+          {/* Neutral Soft Fade Overlay: Preserves true white & grey photography colors while keeping text readable */}
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/35 via-slate-900/15 to-[#FAF5FF] pointer-events-none" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center justify-center my-auto w-full">
+        {/* Soft Radial White Spotlight Behind Text */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-3xl h-[420px] bg-white/75 blur-[80px] rounded-full pointer-events-none z-10 hidden sm:block" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center flex flex-col items-center justify-center my-auto w-full">
           {/* Glassmorphism Top Badge */}
           <motion.div
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center space-x-2 bg-white/95 border border-purple-300/80 px-4 py-1.5 rounded-full text-xs font-bold text-[#7C3AED] mb-4 shadow-xl backdrop-blur-md"
+            className="inline-flex items-center space-x-2 bg-white/95 border border-purple-300 px-4 py-1.5 rounded-full text-xs font-bold text-[#7C3AED] mb-4 shadow-md backdrop-blur-sm"
           >
             <Sparkles className="w-3.5 h-3.5 text-amber-500 animate-pulse" />
             <span className="uppercase tracking-widest text-[11px]">Enterprise IT & Software Services</span>
@@ -63,29 +67,29 @@ export default function Services() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex items-center space-x-2 text-xs font-semibold text-slate-300 mb-5 bg-black/40 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/15 shadow-md"
+            className="flex items-center space-x-2 text-xs font-semibold text-[#4B5563] mb-5 bg-white/80 backdrop-blur-md px-4 py-1.5 rounded-full border border-purple-200/80 shadow-sm"
           >
-            <Link to="/" className="hover:text-white transition-colors">Home</Link>
+            <Link to="/" className="hover:text-[#7C3AED] transition-colors">Home</Link>
             <span className="text-purple-400">/</span>
-            <span className="text-white font-bold">Services</span>
+            <span className="text-[#111827] font-bold">Services</span>
           </motion.div>
 
-          {/* Large Bold Heading: Pure White (#FFFFFF) with #C084FC Keyword Highlight & Soft Shadow */}
+          {/* Large Bold Heading: Matched to Home Page Style */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-3xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.15] text-[#FFFFFF] max-w-4xl mx-auto drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)]"
+            className="text-3xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.15] text-[#111827] max-w-4xl mx-auto drop-shadow-sm"
           >
-            Custom Web, Mobile & <span className="text-[#C084FC] font-extrabold drop-shadow-[0_2px_10px_rgba(168,85,247,0.5)]">Cloud ERP Solutions</span>
+            Custom Web, Mobile & <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7C3AED] to-[#A855F7]">Cloud ERP Solutions</span>
           </motion.h1>
 
-          {/* Short Subtitle */}
+          {/* Short Subtitle Paragraph */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="mt-4 sm:mt-6 text-slate-100 text-sm sm:text-xl max-w-2xl mx-auto font-medium leading-relaxed drop-shadow-md"
+            className="mt-4 sm:mt-6 text-[#374151] text-sm sm:text-xl max-w-2xl mx-auto font-medium leading-relaxed"
           >
             End-to-end software engineering: custom web portals, cross-platform mobile apps, industrial ERP platforms, and 99.9% uptime NVMe cloud servers.
           </motion.p>
