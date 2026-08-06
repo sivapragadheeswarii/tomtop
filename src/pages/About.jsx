@@ -70,7 +70,7 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             className="text-2xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-[#0F172A] max-w-4xl mx-auto drop-shadow-[0_1px_3px_rgba(255,255,255,0.9)]"
           >
-            Madurai’s Trusted Partner For <br className="hidden sm:inline" />
+            Trusted Partner For <br className="hidden sm:inline" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4C1D95] via-[#6D28D9] to-[#7C3AED]">
               Enterprise Software & Growth
             </span>
