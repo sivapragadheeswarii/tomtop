@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, CheckCircle, Send, Sparkles } from 'lucide-react';
+import { X, CheckCircle, Send, Sparkles, Loader2 } from 'lucide-react';
 import { servicesData } from '../data/companyData';
 
 export default function QuoteModal({ isOpen, onClose, initialService = '', selectedService = '' }) {
@@ -14,6 +14,7 @@ export default function QuoteModal({ isOpen, onClose, initialService = '', selec
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     if (activeService) {
@@ -23,13 +24,54 @@ export default function QuoteModal({ isOpen, onClose, initialService = '', selec
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e) => {
+  const triggerMailto = () => {
+    const recipient = "sivapragadheeswari2004@gmail.com";
+    const subject = encodeURIComponent(`Quote Request: ${formData.service} from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService Required: ${formData.service}\n\nProject Details:\n${formData.message}`
+    );
+    window.open(`mailto:${recipient}?subject=${subject}&body=${body}`, '_blank');
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      onClose();
-    }, 2500);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/sivapragadheeswari2004@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          message: formData.message,
+          _subject: `New Quote Request: ${formData.service} from ${formData.name}`,
+          _template: "table"
+        })
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        triggerMailto();
+        setSubmitted(true);
+      }
+    } catch (err) {
+      console.error("Quote submission error:", err);
+      triggerMailto();
+      setSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => {
+        setSubmitted(false);
+        onClose();
+      }, 3000);
+    }
   };
 
   return (
@@ -54,9 +96,9 @@ export default function QuoteModal({ isOpen, onClose, initialService = '', selec
               <div className="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
                 <CheckCircle className="w-10 h-10" />
               </div>
-              <h3 className="text-2xl font-extrabold text-[#111827]">Proposal Request Received!</h3>
+              <h3 className="text-2xl font-extrabold text-[#111827]">Proposal Request Delivered!</h3>
               <p className="text-sm text-slate-600">
-                Thank you, {formData.name}. Our technical team will reach out within 2 business hours.
+                Thank you, <strong className="text-[#2563EB]">{formData.name}</strong>. Your request has been emailed to <strong className="text-[#2563EB]">sivapragadheeswari2004@gmail.com</strong>.
               </p>
             </div>
           ) : (
@@ -134,10 +176,20 @@ export default function QuoteModal({ isOpen, onClose, initialService = '', selec
 
                 <button
                   type="submit"
-                  className="w-full py-4 bg-gradient-to-r from-[#2563EB] via-[#3B82F6] to-[#60A5FA] hover:from-[#1D4ED8] hover:to-[#2563EB] text-white font-bold rounded-xl shadow-lg shadow-blue-600/30 flex items-center justify-center space-x-2 transition-all active:scale-95"
+                  disabled={isSubmitting}
+                  className="w-full py-4 bg-gradient-to-r from-[#2563EB] via-[#3B82F6] to-[#60A5FA] hover:from-[#1D4ED8] hover:to-[#2563EB] text-white font-bold rounded-xl shadow-lg shadow-blue-600/30 flex items-center justify-center space-x-2 transition-all active:scale-95 disabled:opacity-70"
                 >
-                  <Send className="w-4 h-4" />
-                  <span>Submit Quote Request</span>
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      <span>Sending Request...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4" />
+                      <span>Submit Quote Request</span>
+                    </>
+                  )}
                 </button>
               </form>
             </div>

@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   Mail, Phone, MapPin, Globe, Send, CheckCircle,
   Clock, Sparkles, MessageCircle, ChevronDown,
-  HelpCircle, ArrowRight, Zap, Shield, Users
+  HelpCircle, ArrowRight, Loader2
 } from 'lucide-react';
 import { companyInfo, faqData } from '../data/companyData';
 
@@ -12,13 +12,56 @@ export default function Contact() {
   const { onOpenQuote } = useOutletContext();
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [openFaq, setOpenFaq] = useState(null);
   const [focused, setFocused] = useState('');
 
-  const handleSubmit = (e) => {
+  const triggerMailto = () => {
+    const recipient = "sivapragadheeswari2004@gmail.com";
+    const subject = encodeURIComponent(formData.subject || `New Project Inquiry from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nSubject: ${formData.subject || 'N/A'}\n\nMessage / Project Details:\n${formData.message}`
+    );
+    window.open(`mailto:${recipient}?subject=${subject}&body=${body}`, '_blank');
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/sivapragadheeswari2004@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject || "TomTop Solutions Website Inquiry",
+          message: formData.message,
+          _subject: `New Inquiry from ${formData.name} (${formData.email})`,
+          _template: "table"
+        })
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+      } else {
+        triggerMailto();
+        setSubmitted(true);
+      }
+    } catch (err) {
+      console.error("Form submission error:", err);
+      triggerMailto();
+      setSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => setSubmitted(false), 6000);
+    }
   };
 
   const inputClass = (field) =>
@@ -37,26 +80,21 @@ export default function Contact() {
   return (
     <div className="bg-[#F0F7FF] text-[#111827] min-h-screen">
 
-      {/* 1. Header Hero Banner (Matched 1-to-1 with Home Page Hero Fade) */}
+      {/* 1. Header Hero Banner */}
       <section className="relative min-h-screen flex flex-col justify-center items-center pt-24 pb-12 sm:pt-28 sm:pb-16 overflow-hidden border-b border-blue-100 bg-gradient-to-b from-[#DBEAFE] via-[#F0F7FF] to-[#F0F7FF]">
-        {/* Background Image: Matched Home Page Opacity & Filter */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src="/images/contact_hero_bg.png"
             alt="TOMTOP SOLUTIONS Corporate Office Support Network"
             className="w-full h-full object-cover object-center opacity-65 filter contrast-115 brightness-105 saturate-120 pointer-events-none transition-all duration-700"
           />
-          {/* Soft Blue Overlay Matched to Home Page */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#F0F7FF]/20 via-[#F0F7FF]/40 to-[#F0F7FF] z-10 pointer-events-none" />
         </div>
 
-        {/* Soft Radial Spotlight Behind Hero Text (Matched to Home Page) */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-3xl h-[420px] bg-white/75 blur-[75px] rounded-full pointer-events-none z-10 hidden sm:block" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center flex flex-col items-center justify-center my-auto w-full">
 
-
-          {/* Large Bold Heading: Compact on mobile */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -66,7 +104,6 @@ export default function Contact() {
             Start Your Software <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1E3A8A] via-[#1D4ED8] to-[#2563EB]">Project Today</span>
           </motion.h1>
 
-          {/* Short Subtitle Paragraph: Concise on mobile */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -77,7 +114,6 @@ export default function Contact() {
             <span className="hidden sm:inline">Connect with Madurai’s senior software engineers & cloud architects. Get a free custom project proposal and architecture roadmap within 24 hours.</span>
           </motion.p>
 
-          {/* CTA Buttons: Primary CTA on mobile, secondary CTA on desktop */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -103,7 +139,6 @@ export default function Contact() {
           </motion.div>
         </div>
 
-        {/* Scroll Down Indicator */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -120,7 +155,7 @@ export default function Contact() {
         </motion.div>
       </section>
 
-      {/* 2. SECTION 2 — TWO-COLUMN MAIN BODY (White Section) */}
+      {/* 2. SECTION 2 — TWO-COLUMN MAIN BODY */}
       <section className="py-12 sm:py-24 bg-white border-b border-blue-100 relative overflow-hidden text-[#111827]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 items-start">
@@ -148,9 +183,9 @@ export default function Contact() {
                       <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center shadow-lg shadow-emerald-500/10">
                         <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-emerald-600" />
                       </div>
-                      <h3 className="text-xl sm:text-2xl font-extrabold text-[#111827]">Message Sent!</h3>
+                      <h3 className="text-xl sm:text-2xl font-extrabold text-[#111827]">Message Sent to Mail!</h3>
                       <p className="text-slate-600 max-w-xs text-xs sm:text-sm leading-relaxed">
-                        Thank you, <strong className="text-[#111827]">{formData.name}</strong>. We'll review your message and reply within 24 hours.
+                        Thank you! Your message has been routed directly to <strong className="text-[#2563EB]">sivapragadheeswari2004@gmail.com</strong>. We will reply within 24 hours.
                       </p>
                     </motion.div>
                   ) : (
@@ -163,7 +198,7 @@ export default function Contact() {
                     >
                       <div>
                         <h2 className="text-xl sm:text-2xl font-extrabold text-[#111827]">Send a Message</h2>
-                        <p className="text-xs sm:text-sm text-slate-600 mt-1 sm:mt-1.5">Our technical team will get back to you within 24 business hours.</p>
+                        <p className="text-xs sm:text-sm text-slate-600 mt-1 sm:mt-1.5">Directly sends your message to sivapragadheeswari2004@gmail.com</p>
                       </div>
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
@@ -225,13 +260,23 @@ export default function Contact() {
 
                       <motion.button
                         type="submit"
+                        disabled={isSubmitting}
                         whileHover={{ scale: 1.02, y: -2 }}
                         whileTap={{ scale: 0.97 }}
-                        className="w-full py-3.5 sm:py-4 bg-gradient-to-r from-[#2563EB] via-[#3B82F6] to-[#60A5FA] hover:from-[#1D4ED8] hover:to-[#2563EB] text-white font-bold rounded-xl sm:rounded-2xl shadow-lg shadow-blue-600/30 flex items-center justify-center space-x-2 text-xs sm:text-base transition-all active:scale-95"
+                        className="w-full py-3.5 sm:py-4 bg-gradient-to-r from-[#2563EB] via-[#3B82F6] to-[#60A5FA] hover:from-[#1D4ED8] hover:to-[#2563EB] text-white font-bold rounded-xl sm:rounded-2xl shadow-lg shadow-blue-600/30 flex items-center justify-center space-x-2 text-xs sm:text-base transition-all active:scale-95 disabled:opacity-70"
                       >
-                        <Send className="w-4 h-4 sm:w-5 sm:h-5" />
-                        <span>Send Message</span>
-                        <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                        {isSubmitting ? (
+                          <>
+                            <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 animate-spin" />
+                            <span>Sending Email...</span>
+                          </>
+                        ) : (
+                          <>
+                            <Send className="w-4 h-4 sm:w-5 sm:h-5" />
+                            <span>Send Message to Mail</span>
+                            <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                          </>
+                        )}
                       </motion.button>
                     </motion.form>
                   )}
@@ -247,7 +292,6 @@ export default function Contact() {
               transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-5 space-y-4 sm:space-y-5"
             >
-              {/* Studio card & Business Hours */}
               <div className="rounded-2xl sm:rounded-[24px] border border-blue-100 bg-white backdrop-blur-2xl p-5 sm:p-7 shadow-xl shadow-blue-900/5 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-blue-500/5 rounded-full blur-2xl pointer-events-none" />
                 <p className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-[#2563EB] mb-1">Software Engineering Studio</p>
@@ -260,7 +304,6 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Contact detail cards */}
               {contactItems.map(({ icon: Icon, label, value, href, color, bg }) => (
                 <motion.div
                   key={label}
@@ -284,7 +327,6 @@ export default function Contact() {
                 </motion.div>
               ))}
 
-              {/* WhatsApp CTA */}
               <motion.a
                 href="https://wa.me/919677751745"
                 target="_blank"
@@ -297,7 +339,6 @@ export default function Contact() {
                 <span>Chat on WhatsApp — Instant Response</span>
               </motion.a>
 
-              {/* Map glass frame */}
               <div className="rounded-xl sm:rounded-[20px] border border-blue-100 bg-white overflow-hidden shadow-lg shadow-blue-900/5">
                 <div className="px-4 py-3 sm:px-5 sm:py-3.5 border-b border-blue-100 flex items-center space-x-2">
                   <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
@@ -318,7 +359,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* 3. SECTION 3 — FAQ ACCORDION (Soft Blue Background) */}
+      {/* 3. SECTION 3 — FAQ ACCORDION */}
       <section className="py-12 sm:py-24 bg-[#F0F7FF] border-b border-blue-100 relative overflow-hidden text-[#111827]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-8 sm:mb-14">
