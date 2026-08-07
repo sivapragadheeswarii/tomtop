@@ -61,29 +61,42 @@ export const developmentProcess = [
 
 export const servicesData = [
   {
-    id: "web-dev",
-    iconName: "Globe",
-    title: "Web Development",
-    badge: "Full-Stack Core",
-    shortDesc: "High-performance websites, progressive web apps (PWAs), and web portals built with React JS and modern frameworks.",
+    id: "erp-software",
+    iconName: "Layers",
+    title: "ERP Application Development",
+    badge: "Enterprise Core",
+    shortDesc: "Custom enterprise resource planning (ERP) systems, automated GST billing engines, inventory control, and HR/payroll management software.",
     features: [
-      "Responsive & Mobile-First Design",
-      "SEO & Page Speed Optimization",
-      "Custom CMS Integration",
-      "API & Third-Party Integrations"
+      "Custom Industrial & Commercial ERPs",
+      "Automated Billing & Invoicing Systems",
+      "Real-Time Multi-Warehouse Inventory",
+      "Role-Based Access & Audit Analytics"
     ]
   },
   {
-    id: "erp-software",
-    iconName: "Layers",
-    title: "ERP & Software Development",
-    badge: "Enterprise Suite",
-    shortDesc: "Custom business management applications, automated billing systems, CRM solutions, and inventory control platforms.",
+    id: "ai-applications",
+    iconName: "Server",
+    title: "AI-Based Application Development",
+    badge: "Next-Gen AI",
+    shortDesc: "Custom Artificial Intelligence & ML software, predictive data analytics engines, NLP document parsers, and computer vision automation.",
     features: [
-      "Billing & Invoicing Automation",
-      "Real-Time Inventory Tracking",
-      "Role-Based Access Control",
-      "Detailed Analytics & Reporting"
+      "AI Predictive Analytics & Forecasting",
+      "Automated Document & Invoice OCR Parsers",
+      "Intelligent AI Lead Scoring & CRMs",
+      "Computer Vision Quality Inspection"
+    ]
+  },
+  {
+    id: "software-dev",
+    iconName: "Globe",
+    title: "Custom Software Development",
+    badge: "SaaS & Portals",
+    shortDesc: "Tailored full-stack web applications, multi-tenant SaaS platforms, cloud microservices, and enterprise corporate web portals.",
+    features: [
+      "Bespoke High-Concurrency Web Apps",
+      "Multi-Tenant SaaS Architecture",
+      "RESTful & GraphQL API Integration",
+      "SEO & High-Performance UI Engines"
     ]
   },
   {
@@ -91,25 +104,12 @@ export const servicesData = [
     iconName: "Smartphone",
     title: "Mobile Application Development",
     badge: "iOS & Android",
-    shortDesc: "Native and cross-platform mobile apps for iOS and Android built with Flutter and React Native for fluid touch performance.",
+    shortDesc: "Native and cross-platform mobile applications for iOS and Android built with Flutter and React Native for fluid touch performance.",
     features: [
-      "Cross-Platform Efficiency",
-      "Offline Synchronization",
-      "Push Notifications & Chat",
+      "Cross-Platform Efficiency (Flutter)",
+      "Offline Data Synchronization",
+      "Real-Time Push Notifications & Live Tracking",
       "App Store & Play Store Deployment"
-    ]
-  },
-  {
-    id: "domain-hosting",
-    iconName: "Server",
-    title: "Web Domain & Hosting",
-    badge: "99.9% Uptime",
-    shortDesc: "Domain registration, high-speed NVMe cloud hosting, enterprise SSL certificates, and managed email infrastructure.",
-    features: [
-      "NVMe SSD Powered Hosting",
-      "Free Commercial SSL Certs",
-      "Automated Daily Offsite Backups",
-      "24/7 Uptime Server Monitoring"
     ]
   }
 ];
@@ -117,97 +117,110 @@ export const servicesData = [
 export const portfolioProjects = [
   {
     id: 1,
-    title: "Enterprise Corporate Web Portal",
-    category: "Corporate Websites",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-    description: "A luxury corporate portal with interactive service showcases, automated quote calculators, and multi-language support.",
-    tech: ["React JS", "Tailwind CSS", "Node.js"],
-    client: "Global Logistics Ltd"
+    title: "AI-Powered Enterprise Cloud ERP",
+    category: "AI & ERP Applications",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+    description: "Next-generation cloud ERP system equipped with AI demand forecasting, automated GST invoicing, and real-time multi-location inventory syncing.",
+    tech: ["Python", "TensorFlow", "React JS", "Node.js", "MongoDB"],
+    client: "Global Manufacturing Corp"
   },
   {
     id: 2,
     title: "Industrial ERP & Billing Suite",
-    category: "Business ERP Solutions",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
-    description: "Comprehensive enterprise resource planning platform managing billing, supply chain inventory, and employee payroll.",
-    tech: ["React JS", "Express.js", "MongoDB"],
+    category: "ERP Application Development",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+    description: "Comprehensive enterprise resource planning software managing paperless billing, supply chain logistics, and automated employee payroll.",
+    tech: ["React JS", "Express.js", "MongoDB", "Node.js"],
     client: "Apex Manufacturing"
   },
   {
     id: 3,
-    title: "Multi-Warehouse Inventory System",
-    category: "Inventory Management Systems",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
-    description: "Real-time stock control software with barcode scanning support, low-stock automated alerts, and multi-location syncing.",
-    tech: ["Node.js", "MongoDB", "Tailwind"],
-    client: "Vanguard Distributors"
+    title: "AI Lead Scoring & Intelligent CRM",
+    category: "AI & Software Development",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80",
+    description: "Custom AI sales CRM platform featuring automated NLP sentiment analysis, predictive customer lead scoring, and intelligent follow-up bots.",
+    tech: ["Python", "OpenAI API", "React JS", "Node.js", "AWS"],
+    client: "Horizon Financial Group"
   },
   {
     id: 4,
-    title: "Client Relationship CRM Platform",
-    category: "CRM Applications",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80",
-    description: "Sales pipeline and customer interaction CRM platform featuring automated email follow-ups and lead analytics.",
-    tech: ["React JS", "Node.js", "AWS"],
-    client: "Horizon Financial"
+    title: "Multi-Warehouse Inventory ERP System",
+    category: "ERP Application Development",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
+    description: "Real-time stock control ERP software with RFID barcode scanning, automated low-stock reorder triggers, and multi-location logistics sync.",
+    tech: ["Node.js", "MongoDB", "React JS", "Redis"],
+    client: "Vanguard Distributors"
   },
   {
     id: 5,
-    title: "Omnichannel E-Commerce Platform",
-    category: "E-Commerce Websites",
-    image: "https://images.unsplash.com/photo-1556742049-0a675409b7cc?auto=format&fit=crop&w=800&q=80",
-    description: "High-scale online store with integrated Razorpay/Stripe payment gateways, order tracking, and instant search.",
-    tech: ["React JS", "Node.js", "MongoDB"],
-    client: "Luxe Retail Co."
+    title: "AI Vision Quality Control Inspection",
+    category: "AI Application Development",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80",
+    description: "Automated computer vision AI software for real-time assembly line defect detection, automated product scanning, and yield analytics.",
+    tech: ["Python", "OpenCV", "PyTorch", "React JS", "FastAPI"],
+    client: "Precision Tech Industries"
   },
   {
     id: 6,
-    title: "Cross-Platform Delivery Mobile App",
-    category: "Mobile Applications",
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80",
-    description: "Real-time delivery tracking app for iOS and Android with live GPS navigation, push notifications, and digital signature capture.",
-    tech: ["Flutter", "Firebase", "Node.js"],
-    client: "Swift Express"
+    title: "Enterprise Custom SaaS Software Suite",
+    category: "Custom Software Development",
+    image: "https://images.unsplash.com/photo-1556742049-0a675409b7cc?auto=format&fit=crop&w=800&q=80",
+    description: "High-scale custom SaaS software platform featuring automated subscriber billing, multi-tenant database partitioning, and role-based analytics.",
+    tech: ["React JS", "Node.js", "PostgreSQL", "AWS"],
+    client: "Luxe Cloud Co."
   },
   {
     id: 7,
-    title: "Campus Management Portal",
-    category: "School & College Management Software",
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
-    description: "End-to-end academic portal managing student admissions, online fee payments, exam grading, and parent notifications.",
-    tech: ["React JS", "Express.js", "MongoDB"],
-    client: "St. Jude Academy"
+    title: "AI Document Parsing & Invoice OCR Engine",
+    category: "AI & ERP Solutions",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80",
+    description: "Intelligent OCR AI application that extracts metadata from invoices, automates purchase order verification, and syncs directly into ERPs.",
+    tech: ["Python", "LangChain", "Node.js", "React JS"],
+    client: "OmniCorp Global"
   },
   {
     id: 8,
-    title: "Healthcare Patient ERP",
-    category: "Healthcare Software",
+    title: "Healthcare Hospital ERP & EHR Suite",
+    category: "ERP Application Development",
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80",
-    description: "HIPAA-compliant hospital management suite covering patient appointments, electronic health records (EHR), and pharmacy billing.",
-    tech: ["React JS", "Node.js", "AWS"],
-    client: "Medicare Clinics"
+    description: "HIPAA-compliant hospital management ERP covering patient Electronic Health Records (EHR), pharmacy billing, and appointment scheduling.",
+    tech: ["React JS", "Node.js", "MongoDB", "AWS"],
+    client: "Medicare Health Network"
   },
   {
     id: 9,
-    title: "Hotel Booking & Property System",
-    category: "Hotel Management Systems",
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
-    description: "Complete hospitality reservation system with room inventory management, housekeeping scheduling, and guest POS billing.",
-    tech: ["React JS", "Node.js", "MongoDB"],
-    client: "Royal Sands Resort"
+    title: "AI Route Optimization & Smart Fleet App",
+    category: "AI & Mobile Software",
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80",
+    description: "Real-time delivery tracking and AI route optimization software with driver safety analytics and automated fuel consumption forecasting.",
+    tech: ["Flutter", "Python", "Node.js", "Google Maps API"],
+    client: "Swift Express Logistics"
   },
   {
     id: 10,
-    title: "Custom Fleet Operations App",
-    category: "Custom Business Applications",
-    image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=800&q=80",
-    description: "Tailored logistics fleet management software with driver dispatch scheduling, fuel expense logging, and vehicle telemetry.",
-    tech: ["Flutter", "Node.js", "AWS"],
-    client: "Transtech Logistics"
+    title: "Campus Education ERP & Student Portal",
+    category: "ERP Application Development",
+    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80",
+    description: "End-to-end academic institutional ERP managing online admissions, digital fee collection, automated exam grading, and parent communications.",
+    tech: ["React JS", "Express.js", "MongoDB", "Tailwind"],
+    client: "St. Jude Educational Trust"
   }
 ];
 
 export const techStackCategories = [
+  {
+    id: "ai-data",
+    category: "AI & ML Engine",
+    desc: "Next-gen Machine Learning, LLMs & Computer Vision",
+    accent: "from-purple-600/20 via-indigo-500/10 to-transparent",
+    border: "hover:border-purple-400",
+    items: [
+      { name: "Python", icon: "🐍" },
+      { name: "PyTorch / TensorFlow", icon: "🧠" },
+      { name: "OpenAI / LangChain", icon: "🤖" },
+      { name: "OpenCV Vision", icon: "👁️" }
+    ]
+  },
   {
     id: "frontend",
     category: "Frontend",
@@ -223,14 +236,14 @@ export const techStackCategories = [
   },
   {
     id: "backend",
-    category: "Backend",
-    desc: "Scalable microservices & REST API architecture",
+    category: "Backend & ERP Core",
+    desc: "Scalable microservices & ERP API architecture",
     accent: "from-blue-600/20 via-purple-500/10 to-transparent",
     border: "hover:border-blue-400",
     items: [
       { name: "Node.js", icon: "🟢" },
       { name: "Express.js", icon: "🚀" },
-      { name: "Python", icon: "🐍" },
+      { name: "FastAPI", icon: "⚡" },
       { name: "REST & WebSockets", icon: "🔌" }
     ]
   },
@@ -248,25 +261,13 @@ export const techStackCategories = [
   },
   {
     id: "cloud",
-    category: "Cloud",
-    desc: "High-speed NVMe hosting & DevOps infrastructure",
-    accent: "from-amber-500/20 via-orange-500/10 to-transparent",
-    border: "hover:border-amber-400",
-    items: [
-      { name: "AWS Cloud", icon: "☁️" },
-      { name: "Firebase Sockets", icon: "🔥" },
-      { name: "NVMe SSD Servers", icon: "⚡" }
-    ]
-  },
-  {
-    id: "database",
-    category: "Database",
-    desc: "High-concurrency & secure database engines",
+    category: "Cloud & Database",
+    desc: "High-speed NVMe hosting & enterprise databases",
     accent: "from-emerald-500/20 via-teal-500/10 to-transparent",
     border: "hover:border-emerald-400",
     items: [
-      { name: "MongoDB", icon: "🍃" },
-      { name: "PostgreSQL", icon: "🐘" },
+      { name: "MongoDB / Postgres", icon: "🍃" },
+      { name: "AWS Cloud", icon: "☁️" },
       { name: "Redis Caching", icon: "⚡" }
     ]
   }
