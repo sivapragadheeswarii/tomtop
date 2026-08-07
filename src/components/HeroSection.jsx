@@ -112,7 +112,7 @@ export default function HeroSection({ onOpenQuote }) {
               {/* Business-Focused SEO Headline */}
               <motion.h1
                 variants={itemVariants}
-                className="text-2xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0F172A] leading-snug sm:leading-[1.15] drop-shadow-[0_1px_3px_rgba(255,255,255,0.9)]"
+                className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0F172A] leading-tight sm:leading-[1.15] drop-shadow-[0_1px_3px_rgba(255,255,255,0.9)]"
               >
                 Building Scalable{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4C1D95] via-[#6D28D9] to-[#7C3AED]">
