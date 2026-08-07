@@ -22,23 +22,23 @@ export default function Contact() {
   };
 
   const inputClass = (field) =>
-    `w-full px-3.5 py-3 sm:px-4 sm:py-3.5 rounded-xl bg-purple-50/50 text-[#111827] outline-none text-xs sm:text-sm font-medium placeholder:text-slate-400 transition-all duration-300 ${focused === field
-      ? 'border-[#7C3AED] border-2 shadow-sm bg-white'
-      : 'border border-purple-200 hover:border-purple-300'
+    `w-full px-3.5 py-3 sm:px-4 sm:py-3.5 rounded-xl bg-blue-50/50 text-[#111827] outline-none text-xs sm:text-sm font-medium placeholder:text-slate-400 transition-all duration-300 ${focused === field
+      ? 'border-[#2563EB] border-2 shadow-sm bg-white'
+      : 'border border-blue-200 hover:border-blue-300'
     }`;
 
   const contactItems = [
-    { icon: Phone, label: 'Direct Line', value: companyInfo.phone, href: `tel:${companyInfo.phone}`, color: 'text-[#7C3AED]', bg: 'bg-purple-50 border-purple-200' },
-    { icon: Mail, label: 'Email Address', value: companyInfo.email, href: `mailto:${companyInfo.email}`, color: 'text-[#A855F7]', bg: 'bg-purple-50 border-purple-200' },
+    { icon: Phone, label: 'Direct Line', value: companyInfo.phone, href: `tel:${companyInfo.phone}`, color: 'text-[#2563EB]', bg: 'bg-blue-50 border-blue-200' },
+    { icon: Mail, label: 'Email Address', value: companyInfo.email, href: `mailto:${companyInfo.email}`, color: 'text-[#3B82F6]', bg: 'bg-blue-50 border-blue-200' },
     { icon: Globe, label: 'Official Website', value: companyInfo.website, href: `https://${companyInfo.website}`, color: 'text-emerald-600', bg: 'bg-emerald-50 border-emerald-200' },
     { icon: MapPin, label: 'Office Address', value: companyInfo.address, href: null, color: 'text-amber-600', bg: 'bg-amber-50 border-amber-200' },
   ];
 
   return (
-    <div className="bg-[#FAF5FF] text-[#111827] min-h-screen">
+    <div className="bg-[#F0F7FF] text-[#111827] min-h-screen">
 
       {/* 1. Header Hero Banner (Matched 1-to-1 with Home Page Hero Fade) */}
-      <section className="relative min-h-screen flex flex-col justify-center items-center pt-24 pb-12 sm:pt-28 sm:pb-16 overflow-hidden border-b border-purple-100 bg-gradient-to-b from-[#F3E8FF] via-[#FAF5FF] to-[#FAF5FF]">
+      <section className="relative min-h-screen flex flex-col justify-center items-center pt-24 pb-12 sm:pt-28 sm:pb-16 overflow-hidden border-b border-blue-100 bg-gradient-to-b from-[#DBEAFE] via-[#F0F7FF] to-[#F0F7FF]">
         {/* Background Image: Matched Home Page Opacity & Filter */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
@@ -46,8 +46,8 @@ export default function Contact() {
             alt="TOMTOP SOLUTIONS Corporate Office Support Network"
             className="w-full h-full object-cover object-center opacity-65 filter contrast-115 brightness-105 saturate-120 pointer-events-none transition-all duration-700"
           />
-          {/* Soft Violet Overlay Matched to Home Page */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF5FF]/20 via-[#FAF5FF]/40 to-[#FAF5FF] z-10 pointer-events-none" />
+          {/* Soft Blue Overlay Matched to Home Page */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#F0F7FF]/20 via-[#F0F7FF]/40 to-[#F0F7FF] z-10 pointer-events-none" />
         </div>
 
         {/* Soft Radial Spotlight Behind Hero Text (Matched to Home Page) */}
@@ -63,7 +63,7 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight sm:leading-[1.15] text-[#111827] max-w-4xl mx-auto drop-shadow-sm"
           >
-            Start Your Software <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4C1D95] via-[#6D28D9] to-[#7C3AED]">Project Today</span>
+            Start Your Software <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1E3A8A] via-[#1D4ED8] to-[#2563EB]">Project Today</span>
           </motion.h1>
 
           {/* Short Subtitle Paragraph: Concise on mobile */}
@@ -86,7 +86,7 @@ export default function Contact() {
           >
             <button
               onClick={() => window.scrollTo({ top: window.innerHeight - 80, behavior: 'smooth' })}
-              className="w-full sm:w-auto px-6 py-3 sm:px-7 sm:py-3.5 bg-gradient-to-r from-[#7C3AED] via-[#A855F7] to-[#C084FC] hover:from-[#6D28D9] hover:to-[#7C3AED] text-white font-bold rounded-2xl shadow-xl shadow-purple-950/30 flex items-center justify-center space-x-2 text-xs sm:text-sm group transition-all transform hover:-translate-y-0.5 active:scale-95 border border-purple-300/30"
+              className="w-full sm:w-auto px-6 py-3 sm:px-7 sm:py-3.5 bg-gradient-to-r from-[#2563EB] via-[#3B82F6] to-[#60A5FA] hover:from-[#1D4ED8] hover:to-[#2563EB] text-white font-bold rounded-2xl shadow-xl shadow-blue-950/30 flex items-center justify-center space-x-2 text-xs sm:text-sm group transition-all transform hover:-translate-y-0.5 active:scale-95 border border-blue-300/30"
             >
               <Send className="w-4 h-4 text-white" />
               <span>Fill Inquiry Form</span>
@@ -95,9 +95,9 @@ export default function Contact() {
 
             <a
               href={`tel:${companyInfo.phone}`}
-              className="hidden sm:flex w-full sm:w-auto px-7 py-3.5 bg-white/95 hover:bg-white text-[#111827] hover:text-[#7C3AED] border border-purple-200 font-semibold rounded-2xl transition-all text-center items-center justify-center space-x-2 text-sm shadow-md backdrop-blur-md active:scale-95"
+              className="hidden sm:flex w-full sm:w-auto px-7 py-3.5 bg-white/95 hover:bg-white text-[#111827] hover:text-[#2563EB] border border-blue-200 font-semibold rounded-2xl transition-all text-center items-center justify-center space-x-2 text-sm shadow-md backdrop-blur-md active:scale-95"
             >
-              <Phone className="w-4 h-4 text-[#7C3AED]" />
+              <Phone className="w-4 h-4 text-[#2563EB]" />
               <span>Call Tech Team</span>
             </a>
           </motion.div>
@@ -114,14 +114,14 @@ export default function Contact() {
           <span className="text-[9px] sm:text-xs font-bold text-slate-500 uppercase tracking-widest hidden sm:block">
             Scroll to Get in Touch
           </span>
-          <div className="w-8 h-8 rounded-full bg-white border border-purple-200 flex items-center justify-center shadow-sm hover:border-[#7C3AED]">
-            <ChevronDown className="w-4 h-4 text-[#7C3AED] animate-bounce" />
+          <div className="w-8 h-8 rounded-full bg-white border border-blue-200 flex items-center justify-center shadow-sm hover:border-[#2563EB]">
+            <ChevronDown className="w-4 h-4 text-[#2563EB] animate-bounce" />
           </div>
         </motion.div>
       </section>
 
       {/* 2. SECTION 2 — TWO-COLUMN MAIN BODY (White Section) */}
-      <section className="py-12 sm:py-24 bg-white border-b border-purple-100 relative overflow-hidden text-[#111827]">
+      <section className="py-12 sm:py-24 bg-white border-b border-blue-100 relative overflow-hidden text-[#111827]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 items-start">
 
@@ -131,9 +131,9 @@ export default function Contact() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-7 rounded-2xl sm:rounded-[28px] border border-purple-100 bg-white backdrop-blur-2xl shadow-xl shadow-purple-900/5 overflow-hidden relative"
+              className="lg:col-span-7 rounded-2xl sm:rounded-[28px] border border-blue-100 bg-white backdrop-blur-2xl shadow-xl shadow-blue-900/5 overflow-hidden relative"
             >
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-[#7C3AED]/50 to-transparent" />
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-[#2563EB]/50 to-transparent" />
 
               <div className="p-5 sm:p-10">
                 <AnimatePresence mode="wait">
@@ -227,7 +227,7 @@ export default function Contact() {
                         type="submit"
                         whileHover={{ scale: 1.02, y: -2 }}
                         whileTap={{ scale: 0.97 }}
-                        className="w-full py-3.5 sm:py-4 bg-gradient-to-r from-[#7C3AED] via-[#A855F7] to-[#C084FC] hover:from-[#6D28D9] hover:to-[#7C3AED] text-white font-bold rounded-xl sm:rounded-2xl shadow-lg shadow-purple-600/30 flex items-center justify-center space-x-2 text-xs sm:text-base transition-all active:scale-95"
+                        className="w-full py-3.5 sm:py-4 bg-gradient-to-r from-[#2563EB] via-[#3B82F6] to-[#60A5FA] hover:from-[#1D4ED8] hover:to-[#2563EB] text-white font-bold rounded-xl sm:rounded-2xl shadow-lg shadow-blue-600/30 flex items-center justify-center space-x-2 text-xs sm:text-base transition-all active:scale-95"
                       >
                         <Send className="w-4 h-4 sm:w-5 sm:h-5" />
                         <span>Send Message</span>
@@ -248,14 +248,14 @@ export default function Contact() {
               className="lg:col-span-5 space-y-4 sm:space-y-5"
             >
               {/* Studio card & Business Hours */}
-              <div className="rounded-2xl sm:rounded-[24px] border border-purple-100 bg-white backdrop-blur-2xl p-5 sm:p-7 shadow-xl shadow-purple-900/5 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-40 h-40 bg-purple-500/5 rounded-full blur-2xl pointer-events-none" />
-                <p className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-[#7C3AED] mb-1">Software Engineering Studio</p>
+              <div className="rounded-2xl sm:rounded-[24px] border border-blue-100 bg-white backdrop-blur-2xl p-5 sm:p-7 shadow-xl shadow-blue-900/5 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-blue-500/5 rounded-full blur-2xl pointer-events-none" />
+                <p className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-[#2563EB] mb-1">Software Engineering Studio</p>
                 <h3 className="text-lg sm:text-xl font-extrabold text-[#111827]">{companyInfo.name}</h3>
                 <p className="text-[10px] sm:text-xs text-slate-500 font-medium mt-0.5">Founded by {companyInfo.founder}</p>
 
-                <div className="mt-4 sm:mt-5 flex items-center space-x-2 text-[10px] sm:text-xs text-[#111827] bg-purple-50/70 border border-purple-100 px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-xl w-fit">
-                  <Clock className="w-3.5 h-3.5 text-[#7C3AED] shrink-0" />
+                <div className="mt-4 sm:mt-5 flex items-center space-x-2 text-[10px] sm:text-xs text-[#111827] bg-blue-50/70 border border-blue-100 px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-xl w-fit">
+                  <Clock className="w-3.5 h-3.5 text-[#2563EB] shrink-0" />
                   <span>Business Hours: {companyInfo.hours}</span>
                 </div>
               </div>
@@ -265,7 +265,7 @@ export default function Contact() {
                 <motion.div
                   key={label}
                   whileHover={{ y: -3, scale: 1.01 }}
-                  className="rounded-xl sm:rounded-[20px] border border-purple-100 bg-white p-4 sm:p-5 flex items-center space-x-3.5 sm:space-x-4 hover:border-[#C084FC] transition-all duration-300 shadow-lg shadow-purple-900/5"
+                  className="rounded-xl sm:rounded-[20px] border border-blue-100 bg-white p-4 sm:p-5 flex items-center space-x-3.5 sm:space-x-4 hover:border-[#60A5FA] transition-all duration-300 shadow-lg shadow-blue-900/5"
                 >
                   <div className={`w-9 h-9 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl ${bg} border flex items-center justify-center shrink-0`}>
                     <Icon className={`w-4 h-4 sm:w-5 sm:h-5 ${color}`} />
@@ -298,8 +298,8 @@ export default function Contact() {
               </motion.a>
 
               {/* Map glass frame */}
-              <div className="rounded-xl sm:rounded-[20px] border border-purple-100 bg-white overflow-hidden shadow-lg shadow-purple-900/5">
-                <div className="px-4 py-3 sm:px-5 sm:py-3.5 border-b border-purple-100 flex items-center space-x-2">
+              <div className="rounded-xl sm:rounded-[20px] border border-blue-100 bg-white overflow-hidden shadow-lg shadow-blue-900/5">
+                <div className="px-4 py-3 sm:px-5 sm:py-3.5 border-b border-blue-100 flex items-center space-x-2">
                   <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                   <span className="text-[10px] sm:text-[11px] font-bold text-slate-600 uppercase tracking-wider">Madurai HQ — Live Location</span>
                 </div>
@@ -318,11 +318,11 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* 3. SECTION 3 — FAQ ACCORDION (Soft Violet Background) */}
-      <section className="py-12 sm:py-24 bg-[#FAF5FF] border-b border-purple-100 relative overflow-hidden text-[#111827]">
+      {/* 3. SECTION 3 — FAQ ACCORDION (Soft Blue Background) */}
+      <section className="py-12 sm:py-24 bg-[#F0F7FF] border-b border-blue-100 relative overflow-hidden text-[#111827]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-8 sm:mb-14">
-            <span className="text-[#7C3AED] font-bold text-[9px] sm:text-[10px] uppercase tracking-widest bg-purple-100 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full border border-purple-200 shadow-sm">
+            <span className="text-[#2563EB] font-bold text-[9px] sm:text-[10px] uppercase tracking-widest bg-blue-100 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full border border-blue-200 shadow-sm">
               Common Questions
             </span>
             <h2 className="text-xl sm:text-5xl font-extrabold text-[#111827] mt-2.5 sm:mt-4 tracking-tight">
@@ -335,8 +335,8 @@ export default function Contact() {
               <div
                 key={i}
                 className={`rounded-xl sm:rounded-2xl border transition-all duration-300 overflow-hidden ${openFaq === i
-                    ? 'border-[#7C3AED] bg-white shadow-md'
-                    : 'border-purple-100 bg-white hover:border-purple-200'
+                    ? 'border-[#2563EB] bg-white shadow-md'
+                    : 'border-blue-100 bg-white hover:border-blue-200'
                   }`}
               >
                 <button
@@ -344,12 +344,12 @@ export default function Contact() {
                   className="w-full text-left px-4 py-3.5 sm:px-6 sm:py-5 flex items-start justify-between space-x-3 sm:space-x-4 group"
                 >
                   <div className="flex items-start space-x-3 sm:space-x-3.5">
-                    <HelpCircle className={`w-4 h-4 sm:w-5 sm:h-5 shrink-0 mt-0.5 transition-colors ${openFaq === i ? 'text-[#7C3AED]' : 'text-slate-400 group-hover:text-slate-600'}`} />
-                    <span className={`font-bold text-xs sm:text-sm leading-snug transition-colors ${openFaq === i ? 'text-[#7C3AED]' : 'text-[#111827]'}`}>
+                    <HelpCircle className={`w-4 h-4 sm:w-5 sm:h-5 shrink-0 mt-0.5 transition-colors ${openFaq === i ? 'text-[#2563EB]' : 'text-slate-400 group-hover:text-slate-600'}`} />
+                    <span className={`font-bold text-xs sm:text-sm leading-snug transition-colors ${openFaq === i ? 'text-[#2563EB]' : 'text-[#111827]'}`}>
                       {faq.q}
                     </span>
                   </div>
-                  <ChevronDown className={`w-4 h-4 sm:w-5 sm:h-5 text-slate-400 shrink-0 transition-transform duration-300 mt-0.5 ${openFaq === i ? 'rotate-180 text-[#7C3AED]' : ''}`} />
+                  <ChevronDown className={`w-4 h-4 sm:w-5 sm:h-5 text-slate-400 shrink-0 transition-transform duration-300 mt-0.5 ${openFaq === i ? 'rotate-180 text-[#2563EB]' : ''}`} />
                 </button>
 
                 <AnimatePresence>

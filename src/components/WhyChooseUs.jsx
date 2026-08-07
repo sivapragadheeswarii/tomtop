@@ -49,9 +49,9 @@ const pillars = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-12 sm:py-24 bg-white relative overflow-hidden text-[#111827] border-b border-purple-100">
+    <section className="py-12 sm:py-24 bg-white relative overflow-hidden text-[#111827] border-b border-blue-100">
       {/* Ambient Background Light */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[550px] bg-purple-500/5 rounded-full blur-[200px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[550px] bg-blue-500/5 rounded-full blur-[200px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -61,7 +61,7 @@ export default function WhyChooseUs() {
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center space-x-2 bg-purple-50 border border-purple-200 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold text-[#7C3AED] mb-3 sm:mb-4 shadow-sm"
+            className="inline-flex items-center space-x-2 bg-blue-50 border border-blue-200 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold text-[#2563EB] mb-3 sm:mb-4 shadow-sm"
           >
             <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-500 animate-pulse" />
             <span className="uppercase tracking-widest">Enterprise Advantage</span>
@@ -75,7 +75,7 @@ export default function WhyChooseUs() {
             className="text-xl sm:text-5xl font-extrabold text-[#111827] tracking-tight leading-tight"
           >
             Why Partner With{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7C3AED] via-[#A855F7] to-[#C084FC]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] via-[#3B82F6] to-[#60A5FA]">
               TomTop Solutions
             </span>
           </motion.h2>
@@ -103,20 +103,20 @@ export default function WhyChooseUs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: idx * 0.06 }}
-                className="group relative p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-white border border-purple-100 hover:border-[#C084FC] hover:shadow-xl hover:shadow-purple-600/10 backdrop-blur-xl transition-all duration-300 shadow-md shadow-purple-900/5 flex items-start space-x-3.5 sm:space-x-5"
+                className="group relative p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-white border border-blue-100 hover:border-[#60A5FA] hover:shadow-xl hover:shadow-blue-600/10 backdrop-blur-xl transition-all duration-300 shadow-md shadow-blue-900/5 flex items-start space-x-3.5 sm:space-x-5"
               >
                 {/* Glowing Icon Orb */}
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-[#7C3AED] via-[#A855F7] to-[#C084FC] text-white flex items-center justify-center shadow-md shadow-purple-600/25 shrink-0 group-hover:scale-105 transition-transform">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-[#1E40AF] via-[#2563EB] to-[#60A5FA] text-white flex items-center justify-center shadow-md shadow-blue-600/25 shrink-0 group-hover:scale-105 transition-transform">
                   <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </div>
 
                 {/* Content */}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between mb-1 gap-2">
-                    <h3 className="text-sm sm:text-lg font-bold text-[#111827] group-hover:text-[#7C3AED] transition-colors leading-snug">
+                    <h3 className="text-sm sm:text-lg font-bold text-[#111827] group-hover:text-[#2563EB] transition-colors leading-snug">
                       {item.title}
                     </h3>
-                    <span className="hidden sm:inline-block text-[10px] font-mono font-bold px-2.5 py-0.5 rounded bg-purple-50 text-[#7C3AED] border border-purple-200 shrink-0">
+                    <span className="hidden sm:inline-block text-[10px] font-mono font-bold px-2.5 py-0.5 rounded bg-blue-50 text-[#2563EB] border border-blue-200 shrink-0">
                       {item.metric}
                     </span>
                   </div>

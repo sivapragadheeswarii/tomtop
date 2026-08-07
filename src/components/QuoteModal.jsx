@@ -61,8 +61,8 @@ export default function QuoteModal({ isOpen, onClose, initialService = '', selec
             </div>
           ) : (
             <div>
-              <div className="flex items-center space-x-2 text-xs font-bold text-[#7C3AED] mb-2 uppercase tracking-wider">
-                <Sparkles className="w-4 h-4 text-[#7C3AED]" />
+              <div className="flex items-center space-x-2 text-xs font-bold text-[#2563EB] mb-2 uppercase tracking-wider">
+                <Sparkles className="w-4 h-4 text-[#2563EB]" />
                 <span>Instant Proposal Request</span>
               </div>
               <h3 className="text-2xl font-extrabold text-[#111827]">Get a Custom Quote</h3>
@@ -79,7 +79,7 @@ export default function QuoteModal({ isOpen, onClose, initialService = '', selec
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="e.g. John Doe"
-                    className="w-full px-4 py-3 rounded-xl border border-purple-200 focus:border-[#7C3AED] focus:ring-2 focus:ring-[#7C3AED]/20 outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-blue-200 focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/20 outline-none transition-all"
                   />
                 </div>
 
@@ -92,7 +92,7 @@ export default function QuoteModal({ isOpen, onClose, initialService = '', selec
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="john@example.com"
-                      className="w-full px-4 py-3 rounded-xl border border-purple-200 focus:border-[#7C3AED] focus:ring-2 focus:ring-[#7C3AED]/20 outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-blue-200 focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/20 outline-none transition-all"
                     />
                   </div>
                   <div>
@@ -103,7 +103,7 @@ export default function QuoteModal({ isOpen, onClose, initialService = '', selec
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="+91 98765 43210"
-                      className="w-full px-4 py-3 rounded-xl border border-purple-200 focus:border-[#7C3AED] focus:ring-2 focus:ring-[#7C3AED]/20 outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-blue-200 focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/20 outline-none transition-all"
                     />
                   </div>
                 </div>
@@ -113,7 +113,7 @@ export default function QuoteModal({ isOpen, onClose, initialService = '', selec
                   <select
                     value={formData.service}
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-purple-200 focus:border-[#7C3AED] focus:ring-2 focus:ring-[#7C3AED]/20 outline-none transition-all bg-white"
+                    className="w-full px-4 py-3 rounded-xl border border-blue-200 focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/20 outline-none transition-all bg-white"
                   >
                     {servicesData.map((s) => (
                       <option key={s.id} value={s.title}>{s.title}</option>
@@ -128,13 +128,13 @@ export default function QuoteModal({ isOpen, onClose, initialService = '', selec
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Briefly describe your requirements..."
-                    className="w-full px-4 py-3 rounded-xl border border-purple-200 focus:border-[#7C3AED] focus:ring-2 focus:ring-[#7C3AED]/20 outline-none transition-all resize-none"
+                    className="w-full px-4 py-3 rounded-xl border border-blue-200 focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/20 outline-none transition-all resize-none"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-4 bg-gradient-to-r from-[#7C3AED] via-[#A855F7] to-[#C084FC] hover:from-[#6D28D9] hover:to-[#7C3AED] text-white font-bold rounded-xl shadow-lg shadow-purple-600/30 flex items-center justify-center space-x-2 transition-all active:scale-95"
+                  className="w-full py-4 bg-gradient-to-r from-[#2563EB] via-[#3B82F6] to-[#60A5FA] hover:from-[#1D4ED8] hover:to-[#2563EB] text-white font-bold rounded-xl shadow-lg shadow-blue-600/30 flex items-center justify-center space-x-2 transition-all active:scale-95"
                 >
                   <Send className="w-4 h-4" />
                   <span>Submit Quote Request</span>

@@ -31,10 +31,10 @@ export default function Services() {
   };
 
   return (
-    <div className="bg-[#FAF5FF] text-[#111827] min-h-screen">
+    <div className="bg-[#F0F7FF] text-[#111827] min-h-screen">
       
       {/* 1. Viewport Hero Banner (Matched 1-to-1 with Contact Page Hero Fade) */}
-      <section className="relative min-h-screen flex flex-col justify-center items-center pt-24 pb-12 sm:pt-28 sm:pb-16 overflow-hidden border-b border-purple-100 bg-gradient-to-b from-[#F3E8FF] via-[#FAF5FF] to-[#FAF5FF]">
+      <section className="relative min-h-screen flex flex-col justify-center items-center pt-24 pb-12 sm:pt-28 sm:pb-16 overflow-hidden border-b border-blue-100 bg-gradient-to-b from-[#DBEAFE] via-[#F0F7FF] to-[#F0F7FF]">
         {/* Background Image: Matched Contact Page Opacity & Filter */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
@@ -42,8 +42,8 @@ export default function Services() {
             alt="Professional developers working in modern software engineering office workspace"
             className="w-full h-full object-cover object-center opacity-65 filter contrast-115 brightness-105 saturate-120 pointer-events-none transition-all duration-700"
           />
-          {/* Soft Violet Overlay Matched to Contact Page */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF5FF]/20 via-[#FAF5FF]/40 to-[#FAF5FF] z-10 pointer-events-none" />
+          {/* Soft Blue Overlay Matched to Contact Page */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#F0F7FF]/20 via-[#F0F7FF]/40 to-[#F0F7FF] z-10 pointer-events-none" />
         </div>
 
         {/* Soft Radial Spotlight Behind Hero Text (Matched to Contact Page) */}
@@ -59,7 +59,7 @@ export default function Services() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight sm:leading-[1.15] text-[#111827] max-w-4xl mx-auto drop-shadow-sm"
           >
-            Custom Web, Mobile & <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4C1D95] via-[#6D28D9] to-[#7C3AED]">Cloud ERP Solutions</span>
+            Custom Web, Mobile & <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1E3A8A] via-[#1D4ED8] to-[#2563EB]">Cloud ERP Solutions</span>
           </motion.h1>
 
           {/* Short Subtitle Paragraph: Concise on mobile */}
@@ -82,7 +82,7 @@ export default function Services() {
           >
             <button
               onClick={() => onOpenQuote()}
-              className="w-full sm:w-auto px-6 py-3 sm:px-7 sm:py-3.5 bg-gradient-to-r from-[#7C3AED] via-[#A855F7] to-[#C084FC] hover:from-[#6D28D9] hover:to-[#7C3AED] text-white font-bold rounded-2xl shadow-xl shadow-purple-950/30 flex items-center justify-center space-x-2 text-xs sm:text-sm group transition-all transform hover:-translate-y-0.5 active:scale-95 border border-purple-300/30"
+              className="w-full sm:w-auto px-6 py-3 sm:px-7 sm:py-3.5 bg-gradient-to-r from-[#2563EB] via-[#3B82F6] to-[#60A5FA] hover:from-[#1D4ED8] hover:to-[#2563EB] text-white font-bold rounded-2xl shadow-xl shadow-blue-950/30 flex items-center justify-center space-x-2 text-xs sm:text-sm group transition-all transform hover:-translate-y-0.5 active:scale-95 border border-blue-300/30"
             >
               <Sparkles className="w-4 h-4 text-amber-300 animate-pulse" />
               <span>Get Started & Proposal</span>
@@ -91,10 +91,10 @@ export default function Services() {
 
             <button
               onClick={() => window.scrollTo({ top: window.innerHeight - 80, behavior: 'smooth' })}
-              className="hidden sm:flex w-full sm:w-auto px-7 py-3.5 bg-white/95 hover:bg-white text-[#111827] hover:text-[#7C3AED] border border-purple-200 font-semibold rounded-2xl transition-all text-center items-center justify-center space-x-2 text-sm shadow-md backdrop-blur-md active:scale-95"
+              className="hidden sm:flex w-full sm:w-auto px-7 py-3.5 bg-white/95 hover:bg-white text-[#111827] hover:text-[#2563EB] border border-blue-200 font-semibold rounded-2xl transition-all text-center items-center justify-center space-x-2 text-sm shadow-md backdrop-blur-md active:scale-95"
             >
               <span>Explore Capabilities</span>
-              <ChevronDown className="w-4 h-4 text-[#7C3AED]" />
+              <ChevronDown className="w-4 h-4 text-[#2563EB]" />
             </button>
           </motion.div>
         </div>
@@ -110,15 +110,15 @@ export default function Services() {
           <span className="text-[9px] sm:text-xs font-bold text-slate-500 uppercase tracking-widest hidden sm:block">
             Scroll to Explore Services
           </span>
-          <div className="w-8 h-8 rounded-full bg-white border border-purple-200 flex items-center justify-center shadow-sm hover:border-[#7C3AED]">
-            <ChevronDown className="w-4 h-4 text-[#7C3AED] animate-bounce" />
+          <div className="w-8 h-8 rounded-full bg-white border border-blue-200 flex items-center justify-center shadow-sm hover:border-[#2563EB]">
+            <ChevronDown className="w-4 h-4 text-[#2563EB] animate-bounce" />
           </div>
         </motion.div>
       </section>
 
       {/* 2. Primary Services Showcase (White Section) */}
-      <section className="py-12 sm:py-20 lg:py-28 relative overflow-hidden border-b border-purple-100 bg-white text-[#111827]">
-        <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-purple-500/5 rounded-full blur-[160px] pointer-events-none" />
+      <section className="py-12 sm:py-20 lg:py-28 relative overflow-hidden border-b border-blue-100 bg-white text-[#111827]">
+        <div className="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[160px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
@@ -128,7 +128,7 @@ export default function Services() {
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="inline-flex items-center space-x-2 bg-purple-50 border border-purple-200 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold text-[#7C3AED] mb-3 sm:mb-4 shadow-sm"
+              className="inline-flex items-center space-x-2 bg-blue-50 border border-blue-200 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold text-[#2563EB] mb-3 sm:mb-4 shadow-sm"
             >
               <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-500 animate-pulse" />
               <span className="uppercase tracking-widest">Architectural Solution Stacks</span>
@@ -142,7 +142,7 @@ export default function Services() {
               className="text-xl sm:text-5xl font-extrabold text-[#111827] tracking-tight leading-tight"
             >
               Core Software &amp;{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7C3AED] via-[#A855F7] to-[#C084FC]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] via-[#3B82F6] to-[#60A5FA]">
                 Cloud Capabilities
               </span>
             </motion.h2>
@@ -160,7 +160,7 @@ export default function Services() {
 
           {/* Central Connecting Laser Line */}
           <div className="relative">
-            <div className="hidden lg:block absolute left-1/2 top-8 bottom-8 -translate-x-1/2 w-1 bg-gradient-to-b from-[#7C3AED]/20 via-[#7C3AED]/60 to-[#7C3AED]/20 pointer-events-none rounded-full" />
+            <div className="hidden lg:block absolute left-1/2 top-8 bottom-8 -translate-x-1/2 w-1 bg-gradient-to-b from-[#2563EB]/20 via-[#2563EB]/60 to-[#2563EB]/20 pointer-events-none rounded-full" />
 
             <div className="space-y-10 lg:space-y-24">
               {servicesData.map((service, index) => {
@@ -176,11 +176,11 @@ export default function Services() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.08 }}
-                    className="relative group border-b lg:border-none border-purple-100 pb-8 lg:pb-0"
+                    className="relative group border-b lg:border-none border-blue-100 pb-8 lg:pb-0"
                   >
                     {/* Central Node Pulse Point */}
-                    <div className="hidden lg:flex absolute left-1/2 top-6 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-white border-2 border-[#7C3AED] items-center justify-center shadow-md group-hover:scale-125 transition-transform duration-300">
-                      <div className="w-2.5 h-2.5 rounded-full bg-[#7C3AED] animate-ping" />
+                    <div className="hidden lg:flex absolute left-1/2 top-6 -translate-x-1/2 z-20 w-8 h-8 rounded-full bg-white border-2 border-[#2563EB] items-center justify-center shadow-md group-hover:scale-125 transition-transform duration-300">
+                      <div className="w-2.5 h-2.5 rounded-full bg-[#2563EB] animate-ping" />
                     </div>
 
                     {/* Flow Layout Grid */}
@@ -190,20 +190,20 @@ export default function Services() {
                       <div className={`lg:col-span-6 ${isEven ? 'lg:text-right lg:pr-12' : 'lg:col-start-7 lg:pl-12'}`}>
                         {/* Service Step Pill */}
                         <div className={`flex items-center space-x-2.5 mb-2.5 ${isEven ? 'lg:justify-end' : 'lg:justify-start'}`}>
-                          <span className="text-2xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#7C3AED] to-[#A855F7] tracking-tighter">
+                          <span className="text-2xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-[#3B82F6] tracking-tighter">
                             #{stepNum}
                           </span>
-                          <span className="text-[9px] sm:text-[10px] font-extrabold px-2.5 py-0.5 sm:px-3 sm:py-1 bg-purple-50 text-[#7C3AED] rounded-full border border-purple-200 uppercase tracking-widest">
+                          <span className="text-[9px] sm:text-[10px] font-extrabold px-2.5 py-0.5 sm:px-3 sm:py-1 bg-blue-50 text-[#2563EB] rounded-full border border-blue-200 uppercase tracking-widest">
                             {service.badge}
                           </span>
                         </div>
 
                         {/* Header with Icon */}
                         <div className={`flex items-center space-x-3 sm:space-x-4 mb-3 sm:mb-4 ${isEven ? 'lg:flex-row-reverse lg:space-x-reverse' : ''}`}>
-                          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-[#7C3AED] via-[#A855F7] to-[#C084FC] text-white flex items-center justify-center shadow-md shadow-purple-500/25 shrink-0 group-hover:scale-105 transition-transform">
+                          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-[#1E40AF] via-[#2563EB] to-[#60A5FA] text-white flex items-center justify-center shadow-md shadow-blue-500/25 shrink-0 group-hover:scale-105 transition-transform">
                             <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                           </div>
-                          <h3 className="text-xl sm:text-3xl font-extrabold text-[#111827] group-hover:text-[#7C3AED] transition-colors tracking-tight">
+                          <h3 className="text-xl sm:text-3xl font-extrabold text-[#111827] group-hover:text-[#2563EB] transition-colors tracking-tight">
                             {service.title}
                           </h3>
                         </div>
@@ -216,7 +216,7 @@ export default function Services() {
                         <div className={`flex ${isEven ? 'lg:justify-end' : 'lg:justify-start'}`}>
                           <button
                             onClick={() => onOpenQuote(service.title)}
-                            className="bg-gradient-to-r from-[#7C3AED] via-[#A855F7] to-[#C084FC] hover:from-[#6D28D9] hover:to-[#7C3AED] text-white font-bold text-xs sm:text-sm px-5 py-3 sm:px-7 sm:py-3.5 rounded-xl sm:rounded-2xl shadow-lg shadow-purple-600/30 flex items-center space-x-2 group/btn transition-all transform hover:-translate-y-0.5"
+                            className="bg-gradient-to-r from-[#2563EB] via-[#3B82F6] to-[#60A5FA] hover:from-[#1D4ED8] hover:to-[#2563EB] text-white font-bold text-xs sm:text-sm px-5 py-3 sm:px-7 sm:py-3.5 rounded-xl sm:rounded-2xl shadow-lg shadow-blue-600/30 flex items-center space-x-2 group/btn transition-all transform hover:-translate-y-0.5"
                           >
                             <span>Learn More &amp; Request Quote</span>
                             <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover/btn:translate-x-1.5 transition-transform" />
@@ -230,9 +230,9 @@ export default function Services() {
                           {service.features.map((feat, idx) => (
                             <div
                               key={idx}
-                              className="flex items-center space-x-2.5 sm:space-x-3 p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl bg-purple-50/60 border border-purple-100 hover:border-[#C084FC] hover:bg-purple-50 backdrop-blur-md transition-all duration-300"
+                              className="flex items-center space-x-2.5 sm:space-x-3 p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl bg-blue-50/60 border border-blue-100 hover:border-[#60A5FA] hover:bg-blue-50 backdrop-blur-md transition-all duration-300"
                             >
-                              <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-purple-100 text-[#7C3AED] flex items-center justify-center shrink-0">
+                              <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-blue-100 text-[#2563EB] flex items-center justify-center shrink-0">
                                 <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                               </div>
                               <span className="text-xs sm:text-sm font-semibold text-[#111827]">

@@ -36,10 +36,10 @@ export default function About() {
   };
 
   return (
-    <div className="bg-[#FAF5FF] text-[#111827] min-h-screen">
+    <div className="bg-[#F0F7FF] text-[#111827] min-h-screen">
       
       {/* 1. Header Hero Banner (Matched 1-to-1 with Contact Page Hero Fade) */}
-      <section className="relative min-h-screen flex flex-col justify-center items-center pt-24 pb-12 sm:pt-28 sm:pb-16 overflow-hidden border-b border-purple-100 bg-gradient-to-b from-[#F3E8FF] via-[#FAF5FF] to-[#FAF5FF]">
+      <section className="relative min-h-screen flex flex-col justify-center items-center pt-24 pb-12 sm:pt-28 sm:pb-16 overflow-hidden border-b border-blue-100 bg-gradient-to-b from-[#DBEAFE] via-[#F0F7FF] to-[#F0F7FF]">
         {/* Background Image: Matched Contact Page Opacity & Filter */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
@@ -47,8 +47,8 @@ export default function About() {
             alt="Business leaders discussing technology strategy in modern glass office meeting room"
             className="w-full h-full object-cover object-center opacity-65 filter contrast-115 brightness-105 saturate-120 pointer-events-none transition-all duration-700"
           />
-          {/* Soft Violet Overlay Matched to Contact Page */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF5FF]/20 via-[#FAF5FF]/40 to-[#FAF5FF] z-10 pointer-events-none" />
+          {/* Soft Blue Overlay Matched to Contact Page */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#F0F7FF]/20 via-[#F0F7FF]/40 to-[#F0F7FF] z-10 pointer-events-none" />
         </div>
 
         {/* Soft Radial Spotlight Behind Hero Text (Matched to Contact Page) */}
@@ -64,7 +64,7 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight sm:leading-[1.15] text-[#111827] max-w-4xl mx-auto drop-shadow-sm"
           >
-            Pioneering <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4C1D95] via-[#6D28D9] to-[#7C3AED]">Digital Innovation</span> & Enterprise Scale
+            Pioneering <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1E3A8A] via-[#1D4ED8] to-[#2563EB]">Digital Innovation</span> & Enterprise Scale
           </motion.h1>
 
           {/* Short Subtitle Paragraph: Concise on mobile */}
@@ -87,7 +87,7 @@ export default function About() {
           >
             <button
               onClick={() => onOpenQuote()}
-              className="w-full sm:w-auto px-6 py-3 sm:px-7 sm:py-3.5 bg-gradient-to-r from-[#7C3AED] via-[#A855F7] to-[#C084FC] hover:from-[#6D28D9] hover:to-[#7C3AED] text-white font-bold rounded-2xl shadow-xl shadow-purple-950/40 flex items-center justify-center space-x-2 text-xs sm:text-sm group transition-all transform hover:-translate-y-0.5 active:scale-95 border border-purple-300/30"
+              className="w-full sm:w-auto px-6 py-3 sm:px-7 sm:py-3.5 bg-gradient-to-r from-[#2563EB] via-[#3B82F6] to-[#60A5FA] hover:from-[#1D4ED8] hover:to-[#2563EB] text-white font-bold rounded-2xl shadow-xl shadow-blue-950/40 flex items-center justify-center space-x-2 text-xs sm:text-sm group transition-all transform hover:-translate-y-0.5 active:scale-95 border border-blue-300/30"
             >
               <Sparkles className="w-4 h-4 text-amber-300 animate-pulse" />
               <span>Request Free Proposal</span>
@@ -96,10 +96,10 @@ export default function About() {
 
             <button
               onClick={() => window.scrollTo({ top: window.innerHeight - 80, behavior: 'smooth' })}
-              className="hidden sm:flex w-full sm:w-auto px-7 py-3.5 bg-white/95 hover:bg-white text-[#111827] hover:text-[#7C3AED] border border-purple-200 font-semibold rounded-2xl transition-all text-center items-center justify-center space-x-2 text-sm shadow-md backdrop-blur-md active:scale-95"
+              className="hidden sm:flex w-full sm:w-auto px-7 py-3.5 bg-white/95 hover:bg-white text-[#111827] hover:text-[#2563EB] border border-blue-200 font-semibold rounded-2xl transition-all text-center items-center justify-center space-x-2 text-sm shadow-md backdrop-blur-md active:scale-95"
             >
               <span>Explore Our Story</span>
-              <ChevronDown className="w-4 h-4 text-[#7C3AED]" />
+              <ChevronDown className="w-4 h-4 text-[#2563EB]" />
             </button>
           </motion.div>
         </div>
@@ -115,15 +115,15 @@ export default function About() {
           <span className="text-[9px] sm:text-[10px] font-bold text-slate-500 uppercase tracking-widest hidden sm:block">
             Scroll to Explore
           </span>
-          <div className="w-8 h-8 rounded-full bg-white border border-purple-200 flex items-center justify-center shadow-sm hover:border-[#7C3AED]">
-            <ChevronDown className="w-4 h-4 text-[#7C3AED] animate-bounce" />
+          <div className="w-8 h-8 rounded-full bg-white border border-blue-200 flex items-center justify-center shadow-sm hover:border-[#2563EB]">
+            <ChevronDown className="w-4 h-4 text-[#2563EB] animate-bounce" />
           </div>
         </motion.div>
       </section>
 
       {/* 2. Company Story & Profile (White Section) */}
-      <section className="py-14 sm:py-24 bg-white border-b border-purple-100 relative overflow-hidden text-[#111827]">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-purple-500/5 rounded-full blur-[180px] pointer-events-none" />
+      <section className="py-14 sm:py-24 bg-white border-b border-blue-100 relative overflow-hidden text-[#111827]">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-blue-500/5 rounded-full blur-[180px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -135,11 +135,11 @@ export default function About() {
           >
             <motion.div
               variants={itemVariants}
-              className="lg:col-span-7 p-5 sm:p-10 rounded-2xl sm:rounded-3xl bg-white border border-purple-100 shadow-xl shadow-purple-900/5 flex flex-col justify-between"
+              className="lg:col-span-7 p-5 sm:p-10 rounded-2xl sm:rounded-3xl bg-white border border-blue-100 shadow-xl shadow-blue-900/5 flex flex-col justify-between"
             >
               <div className="space-y-3 sm:space-y-4">
                 <div>
-                  <span className="text-[10px] sm:text-xs font-bold text-[#7C3AED] uppercase tracking-widest bg-purple-50 px-3 py-1 rounded-full border border-purple-200 inline-block mb-1">
+                  <span className="text-[10px] sm:text-xs font-bold text-[#2563EB] uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200 inline-block mb-1">
                     Company Story
                   </span>
                 </div>
@@ -154,58 +154,58 @@ export default function About() {
                 </p>
               </div>
 
-              <div className="pt-4 sm:pt-6 mt-4 sm:mt-6 border-t border-purple-100">
-                <div className="p-3.5 sm:p-4 bg-purple-50/70 rounded-xl sm:rounded-2xl border border-purple-100 flex items-center space-x-3 sm:space-x-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-tr from-[#7C3AED] to-[#A855F7] text-white flex items-center justify-center font-bold shrink-0 shadow-md">
+              <div className="pt-4 sm:pt-6 mt-4 sm:mt-6 border-t border-blue-100">
+                <div className="p-3.5 sm:p-4 bg-blue-50/70 rounded-xl sm:rounded-2xl border border-blue-100 flex items-center space-x-3 sm:space-x-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-tr from-[#2563EB] to-[#3B82F6] text-white flex items-center justify-center font-bold shrink-0 shadow-md">
                     <UserCheck className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
                   <div>
                     <h4 className="font-bold text-[#111827] text-sm sm:text-base">{companyInfo.founder}</h4>
-                    <p className="text-[11px] sm:text-xs text-[#7C3AED] font-semibold">{companyInfo.title} • {companyInfo.name}</p>
+                    <p className="text-[11px] sm:text-xs text-[#2563EB] font-semibold">{companyInfo.title} • {companyInfo.name}</p>
                   </div>
                 </div>
               </div>
             </motion.div>
             <motion.div
               variants={itemVariants}
-              className="hidden lg:flex lg:col-span-5 p-6 sm:p-8 rounded-3xl bg-white border border-purple-100 shadow-xl shadow-purple-900/5 flex-col justify-between relative overflow-hidden"
+              className="hidden lg:flex lg:col-span-5 p-6 sm:p-8 rounded-3xl bg-white border border-blue-100 shadow-xl shadow-blue-900/5 flex-col justify-between relative overflow-hidden"
             >
               <div className="space-y-5">
                 {/* Header */}
                 <div className="flex items-center space-x-3">
-                  <div className="w-11 h-11 rounded-2xl bg-purple-50 flex items-center justify-center text-[#7C3AED] border border-purple-200 shrink-0 shadow-sm">
-                    <Building2 className="w-5 h-5 text-[#7C3AED]" />
+                  <div className="w-11 h-11 rounded-2xl bg-blue-50 flex items-center justify-center text-[#2563EB] border border-blue-200 shrink-0 shadow-sm">
+                    <Building2 className="w-5 h-5 text-[#2563EB]" />
                   </div>
                   <div>
                     <h3 className="font-extrabold text-lg text-[#111827] leading-tight">Technical HQ</h3>
-                    <p className="text-xs text-[#7C3AED] font-medium">Madurai, Tamil Nadu, India</p>
+                    <p className="text-xs text-[#2563EB] font-medium">Madurai, Tamil Nadu, India</p>
                   </div>
                 </div>
 
                 {/* Address */}
-                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed border-l-2 border-[#7C3AED] pl-3 py-1 bg-purple-50/50 rounded-r-xl">
+                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed border-l-2 border-[#2563EB] pl-3 py-1 bg-blue-50/50 rounded-r-xl">
                   {companyInfo.address}
                 </p>
 
                 {/* Operational Highlights Specs Grid */}
                 <div className="grid grid-cols-2 gap-2.5">
-                  <div className="p-3 rounded-2xl bg-purple-50/50 border border-purple-100">
-                    <div className="flex items-center space-x-2 text-[#7C3AED] mb-1">
+                  <div className="p-3 rounded-2xl bg-blue-50/50 border border-blue-100">
+                    <div className="flex items-center space-x-2 text-[#2563EB] mb-1">
                       <Building2 className="w-3.5 h-3.5" />
                       <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Facility</span>
                     </div>
                     <p className="text-xs font-bold text-[#111827] truncate">Engineering Studio</p>
                   </div>
 
-                  <div className="p-3 rounded-2xl bg-purple-50/50 border border-purple-100">
-                    <div className="flex items-center space-x-2 text-[#7C3AED] mb-1">
+                  <div className="p-3 rounded-2xl bg-blue-50/50 border border-blue-100">
+                    <div className="flex items-center space-x-2 text-[#2563EB] mb-1">
                       <Server className="w-3.5 h-3.5" />
                       <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Servers</span>
                     </div>
                     <p className="text-xs font-bold text-[#111827] truncate">NVMe Cloud Hub</p>
                   </div>
 
-                  <div className="p-3 rounded-2xl bg-purple-50/50 border border-purple-100">
+                  <div className="p-3 rounded-2xl bg-blue-50/50 border border-blue-100">
                     <div className="flex items-center space-x-2 text-emerald-600 mb-1">
                       <Clock className="w-3.5 h-3.5" />
                       <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Hours</span>
@@ -213,7 +213,7 @@ export default function About() {
                     <p className="text-xs font-bold text-[#111827] truncate">Mon - Sat (9am - 7pm)</p>
                   </div>
 
-                  <div className="p-3 rounded-2xl bg-purple-50/50 border border-purple-100">
+                  <div className="p-3 rounded-2xl bg-blue-50/50 border border-blue-100">
                     <div className="flex items-center space-x-2 text-amber-500 mb-1">
                       <ShieldCheck className="w-3.5 h-3.5" />
                       <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500">Support</span>
@@ -223,7 +223,7 @@ export default function About() {
                 </div>
 
                 {/* Interactive Live Map Preview Frame */}
-                <div className="rounded-2xl border border-purple-200 overflow-hidden shadow-sm relative h-36 bg-purple-50">
+                <div className="rounded-2xl border border-blue-200 overflow-hidden shadow-sm relative h-36 bg-blue-50">
                   <iframe
                     title="Technical HQ Location"
                     src="https://maps.google.com/maps?q=Madurai,TamilNadu,India&t=&z=13&ie=UTF8&iwloc=&output=embed"
@@ -231,16 +231,16 @@ export default function About() {
                     allowFullScreen=""
                     loading="lazy"
                   />
-                  <div className="absolute bottom-2 left-2 right-2 flex items-center justify-between bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-purple-100 text-[10px] text-[#111827]">
+                  <div className="absolute bottom-2 left-2 right-2 flex items-center justify-between bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-blue-100 text-[10px] text-[#111827]">
                     <span className="flex items-center space-x-1.5 font-medium">
-                      <MapPin className="w-3 h-3 text-[#7C3AED]" />
+                      <MapPin className="w-3 h-3 text-[#2563EB]" />
                       <span>Madurai Live Center</span>
                     </span>
                     <a
                       href="https://maps.google.com/?q=Madurai,TamilNadu,India"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#7C3AED] hover:text-[#6D28D9] font-bold flex items-center space-x-1 transition-colors"
+                      className="text-[#2563EB] hover:text-[#1D4ED8] font-bold flex items-center space-x-1 transition-colors"
                     >
                       <Navigation className="w-3 h-3" />
                       <span>Directions</span>
@@ -250,27 +250,27 @@ export default function About() {
               </div>
 
               {/* Contact details */}
-              <div className="space-y-2 border-t border-purple-100 pt-4 mt-4 text-xs">
+              <div className="space-y-2 border-t border-blue-100 pt-4 mt-4 text-xs">
                 <div className="flex items-center justify-between">
                   <span className="text-slate-600 flex items-center space-x-1.5">
-                    <Phone className="w-3.5 h-3.5 text-[#7C3AED]" />
+                    <Phone className="w-3.5 h-3.5 text-[#2563EB]" />
                     <span>Phone:</span>
                   </span>
-                  <a href={`tel:${companyInfo.phone}`} className="font-bold text-[#111827] hover:text-[#7C3AED] transition-colors">{companyInfo.phone}</a>
+                  <a href={`tel:${companyInfo.phone}`} className="font-bold text-[#111827] hover:text-[#2563EB] transition-colors">{companyInfo.phone}</a>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-slate-600 flex items-center space-x-1.5">
-                    <Mail className="w-3.5 h-3.5 text-[#7C3AED]" />
+                    <Mail className="w-3.5 h-3.5 text-[#2563EB]" />
                     <span>Email:</span>
                   </span>
-                  <a href={`mailto:${companyInfo.email}`} className="font-bold text-[#111827] hover:text-[#7C3AED] transition-colors truncate ml-2">{companyInfo.email}</a>
+                  <a href={`mailto:${companyInfo.email}`} className="font-bold text-[#111827] hover:text-[#2563EB] transition-colors truncate ml-2">{companyInfo.email}</a>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-slate-600 flex items-center space-x-1.5">
-                    <Globe className="w-3.5 h-3.5 text-[#7C3AED]" />
+                    <Globe className="w-3.5 h-3.5 text-[#2563EB]" />
                     <span>Website:</span>
                   </span>
-                  <a href={`https://${companyInfo.website}`} target="_blank" rel="noopener noreferrer" className="font-bold text-[#111827] hover:text-[#7C3AED] transition-colors">{companyInfo.website}</a>
+                  <a href={`https://${companyInfo.website}`} target="_blank" rel="noopener noreferrer" className="font-bold text-[#111827] hover:text-[#2563EB] transition-colors">{companyInfo.website}</a>
                 </div>
               </div>
             </motion.div>
@@ -278,13 +278,13 @@ export default function About() {
         </div>
       </section>
 
-      {/* 4. Company Timeline Section (#FAF5FF Background) */}
-      <section className="py-12 sm:py-24 bg-[#FAF5FF] border-b border-purple-100 relative overflow-hidden text-[#111827]">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[550px] bg-purple-500/5 rounded-full blur-[200px] pointer-events-none" />
+      {/* 4. Company Timeline Section (#F0F7FF Background) */}
+      <section className="py-12 sm:py-24 bg-[#F0F7FF] border-b border-blue-100 relative overflow-hidden text-[#111827]">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[550px] bg-blue-500/5 rounded-full blur-[200px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-20">
-            <span className="text-[#7C3AED] font-bold text-[10px] sm:text-xs uppercase tracking-widest bg-purple-100 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full border border-purple-200 shadow-sm">
+            <span className="text-[#2563EB] font-bold text-[10px] sm:text-xs uppercase tracking-widest bg-blue-100 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full border border-blue-200 shadow-sm">
               EVOLUTION &amp; MILESTONES
             </span>
             <h2 className="text-2xl sm:text-5xl font-extrabold text-[#111827] mt-2.5 sm:mt-3 tracking-tight">
@@ -298,10 +298,10 @@ export default function About() {
           {/* Timeline Container */}
           <div className="relative">
             {/* Desktop Horizontal Connecting Line */}
-            <div className="hidden lg:block absolute top-[28px] left-[10%] right-[10%] h-[3px] bg-gradient-to-r from-[#7C3AED] via-[#A855F7] to-[#C084FC] shadow-sm z-0" />
+            <div className="hidden lg:block absolute top-[28px] left-[10%] right-[10%] h-[3px] bg-gradient-to-r from-[#2563EB] via-[#3B82F6] to-[#60A5FA] shadow-sm z-0" />
 
             {/* Mobile Vertical Track */}
-            <div className="lg:hidden absolute left-5 top-4 bottom-4 w-0.5 bg-gradient-to-b from-[#7C3AED] via-[#A855F7] to-[#C084FC] z-0" />
+            <div className="lg:hidden absolute left-5 top-4 bottom-4 w-0.5 bg-gradient-to-b from-[#2563EB] via-[#3B82F6] to-[#60A5FA] z-0" />
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 relative z-10 space-y-2 sm:space-y-0">
               {timelineEvents.map((event, idx) => {
@@ -316,25 +316,25 @@ export default function About() {
                     className="relative group pl-12 lg:pl-0 flex flex-col items-start"
                   >
                     {/* Stepper Node */}
-                    <div className="absolute left-0 top-0 lg:static w-10 h-10 lg:w-14 lg:h-14 rounded-xl lg:rounded-2xl bg-white border-2 border-[#7C3AED] text-[#7C3AED] flex items-center justify-center font-mono font-extrabold text-xs lg:text-sm shadow-md group-hover:scale-110 group-hover:bg-[#7C3AED] group-hover:text-white transition-all lg:mb-8 z-10 shrink-0">
+                    <div className="absolute left-0 top-0 lg:static w-10 h-10 lg:w-14 lg:h-14 rounded-xl lg:rounded-2xl bg-white border-2 border-[#2563EB] text-[#2563EB] flex items-center justify-center font-mono font-extrabold text-xs lg:text-sm shadow-md group-hover:scale-110 group-hover:bg-[#2563EB] group-hover:text-white transition-all lg:mb-8 z-10 shrink-0">
                       0{idx + 1}
                     </div>
 
                     {/* Stepper White Glass Card */}
-                    <div className="w-full p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-white border border-purple-100 backdrop-blur-2xl shadow-lg shadow-purple-900/5 flex flex-col justify-between group-hover:border-[#C084FC] transition-all h-full relative overflow-hidden">
-                      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#C084FC] to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="w-full p-4 sm:p-8 rounded-2xl sm:rounded-3xl bg-white border border-blue-100 backdrop-blur-2xl shadow-lg shadow-blue-900/5 flex flex-col justify-between group-hover:border-[#60A5FA] transition-all h-full relative overflow-hidden">
+                      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#60A5FA] to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
                       <div>
                         <div className="flex items-center justify-between mb-2.5 sm:mb-4 gap-2">
-                          <span className="text-xl sm:text-2xl font-black font-mono text-[#7C3AED]">
+                          <span className="text-xl sm:text-2xl font-black font-mono text-[#2563EB]">
                             {event.year}
                           </span>
-                          <span className="text-[9px] sm:text-[10px] font-mono font-bold tracking-widest text-[#7C3AED] bg-purple-50 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full border border-purple-200 shrink-0">
+                          <span className="text-[9px] sm:text-[10px] font-mono font-bold tracking-widest text-[#2563EB] bg-blue-50 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full border border-blue-200 shrink-0">
                             {stepPills[idx]}
                           </span>
                         </div>
 
-                        <h3 className="text-base sm:text-xl font-extrabold text-[#111827] group-hover:text-[#7C3AED] transition-colors mb-1.5 sm:mb-3">
+                        <h3 className="text-base sm:text-xl font-extrabold text-[#111827] group-hover:text-[#2563EB] transition-colors mb-1.5 sm:mb-3">
                           {event.title}
                         </h3>
 

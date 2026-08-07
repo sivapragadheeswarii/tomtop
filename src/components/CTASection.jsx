@@ -4,9 +4,9 @@ import { ArrowRight, MessageSquare } from 'lucide-react';
 
 export default function CTASection({ onOpenQuote }) {
   return (
-    <section className="py-20 bg-[#FAF5FF] text-[#111827] relative overflow-hidden border-t border-purple-100 text-center">
+    <section className="py-20 bg-[#F0F7FF] text-[#111827] relative overflow-hidden border-t border-blue-100 text-center">
       {/* Background Radial Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-purple-500/10 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-blue-500/10 rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
@@ -18,7 +18,7 @@ export default function CTASection({ onOpenQuote }) {
           {/* Main Title */}
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#111827] tracking-tight leading-tight mb-4">
             Ready to Transform Your{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#7C3AED] via-[#A855F7] to-[#C084FC]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] via-[#3B82F6] to-[#60A5FA]">
               Business?
             </span>
           </h2>
@@ -32,7 +32,7 @@ export default function CTASection({ onOpenQuote }) {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={() => onOpenQuote()}
-              className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#7C3AED] via-[#A855F7] to-[#C084FC] hover:from-[#6D28D9] hover:to-[#7C3AED] text-white font-extrabold text-sm rounded-xl shadow-lg shadow-purple-600/30 flex items-center justify-center space-x-2.5 group transition-all transform hover:-translate-y-0.5"
+              className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#2563EB] via-[#3B82F6] to-[#60A5FA] hover:from-[#1D4ED8] hover:to-[#2563EB] text-white font-extrabold text-sm rounded-xl shadow-lg shadow-blue-600/30 flex items-center justify-center space-x-2.5 group transition-all transform hover:-translate-y-0.5"
             >
               <span>Get Free Proposal</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

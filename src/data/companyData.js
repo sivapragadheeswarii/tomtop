@@ -212,8 +212,8 @@ export const techStackCategories = [
     id: "ai-data",
     category: "AI & ML Engine",
     desc: "Next-gen Machine Learning, LLMs & Computer Vision",
-    accent: "from-purple-600/20 via-indigo-500/10 to-transparent",
-    border: "hover:border-purple-400",
+    accent: "from-blue-600/20 via-sky-500/10 to-transparent",
+    border: "hover:border-blue-400",
     items: [
       { name: "Python", icon: "🐍" },
       { name: "PyTorch / TensorFlow", icon: "🧠" },
@@ -238,7 +238,7 @@ export const techStackCategories = [
     id: "backend",
     category: "Backend & ERP Core",
     desc: "Scalable microservices & ERP API architecture",
-    accent: "from-blue-600/20 via-purple-500/10 to-transparent",
+    accent: "from-blue-600/20 via-indigo-500/10 to-transparent",
     border: "hover:border-blue-400",
     items: [
       { name: "Node.js", icon: "🟢" },
@@ -251,8 +251,8 @@ export const techStackCategories = [
     id: "mobile",
     category: "Mobile",
     desc: "Cross-platform & high-performance mobile apps",
-    accent: "from-purple-500/20 via-pink-500/10 to-transparent",
-    border: "hover:border-purple-400",
+    accent: "from-blue-500/20 via-cyan-500/10 to-transparent",
+    border: "hover:border-blue-400",
     items: [
       { name: "Flutter", icon: "📱" },
       { name: "React Native", icon: "⚛️" },

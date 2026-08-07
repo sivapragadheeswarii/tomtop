@@ -7,7 +7,7 @@ const processIcons = [Search, Compass, Palette, Code, Rocket, ShieldCheck];
 
 export default function DevelopmentProcess() {
   return (
-    <section className="py-24 bg-[#FAF5FF] relative overflow-hidden text-[#111827] border-b border-purple-100">
+    <section className="py-24 bg-[#F0F7FF] relative overflow-hidden text-[#111827] border-b border-blue-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
@@ -16,7 +16,7 @@ export default function DevelopmentProcess() {
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center space-x-2 bg-purple-100 border border-purple-200 px-4 py-1.5 rounded-full text-xs font-bold text-[#7C3AED] mb-4 shadow-sm"
+            className="inline-flex items-center space-x-2 bg-blue-100 border border-blue-200 px-4 py-1.5 rounded-full text-xs font-bold text-[#2563EB] mb-4 shadow-sm"
           >
             <Sparkles className="w-3.5 h-3.5 text-amber-500 animate-pulse" />
             <span className="uppercase tracking-widest">Our Methodology</span>
@@ -55,19 +55,19 @@ export default function DevelopmentProcess() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.08 }}
                 whileHover={{ y: -6 }}
-                className="p-8 rounded-3xl bg-white border border-purple-100 backdrop-blur-2xl flex flex-col justify-between group hover:border-[#C084FC] hover:shadow-2xl hover:shadow-purple-600/10 transition-all duration-300 shadow-xl shadow-purple-900/5"
+                className="p-8 rounded-3xl bg-white border border-blue-100 backdrop-blur-2xl flex flex-col justify-between group hover:border-[#60A5FA] hover:shadow-2xl hover:shadow-blue-600/10 transition-all duration-300 shadow-xl shadow-blue-900/5"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <span className="text-3xl font-extrabold text-[#7C3AED] font-mono">
+                    <span className="text-3xl font-extrabold text-[#2563EB] font-mono">
                       {item.step}
                     </span>
-                    <div className="w-10 h-10 rounded-xl bg-purple-50 text-[#7C3AED] group-hover:bg-[#7C3AED] flex items-center justify-center transition-colors">
-                      <IconComp className="w-5 h-5 text-[#7C3AED] group-hover:text-white" />
+                    <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#2563EB] group-hover:bg-[#2563EB] flex items-center justify-center transition-colors">
+                      <IconComp className="w-5 h-5 text-[#2563EB] group-hover:text-white" />
                     </div>
                   </div>
 
-                  <h3 className="text-xl font-extrabold text-[#111827] group-hover:text-[#7C3AED] transition-colors mb-3">
+                  <h3 className="text-xl font-extrabold text-[#111827] group-hover:text-[#2563EB] transition-colors mb-3">
                     {item.title}
                   </h3>
 

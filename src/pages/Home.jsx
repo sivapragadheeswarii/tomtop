@@ -11,7 +11,7 @@ export default function Home() {
   const { onOpenQuote } = useOutletContext();
 
   return (
-    <div className="bg-[#FAF5FF] text-[#111827]">
+    <div className="bg-[#F0F7FF] text-[#111827]">
       {/* 1. Executive Hero Banner */}
       <HeroSection onOpenQuote={onOpenQuote} />
 
