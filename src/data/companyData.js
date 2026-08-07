@@ -6,7 +6,7 @@ export const companyInfo = {
   tagline: "Transforming Ideas Into Powerful Digital Solutions",
   shortDesc: "We build modern websites, enterprise software, mobile applications, and cloud solutions that help businesses grow with confidence. Our solutions are secure, scalable, and tailored to your business needs.",
   phone: "+91 96777 51745",
-  email: "sivapragadheeswari2004@gmail.com",
+  email: "info@tomtopsolutions.com",
   website: "www.tomtopsolutions.com",
   address: "Bizzbay Cowork, Door No:39A, 2nd Floor, Section B, Kalasekar Tower, Bypass Road, Chokkalinga Nagar, Madurai - 625010, Tamil Nadu, India",
   hours: "Monday - Saturday: 9:00 AM - 7:00 PM IST",

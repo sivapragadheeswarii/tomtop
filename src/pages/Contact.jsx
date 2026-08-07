@@ -17,7 +17,7 @@ export default function Contact() {
   const [focused, setFocused] = useState('');
 
   const triggerMailto = () => {
-    const recipient = "sivapragadheeswari2004@gmail.com";
+    const recipient = "info@tomtopsolutions.com";
     const subject = encodeURIComponent(formData.subject || `New Project Inquiry from ${formData.name}`);
     const body = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nSubject: ${formData.subject || 'N/A'}\n\nMessage / Project Details:\n${formData.message}`
@@ -30,7 +30,7 @@ export default function Contact() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/sivapragadheeswari2004@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/info@tomtopsolutions.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -185,7 +185,7 @@ export default function Contact() {
                       </div>
                       <h3 className="text-xl sm:text-2xl font-extrabold text-[#111827]">Message Sent to Mail!</h3>
                       <p className="text-slate-600 max-w-xs text-xs sm:text-sm leading-relaxed">
-                        Thank you! Your message has been routed directly to <strong className="text-[#2563EB]">sivapragadheeswari2004@gmail.com</strong>. We will reply within 24 hours.
+                        Thank you! Your message has been routed directly to <strong className="text-[#2563EB]">info@tomtopsolutions.com</strong>. We will reply within 24 hours.
                       </p>
                     </motion.div>
                   ) : (
@@ -198,7 +198,7 @@ export default function Contact() {
                     >
                       <div>
                         <h2 className="text-xl sm:text-2xl font-extrabold text-[#111827]">Send a Message</h2>
-                        <p className="text-xs sm:text-sm text-slate-600 mt-1 sm:mt-1.5">Directly sends your message to sivapragadheeswari2004@gmail.com</p>
+                        <p className="text-xs sm:text-sm text-slate-600 mt-1 sm:mt-1.5">Directly sends your message to info@tomtopsolutions.com</p>
                       </div>
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
@@ -376,8 +376,8 @@ export default function Contact() {
               <div
                 key={i}
                 className={`rounded-xl sm:rounded-2xl border transition-all duration-300 overflow-hidden ${openFaq === i
-                    ? 'border-[#2563EB] bg-white shadow-md'
-                    : 'border-blue-100 bg-white hover:border-blue-200'
+                  ? 'border-[#2563EB] bg-white shadow-md'
+                  : 'border-blue-100 bg-white hover:border-blue-200'
                   }`}
               >
                 <button

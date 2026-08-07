@@ -25,7 +25,7 @@ export default function QuoteModal({ isOpen, onClose, initialService = '', selec
   if (!isOpen) return null;
 
   const triggerMailto = () => {
-    const recipient = "sivapragadheeswari2004@gmail.com";
+    const recipient = "info@tomtopsolutions.com";
     const subject = encodeURIComponent(`Quote Request: ${formData.service} from ${formData.name}`);
     const body = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService Required: ${formData.service}\n\nProject Details:\n${formData.message}`
@@ -38,7 +38,7 @@ export default function QuoteModal({ isOpen, onClose, initialService = '', selec
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/sivapragadheeswari2004@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/info@tomtopsolutions.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -98,7 +98,7 @@ export default function QuoteModal({ isOpen, onClose, initialService = '', selec
               </div>
               <h3 className="text-2xl font-extrabold text-[#111827]">Proposal Request Delivered!</h3>
               <p className="text-sm text-slate-600">
-                Thank you, <strong className="text-[#2563EB]">{formData.name}</strong>. Your request has been emailed to <strong className="text-[#2563EB]">sivapragadheeswari2004@gmail.com</strong>.
+                Thank you, <strong className="text-[#2563EB]">{formData.name}</strong>. Your request has been emailed to <strong className="text-[#2563EB]">info@tomtopsolutions.com</strong>.
               </p>
             </div>
           ) : (
