@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useOutletContext, Link } from 'react-router-dom';
+import { useOutletContext } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   Sparkles, ArrowRight, ArrowUpRight, CheckCircle2, ChevronDown,
@@ -302,8 +302,8 @@ export default function Portfolio() {
   return (
     <div className="bg-[#FAF5FF] text-[#111827] min-h-screen">
 
-      {/* 1. SECTION 1 — HEADER & INTRO (Matched 1-to-1 with Home Page Hero Fade) */}
-      <section className="relative min-h-[85vh] sm:min-h-screen flex flex-col justify-center items-center pt-28 pb-16 overflow-hidden border-b border-purple-100 bg-gradient-to-b from-[#F3E8FF] via-[#FAF5FF] to-[#FAF5FF]">
+      {/* 1. SECTION 1 — HEADER & INTRO (Matched 1-to-1 with Contact Page Hero Fade) */}
+      <section className="relative min-h-screen flex flex-col justify-center items-center pt-24 pb-12 sm:pt-28 sm:pb-16 overflow-hidden border-b border-purple-100 bg-gradient-to-b from-[#F3E8FF] via-[#FAF5FF] to-[#FAF5FF]">
         {/* Background Image: Matched Home Page Opacity & Filter */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
@@ -319,59 +319,39 @@ export default function Portfolio() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-3xl h-[420px] bg-white/75 blur-[75px] rounded-full pointer-events-none z-10 hidden sm:block" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center flex flex-col items-center justify-center my-auto w-full">
-          {/* Glassmorphism Top Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: -15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center space-x-2 bg-white/95 border border-purple-300 px-4 py-1.5 rounded-full text-xs font-bold text-[#7C3AED] mb-4 shadow-md backdrop-blur-sm"
-          >
-            <Sparkles className="w-3.5 h-3.5 text-amber-500 animate-pulse" />
-            <span className="uppercase tracking-widest text-[11px]">Client Success & Enterprise Case Studies</span>
-          </motion.div>
 
-          {/* Breadcrumb Navigation */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex items-center space-x-2 text-xs font-semibold text-[#4B5563] mb-5 bg-white/80 backdrop-blur-md px-4 py-1.5 rounded-full border border-purple-200/80 shadow-sm"
-          >
-            <Link to="/" className="hover:text-[#7C3AED] transition-colors">Home</Link>
-            <span className="text-purple-400">/</span>
-            <span className="text-[#111827] font-bold">Portfolio</span>
-          </motion.div>
 
-          {/* Large Bold Heading: Matched to Home Page Style */}
+          {/* Large Bold Heading: Compact on mobile */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-3xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.15] text-[#111827] max-w-4xl mx-auto drop-shadow-sm"
+            className="text-2xl sm:text-3xl lg:text-6xl font-extrabold tracking-tight leading-tight sm:leading-[1.18] text-[#111827] max-w-3xl mx-auto drop-shadow-sm"
           >
             Software Solutions <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4C1D95] via-[#6D28D9] to-[#7C3AED]">Engineered For Impact & Scale</span>
           </motion.h1>
 
-          {/* Short Subtitle Paragraph */}
+          {/* Short Subtitle Paragraph: Concise on mobile */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="mt-4 sm:mt-6 text-[#374151] text-sm sm:text-xl max-w-2xl mx-auto font-medium leading-relaxed"
+            className="mt-3 sm:mt-6 text-[#374151] text-xs sm:text-xl max-w-xl sm:max-w-2xl mx-auto font-medium leading-relaxed"
           >
-            Explore our featured portfolio of industrial ERPs, cross-platform mobile apps, and high-concurrency corporate web applications.
+            <span className="sm:hidden">Featured portfolio of industrial ERPs, mobile apps, and web applications.</span>
+            <span className="hidden sm:inline">Explore our featured portfolio of industrial ERPs, cross-platform mobile apps, and high-concurrency corporate web applications.</span>
           </motion.p>
 
-          {/* Two CTA Buttons */}
+          {/* CTA Buttons: Primary CTA on mobile, secondary CTA on desktop */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.35 }}
-            className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto"
+            className="mt-5 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto"
           >
             <button
               onClick={() => onOpenQuote()}
-              className="w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-[#7C3AED] via-[#A855F7] to-[#C084FC] hover:from-[#6D28D9] hover:to-[#7C3AED] text-white font-bold rounded-2xl shadow-xl shadow-purple-950/30 flex items-center justify-center space-x-2 text-sm group transition-all transform hover:-translate-y-0.5 active:scale-95 border border-purple-300/30"
+              className="w-full sm:w-auto px-6 py-3 sm:px-7 sm:py-3.5 bg-gradient-to-r from-[#7C3AED] via-[#A855F7] to-[#C084FC] hover:from-[#6D28D9] hover:to-[#7C3AED] text-white font-bold rounded-2xl shadow-xl shadow-purple-950/30 flex items-center justify-center space-x-2 text-xs sm:text-sm group transition-all transform hover:-translate-y-0.5 active:scale-95 border border-purple-300/30"
             >
               <Sparkles className="w-4 h-4 text-amber-300 animate-pulse" />
               <span>Request Case Study & Proposal</span>
@@ -380,7 +360,7 @@ export default function Portfolio() {
 
             <button
               onClick={() => window.scrollTo({ top: window.innerHeight - 80, behavior: 'smooth' })}
-              className="w-full sm:w-auto px-7 py-3.5 bg-white/95 hover:bg-white text-[#111827] hover:text-[#7C3AED] border border-purple-200 font-semibold rounded-2xl transition-all text-center flex items-center justify-center space-x-2 text-sm shadow-md backdrop-blur-md active:scale-95"
+              className="hidden sm:flex w-full sm:w-auto px-7 py-3.5 bg-white/95 hover:bg-white text-[#111827] hover:text-[#7C3AED] border border-purple-200 font-semibold rounded-2xl transition-all text-center items-center justify-center space-x-2 text-sm shadow-md backdrop-blur-md active:scale-95"
             >
               <span>Explore Case Studies</span>
               <ChevronDown className="w-4 h-4 text-[#7C3AED]" />

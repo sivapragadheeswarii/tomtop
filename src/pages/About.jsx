@@ -1,5 +1,5 @@
 import React from 'react';
-import { useOutletContext, Link } from 'react-router-dom';
+import { useOutletContext } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Target, Compass, Sparkles, UserCheck, MapPin, CheckCircle2, Award, ShieldCheck, Zap, HeartHandshake, Lightbulb, Clock, ChevronDown, Building2, Server, Phone, Mail, Globe, Navigation, ArrowRight } from 'lucide-react';
 import { companyInfo } from '../data/companyData';
@@ -38,103 +38,56 @@ export default function About() {
   return (
     <div className="bg-[#FAF5FF] text-[#111827] min-h-screen">
       
-      {/* 1. Header Hero Banner (3D Glass Architecture & Digital Connections Theme) */}
-      <section className="relative min-h-[85vh] sm:min-h-screen flex flex-col justify-center items-center pt-28 pb-16 overflow-hidden border-b border-purple-100 bg-gradient-to-b from-[#F8FAFC] via-[#FAF5FF] to-[#FAF5FF]">
-        {/* Background Image: 3D Architectural Glass & Modern Office Structure */}
+      {/* 1. Header Hero Banner (Matched 1-to-1 with Contact Page Hero Fade) */}
+      <section className="relative min-h-screen flex flex-col justify-center items-center pt-24 pb-12 sm:pt-28 sm:pb-16 overflow-hidden border-b border-purple-100 bg-gradient-to-b from-[#F3E8FF] via-[#FAF5FF] to-[#FAF5FF]">
+        {/* Background Image: Matched Contact Page Opacity & Filter */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src="/images/about_hero_bg.png"
-            alt="3D Architectural Glass Shapes, Modern Architecture, Digital Network Connections"
-            className="w-full h-full object-cover object-center opacity-85 filter brightness-100 contrast-105 saturate-100 pointer-events-none transition-all duration-700"
+            alt="Business leaders discussing technology strategy in modern glass office meeting room"
+            className="w-full h-full object-cover object-center opacity-65 filter contrast-115 brightness-105 saturate-120 pointer-events-none transition-all duration-700"
           />
-          
-          {/* Realistic 3D Glass Shapes & Data Flow Network Overlay */}
-          <div className="absolute inset-0 pointer-events-none opacity-30">
-            <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <pattern id="about-glass-grid" width="80" height="80" patternUnits="userSpaceOnUse">
-                  <polygon points="40,0 80,40 40,80 0,40" fill="none" stroke="rgba(71, 85, 105, 0.12)" strokeWidth="1" />
-                  <circle cx="40" cy="40" r="2" fill="rgba(148, 163, 184, 0.5)" />
-                </pattern>
-                <linearGradient id="glass-fade" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="rgba(255, 255, 255, 0.6)" />
-                  <stop offset="50%" stopColor="rgba(241, 245, 249, 0.3)" />
-                  <stop offset="100%" stopColor="rgba(15, 23, 42, 0.4)" />
-                </linearGradient>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#about-glass-grid)" />
-              <rect width="100%" height="100%" fill="url(#glass-fade)" />
-            </svg>
-          </div>
-
-          {/* Minimal Neutral Architectural Light Highlights (White, Grey, Slate Black) */}
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-slate-200/50 blur-3xl rounded-full pointer-events-none" />
-          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-slate-300/30 blur-3xl rounded-full pointer-events-none" />
-
-          {/* Neutral Soft Fade Overlay: Preserves true white & grey photography colors while keeping text readable */}
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/35 via-slate-900/15 to-[#FAF5FF] pointer-events-none" />
+          {/* Soft Violet Overlay Matched to Contact Page */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#FAF5FF]/20 via-[#FAF5FF]/40 to-[#FAF5FF] z-10 pointer-events-none" />
         </div>
 
-        {/* Soft Radial Spotlight Behind Hero Text (Matched to Home Page) */}
+        {/* Soft Radial Spotlight Behind Hero Text (Matched to Contact Page) */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-3xl h-[420px] bg-white/75 blur-[75px] rounded-full pointer-events-none z-10 hidden sm:block" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center flex flex-col items-center justify-center my-auto w-full">
-          {/* Glassmorphism Top Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: -15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center space-x-2 bg-white/95 border border-purple-300 px-4 py-1.5 rounded-full text-xs font-bold text-[#7C3AED] mb-4 shadow-md backdrop-blur-sm"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#7C3AED]"></span>
-            </span>
-            <span className="uppercase tracking-widest text-[11px]">Engineering Tech Excellence</span>
-          </motion.div>
 
-          {/* Breadcrumb Navigation */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex items-center space-x-2 text-xs font-semibold text-[#4B5563] mb-5 bg-white/80 backdrop-blur-md px-4 py-1.5 rounded-full border border-purple-200/80 shadow-sm"
-          >
-            <Link to="/" className="hover:text-[#7C3AED] transition-colors">Home</Link>
-            <span className="text-purple-400">/</span>
-            <span className="text-[#111827] font-bold">About Us</span>
-          </motion.div>
 
-          {/* Large Bold Heading: Matched to Home Page Style */}
+          {/* Large Bold Heading: Compact on mobile */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-3xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.15] text-[#111827] max-w-4xl mx-auto drop-shadow-sm"
+            className="text-2xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight sm:leading-[1.15] text-[#111827] max-w-4xl mx-auto drop-shadow-sm"
           >
             Pioneering <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4C1D95] via-[#6D28D9] to-[#7C3AED]">Digital Innovation</span> & Enterprise Scale
           </motion.h1>
 
-          {/* Short Subtitle Paragraph */}
+          {/* Short Subtitle Paragraph: Concise on mobile */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="mt-4 sm:mt-6 text-[#374151] text-sm sm:text-xl max-w-2xl mx-auto font-medium leading-relaxed"
+            className="mt-3 sm:mt-6 text-[#374151] text-xs sm:text-xl max-w-xl sm:max-w-2xl mx-auto font-medium leading-relaxed"
           >
-            We engineer high-concurrency ERP systems, custom web portals, and cloud infrastructure for modern corporate enterprises.
+            <span className="sm:hidden">Engineering high-concurrency ERP systems, web portals, and cloud infrastructure.</span>
+            <span className="hidden sm:inline">We engineer high-concurrency ERP systems, custom web portals, and cloud infrastructure for modern corporate enterprises.</span>
           </motion.p>
 
-          {/* Two CTA Buttons */}
+          {/* CTA Buttons: Primary CTA on mobile, secondary CTA on desktop */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.35 }}
-            className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto"
+            className="mt-5 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto"
           >
             <button
               onClick={() => onOpenQuote()}
-              className="w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-[#7C3AED] via-[#A855F7] to-[#C084FC] hover:from-[#6D28D9] hover:to-[#7C3AED] text-white font-bold rounded-2xl shadow-xl shadow-purple-950/40 flex items-center justify-center space-x-2 text-sm group transition-all transform hover:-translate-y-0.5 active:scale-95 border border-purple-300/30"
+              className="w-full sm:w-auto px-6 py-3 sm:px-7 sm:py-3.5 bg-gradient-to-r from-[#7C3AED] via-[#A855F7] to-[#C084FC] hover:from-[#6D28D9] hover:to-[#7C3AED] text-white font-bold rounded-2xl shadow-xl shadow-purple-950/40 flex items-center justify-center space-x-2 text-xs sm:text-sm group transition-all transform hover:-translate-y-0.5 active:scale-95 border border-purple-300/30"
             >
               <Sparkles className="w-4 h-4 text-amber-300 animate-pulse" />
               <span>Request Free Proposal</span>
@@ -143,7 +96,7 @@ export default function About() {
 
             <button
               onClick={() => window.scrollTo({ top: window.innerHeight - 80, behavior: 'smooth' })}
-              className="w-full sm:w-auto px-7 py-3.5 bg-white/95 hover:bg-white text-[#111827] hover:text-[#7C3AED] border border-purple-200 font-semibold rounded-2xl transition-all text-center flex items-center justify-center space-x-2 text-sm shadow-md backdrop-blur-md active:scale-95"
+              className="hidden sm:flex w-full sm:w-auto px-7 py-3.5 bg-white/95 hover:bg-white text-[#111827] hover:text-[#7C3AED] border border-purple-200 font-semibold rounded-2xl transition-all text-center items-center justify-center space-x-2 text-sm shadow-md backdrop-blur-md active:scale-95"
             >
               <span>Explore Our Story</span>
               <ChevronDown className="w-4 h-4 text-[#7C3AED]" />

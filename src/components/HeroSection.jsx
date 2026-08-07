@@ -185,7 +185,7 @@ export default function HeroSection({ onOpenQuote }) {
 
                         <div>
                           <div className="flex items-center space-x-2 flex-wrap gap-y-0.5">
-                            <h4 className="font-extrabold text-[#111827] text-xs sm:text-sm group-hover:text-[#7C3AED] transition-colors">
+                            <h4 className="font-extrabold text-[#111827] text-xs sm:text-sm">
                               {card.title}
                             </h4>
                             <span className="text-[9px] font-bold px-2 py-0.5 rounded-full border bg-purple-50 text-[#7C3AED] border-purple-200">
