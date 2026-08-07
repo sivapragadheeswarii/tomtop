@@ -13,7 +13,7 @@ export default function Logo({ dark = false, onClick }) {
       <img
         src="/images/logo.png"
         alt="TOMTOP SOLUTIONS Logo"
-        className="h-7 sm:h-10 w-auto object-contain"
+        className="h-8 sm:h-11 w-auto object-contain"
       />
     </Link>
   );
