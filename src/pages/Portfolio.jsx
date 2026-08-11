@@ -433,14 +433,14 @@ export default function Portfolio() {
                 <span className="text-[10px] text-[#2563EB] font-bold">Swipe →</span>
               </div>
 
-              <div className="flex overflow-x-auto gap-3.5 snap-x snap-mandatory pb-3 px-1 scrollbar-none touch-pan-x">
+              <div className="flex overflow-x-auto gap-3 snap-x snap-mandatory pb-2.5 px-1 scrollbar-none touch-pan-x">
                 {allFeaturedProjects.map((study) => (
                   <div
                     key={`m-featured-${study.id}`}
-                    className="w-[86vw] max-w-[320px] shrink-0 snap-center rounded-2xl border border-blue-100 bg-white text-[#111827] p-4 shadow-lg shadow-blue-900/5 flex flex-col justify-between"
+                    className="w-[72vw] max-w-[255px] shrink-0 snap-center rounded-2xl border border-blue-100 bg-white text-[#111827] p-3 shadow-md shadow-blue-900/5 flex flex-col justify-between"
                   >
                     {/* Top Image Banner */}
-                    <div className="relative h-36 rounded-xl overflow-hidden bg-slate-100 mb-3">
+                    <div className="relative h-28 rounded-xl overflow-hidden bg-slate-100 mb-2">
                       {study.image ? (
                         <img
                           src={study.image}
@@ -448,43 +448,43 @@ export default function Portfolio() {
                           className="w-full h-full object-cover"
                         />
                       ) : (
-                        <div className="w-full h-full bg-gradient-to-br from-[#1E3A8A] to-[#2563EB] flex items-center justify-center p-3">
-                          <Briefcase className="w-8 h-8 text-blue-200" />
+                        <div className="w-full h-full bg-gradient-to-br from-[#1E3A8A] to-[#2563EB] flex items-center justify-center p-2">
+                          <Briefcase className="w-6 h-6 text-blue-200" />
                         </div>
                       )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-transparent" />
 
-                      <span className="absolute top-2.5 left-2.5 text-[8px] font-extrabold uppercase tracking-widest bg-[#2563EB] text-white px-2.5 py-0.5 rounded-full border border-blue-300/40 shadow-sm">
+                      <span className="absolute top-2 left-2 text-[8px] font-extrabold uppercase tracking-widest bg-[#2563EB] text-white px-2 py-0.5 rounded-full border border-blue-300/40 shadow-xs">
                         {study.category}
                       </span>
                     </div>
 
                     {/* Content */}
-                    <div className="space-y-2 flex-1 flex flex-col justify-between">
+                    <div className="space-y-1.5 flex-1 flex flex-col justify-between">
                       <div>
-                        <span className="text-[9px] font-bold text-[#2563EB] uppercase tracking-wider block">
+                        <span className="text-[8px] font-bold text-[#2563EB] uppercase tracking-wider block">
                           Client: {study.client}
                         </span>
-                        <h3 className="text-base font-extrabold text-[#111827] leading-tight mt-0.5 line-clamp-1">
+                        <h3 className="text-xs font-extrabold text-[#111827] leading-snug mt-0.5 line-clamp-1">
                           {study.title}
                         </h3>
-                        <p className="text-slate-600 text-xs leading-relaxed line-clamp-2 mt-1 font-medium">
+                        <p className="text-slate-600 text-[11px] leading-snug line-clamp-2 mt-0.5 font-medium">
                           {study.overview}
                         </p>
                       </div>
 
                       {/* Key Results Badges */}
-                      <div className="space-y-1 pt-1">
+                      <div className="space-y-0.5 pt-0.5">
                         <span className="text-[8px] font-extrabold text-[#2563EB] uppercase tracking-wider block">
                           Delivered Impact:
                         </span>
-                        <div className="grid grid-cols-1 gap-1">
+                        <div className="grid grid-cols-1 gap-0.5">
                           {study.results.slice(0, 2).map((res, rIdx) => (
                             <div
                               key={rIdx}
-                              className="flex items-center space-x-1.5 text-[10px] font-bold text-[#1E3A8A] bg-blue-50/80 px-2 py-1 rounded-md border border-blue-200"
+                              className="flex items-center space-x-1 text-[9px] font-bold text-[#1E3A8A] bg-blue-50/80 px-1.5 py-0.5 rounded-md border border-blue-200"
                             >
-                              <CheckCircle2 className="w-3 h-3 text-[#2563EB] shrink-0" />
+                              <CheckCircle2 className="w-2.5 h-2.5 text-[#2563EB] shrink-0" />
                               <span className="truncate">{res}</span>
                             </div>
                           ))}
@@ -492,13 +492,13 @@ export default function Portfolio() {
                       </div>
 
                       {/* CTA Button */}
-                      <div className="pt-2 border-t border-blue-100">
+                      <div className="pt-1.5 border-t border-blue-100">
                         <button
                           onClick={() => onOpenQuote(study.title)}
-                          className="w-full py-2.5 px-3 bg-gradient-to-r from-[#2563EB] via-[#3B82F6] to-[#60A5FA] text-white font-extrabold rounded-xl text-xs flex items-center justify-center space-x-1.5 shadow-md shadow-blue-600/20 active:scale-95 cursor-pointer"
+                          className="w-full py-2 px-2.5 bg-gradient-to-r from-[#2563EB] via-[#3B82F6] to-[#60A5FA] text-white font-extrabold rounded-lg text-[11px] flex items-center justify-center space-x-1 shadow-xs active:scale-95 cursor-pointer"
                         >
-                          <span>Request Case Study & Proposal</span>
-                          <ArrowRight className="w-3.5 h-3.5" />
+                          <span>Request Proposal</span>
+                          <ArrowRight className="w-3 h-3" />
                         </button>
                       </div>
                     </div>
@@ -516,49 +516,49 @@ export default function Portfolio() {
                 <span className="text-[10px] text-[#2563EB] font-bold">Swipe →</span>
               </div>
 
-              <div className="flex overflow-x-auto gap-3 snap-x snap-mandatory pb-3 px-1 scrollbar-none touch-pan-x">
+              <div className="flex overflow-x-auto gap-2.5 snap-x snap-mandatory pb-2 px-1 scrollbar-none touch-pan-x">
                 {recentProjects.map((project) => (
                   <div
                     key={`m-recent-${project.id}`}
                     onClick={() => setSelectedProject(project)}
-                    className="w-[78vw] max-w-[280px] shrink-0 snap-center bg-white rounded-2xl border border-blue-200 shadow-lg overflow-hidden flex flex-col justify-between cursor-pointer active:scale-95 transition-all"
+                    className="w-[58vw] max-w-[215px] shrink-0 snap-center bg-white rounded-xl border border-blue-200 shadow-md overflow-hidden flex flex-col justify-between cursor-pointer active:scale-95 transition-all"
                   >
-                    <div className="relative h-32 overflow-hidden bg-blue-50">
+                    <div className="relative h-24 overflow-hidden bg-blue-50">
                       <img
                         src={project.image}
                         alt={project.title}
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent" />
-                      <span className="absolute top-2 left-2 text-[8px] font-extrabold px-2 py-0.5 bg-white/95 backdrop-blur-md text-[#2563EB] rounded-full border border-blue-200 uppercase tracking-widest shadow-xs">
+                      <span className="absolute top-1.5 left-1.5 text-[8px] font-extrabold px-1.5 py-0.5 bg-white/95 backdrop-blur-md text-[#2563EB] rounded-full border border-blue-200 uppercase tracking-widest shadow-xs">
                         {project.category}
                       </span>
                     </div>
 
-                    <div className="p-3.5 space-y-2 flex-1 flex flex-col justify-between">
+                    <div className="p-2.5 space-y-1.5 flex-1 flex flex-col justify-between">
                       <div>
-                        <h3 className="text-xs font-black text-[#111827] leading-snug line-clamp-1">
+                        <h3 className="text-xs font-extrabold text-[#111827] leading-snug line-clamp-1">
                           {project.title}
                         </h3>
-                        <p className="text-slate-600 text-[11px] leading-relaxed line-clamp-2 mt-0.5 font-medium">
+                        <p className="text-slate-600 text-[10px] leading-snug line-clamp-2 mt-0.5 font-medium">
                           {project.description}
                         </p>
                       </div>
 
                       <div className="flex flex-wrap gap-1 pt-0.5">
                         {project.tech.slice(0, 2).map((t, idx) => (
-                          <span key={idx} className="text-[8px] font-bold px-2 py-0.5 bg-[#F0F7FF] text-[#2563EB] rounded-md border border-blue-100">
+                          <span key={idx} className="text-[8px] font-bold px-1.5 py-0.5 bg-[#F0F7FF] text-[#2563EB] rounded-md border border-blue-100">
                             {t}
                           </span>
                         ))}
                       </div>
                     </div>
 
-                    <div className="px-3.5 py-2 border-t border-blue-100 flex items-center justify-between bg-[#F0F7FF]/60">
-                      <span className="text-[9px] font-semibold text-slate-500 truncate max-w-[130px]">Client: {project.client}</span>
-                      <span className="text-[9px] font-black text-[#2563EB] flex items-center space-x-0.5">
+                    <div className="px-2.5 py-1.5 border-t border-blue-100 flex items-center justify-between bg-[#F0F7FF]/60">
+                      <span className="text-[8px] font-semibold text-slate-500 truncate max-w-[100px]">Client: {project.client}</span>
+                      <span className="text-[8px] font-black text-[#2563EB] flex items-center space-x-0.5">
                         <span>Details</span>
-                        <ArrowUpRight className="w-3 h-3 text-[#2563EB]" />
+                        <ArrowUpRight className="w-2.5 h-2.5 text-[#2563EB]" />
                       </span>
                     </div>
                   </div>
