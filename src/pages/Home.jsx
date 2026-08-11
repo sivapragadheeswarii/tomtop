@@ -1,6 +1,7 @@
 import React from 'react';
 import { useOutletContext } from 'react-router-dom';
 import HeroSection from '../components/HeroSection';
+import CompanyIntro from '../components/CompanyIntro';
 import ServicesSection from '../components/ServicesSection';
 import Testimonials from '../components/Testimonials';
 import CTASection from '../components/CTASection';
@@ -13,13 +14,16 @@ export default function Home() {
       {/* 1. Executive Hero Banner */}
       <HeroSection onOpenQuote={onOpenQuote} />
 
-      {/* 2. Featured Core Services */}
-      <ServicesSection onOpenQuote={onOpenQuote} limit={3} />
+      {/* 2. Short Company Intro */}
+      <CompanyIntro onOpenQuote={onOpenQuote} />
 
-      {/* 3. Client Testimonials */}
+      {/* 3. Featured Core Services */}
+      <ServicesSection onOpenQuote={onOpenQuote} limit={6} />
+
+      {/* 4. Client Testimonials */}
       <Testimonials />
 
-      {/* 4. Contact Call To Action */}
+      {/* 5. Contact Call To Action */}
       <CTASection onOpenQuote={onOpenQuote} />
     </div>
   );
