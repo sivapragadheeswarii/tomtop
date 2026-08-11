@@ -1,208 +1,171 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Globe, Code2, ClipboardCheck, Users, GraduationCap, Server, ArrowRight, Sparkles, CheckCircle2, ExternalLink } from 'lucide-react';
+import { Globe, Code2, ClipboardCheck, Users, GraduationCap, Server, ArrowRight, Sparkles, CheckCircle2, ShieldCheck } from 'lucide-react';
 import { servicesData } from '../data/companyData';
 
 const iconMap = { Code2, Globe, ClipboardCheck, Users, GraduationCap, Server };
-const GRADS = [
-  ['#1D4ED8','#3B82F6'],['#1E40AF','#2563EB'],['#1848C8','#60A5FA'],
-  ['#1e3a8a','#3B82F6'],['#2563EB','#60A5FA'],['#1D4ED8','#2563EB'],
+
+const CARD_ACCENTS = [
+  { bg: 'from-blue-600 to-indigo-600', lightBg: 'bg-blue-50/70', border: 'hover:border-blue-300', text: 'text-blue-600' },
+  { bg: 'from-blue-700 to-[#1E3A8A]', lightBg: 'bg-blue-50/70', border: 'hover:border-blue-400', text: 'text-[#1E3A8A]' },
+  { bg: 'from-indigo-600 to-blue-700', lightBg: 'bg-indigo-50/70', border: 'hover:border-indigo-300', text: 'text-indigo-600' },
+  { bg: 'from-sky-600 to-blue-600', lightBg: 'bg-sky-50/70', border: 'hover:border-sky-300', text: 'text-sky-600' },
+  { bg: 'from-blue-800 to-indigo-800', lightBg: 'bg-slate-50', border: 'hover:border-slate-300', text: 'text-slate-800' },
+  { bg: 'from-blue-600 to-cyan-600', lightBg: 'bg-cyan-50/70', border: 'hover:border-cyan-300', text: 'text-cyan-600' },
 ];
 
-const AUTOPLAY_DELAY = 4500;
-
 export default function ServicesSection({ onOpenQuote, limit }) {
-  const [active, setActive] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const services = limit ? servicesData.slice(0, limit) : servicesData;
-  const svc = services[active];
-  const ActiveIcon = iconMap[svc.iconName] || Globe;
-  const [ca, cb] = GRADS[active % GRADS.length];
-
-  const nextSlide = useCallback(() => {
-    setActive((prev) => (prev + 1) % services.length);
-  }, [services.length]);
-
-  useEffect(() => {
-    if (isPaused) return;
-    const timer = setInterval(() => {
-      nextSlide();
-    }, AUTOPLAY_DELAY);
-    return () => clearInterval(timer);
-  }, [isPaused, nextSlide]);
 
   return (
-    <section 
-      className="py-10 sm:py-20 bg-[#F0F7FF] relative overflow-hidden"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
-      <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
-        <svg width="100%" height="100%"><defs><pattern id="gr" width="40" height="40" patternUnits="userSpaceOnUse">
-          <path d="M40 0L0 0 0 40" fill="none" stroke="#2563EB" strokeWidth="0.7"/>
-        </pattern></defs><rect width="100%" height="100%" fill="url(#gr)"/></svg>
+    <section className="py-16 sm:py-24 bg-gradient-to-b from-[#F8FAFC] via-[#F1F5F9] to-[#F8FAFC] relative overflow-hidden text-[#0F172A]">
+      {/* Background Micro Grid */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.035]">
+        <svg width="100%" height="100%"><defs><pattern id="bento-grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M40 0L0 0 0 40" fill="none" stroke="#1E3A8A" strokeWidth="0.8"/>
+        </pattern></defs><rect width="100%" height="100%" fill="url(#bento-grid-pattern)"/></svg>
       </div>
-      <motion.div className="absolute rounded-full pointer-events-none"
-        style={{width:500,height:500,background:'radial-gradient(circle,rgba(59,130,246,0.07) 0%,transparent 70%)',top:'-5%',left:'35%'}}
-        animate={{scale:[1,1.2,1]}} transition={{duration:12,repeat:Infinity,ease:'easeInOut'}}/>
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-blue-300 to-transparent"/>
-      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent"/>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-        {/* Header */}
-        <div className="text-center mb-8 sm:mb-14">
-          <motion.h2 initial={{opacity:0,y:16}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:0.1}}
-            className="text-xl sm:text-4xl lg:text-5xl font-black text-[#0B1120] tracking-tight leading-tight px-2">
+        {/* ── Corporate Section Header ── */}
+        <div className="text-center mb-12 sm:mb-16 max-w-3xl mx-auto space-y-3">
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-[#1E3A8A] text-xs font-bold tracking-wide uppercase shadow-xs"
+          >
+            <ShieldCheck className="w-4 h-4 text-[#2563EB]" />
+            <span>End-To-End Enterprise Capabilities</span>
+          </motion.div>
+
+          <motion.h2 
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#0F172A] tracking-tight leading-tight"
+          >
             Enterprise Software &amp;{' '}
-            <span className="relative inline-block">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1D4ED8] via-[#3B82F6] to-[#60A5FA]">Cloud Ecosystem</span>
-              <motion.span className="absolute -bottom-0.5 left-0 h-[3px] rounded-full bg-gradient-to-r from-[#1D4ED8] to-[#60A5FA]"
-                initial={{scaleX:0,originX:0}} whileInView={{scaleX:1}} viewport={{once:true}} transition={{delay:0.6,duration:0.8}}/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1E3A8A] via-[#2563EB] to-[#3B82F6]">
+              Cloud Ecosystem
             </span>
           </motion.h2>
-          <motion.p initial={{opacity:0}} whileInView={{opacity:1}} viewport={{once:true}} transition={{delay:0.2}}
-            className="hidden sm:block mt-3 text-slate-500 text-base">
-            Automatic rotation enabled. Hover over the section to pause.
+
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-slate-600 text-sm sm:text-base font-medium max-w-2xl mx-auto"
+          >
+            Architecting scalable custom software, cloud infrastructure, and consulting frameworks engineered for modern business growth.
           </motion.p>
         </div>
 
-        {/* ── Progress Steps ── */}
-        <motion.div initial={{opacity:0,y:16}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:0.2}}
-          className="hidden sm:block relative mb-6 sm:mb-12 overflow-x-auto scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
-          <div className="flex items-start justify-start sm:justify-center min-w-max mx-auto py-1">
-            {services.map((s, idx) => {
-              const SIcon = iconMap[s.iconName] || Globe;
-              const isActive = active === idx;
-              const isDone = idx < active;
-              const [ga, gb] = GRADS[idx % GRADS.length];
-              return (
-                <React.Fragment key={s.id}>
-                  {/* Step node */}
-                  <div className="flex flex-col items-center gap-2 shrink-0">
-                    <motion.button onClick={() => setActive(idx)}
-                      whileHover={{scale:1.08}} whileTap={{scale:0.95}}
-                      className={`relative w-11 h-11 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center transition-all duration-300 ${
-                        isActive ? 'shadow-xl' : isDone ? 'shadow-md' : 'bg-white border border-blue-100 shadow-sm hover:shadow-md hover:border-blue-300'
-                      }`}
-                      style={isActive ? {background:`linear-gradient(135deg,${ga},${gb})`,boxShadow:`0 8px 24px rgba(37,99,235,0.3)`}
-                        : isDone ? {background:`linear-gradient(135deg,${ga}88,${gb}88)`} : {}}
-                    >
-                      {isActive && (
-                        <motion.div className="absolute inset-0 rounded-xl sm:rounded-2xl"
-                          style={{background:`linear-gradient(135deg,${ga},${gb})`}}
-                          animate={{scale:[1,1.25,1],opacity:[0.5,0,0.5]}}
-                          transition={{duration:2,repeat:Infinity}}/>
-                      )}
-                      <SIcon className={`relative z-10 w-4 h-4 sm:w-6 sm:h-6 ${isActive||isDone?'text-white':'text-[#2563EB]'}`}/>
-                    </motion.button>
-                    <span className={`hidden sm:block text-[9px] sm:text-[10px] font-black uppercase tracking-wide text-center max-w-[62px] sm:max-w-[72px] leading-tight transition-colors ${isActive?'text-[#1D4ED8]':isDone?'text-slate-400':'text-slate-400'}`}>
-                      {s.title.split(' ').slice(0,2).join(' ')}
+        {/* ── 💻 6-CARD ULTRA-PREMIUM EXECUTIVE BENTO GRID ── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {services.map((svc, idx) => {
+            const ActiveIcon = iconMap[svc.iconName] || Globe;
+            const accent = CARD_ACCENTS[idx % CARD_ACCENTS.length];
+
+            return (
+              <motion.div
+                key={svc.id}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.45, delay: idx * 0.08 }}
+                whileHover={{ y: -6 }}
+                className={`bg-white rounded-3xl border border-slate-200/90 ${accent.border} shadow-lg shadow-slate-900/5 hover:shadow-2xl hover:shadow-blue-900/10 transition-all duration-300 p-6 sm:p-7 flex flex-col justify-between group relative overflow-hidden`}
+              >
+                {/* Top Subtle Background Glow */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl group-hover:bg-blue-500/10 transition-all pointer-events-none" />
+
+                <div className="space-y-5 relative z-10">
+                  {/* Card Header: Icon & Badge */}
+                  <div className="flex items-center justify-between">
+                    <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${accent.bg} flex items-center justify-center text-white shadow-md shadow-blue-900/20 group-hover:scale-110 transition-transform duration-300`}>
+                      <ActiveIcon className="w-6 h-6" />
+                    </div>
+                    <span className="text-[10px] font-extrabold px-3 py-1 bg-slate-100 text-slate-700 rounded-full border border-slate-200/80 uppercase tracking-widest group-hover:bg-blue-50 group-hover:text-[#1E3A8A] group-hover:border-blue-200 transition-colors">
+                      {svc.badge}
                     </span>
                   </div>
 
-                  {/* Connector line */}
-                  {idx < services.length - 1 && (
-                    <div className="relative h-0.5 w-8 sm:w-20 mx-1 sm:mx-2 shrink-0 bg-blue-100 rounded-full overflow-hidden mt-5 sm:mt-6">
-                      <motion.div className="absolute inset-y-0 left-0 rounded-full"
-                        style={{background:`linear-gradient(90deg,${ga},${gb})`}}
-                        animate={{width: idx < active ? '100%' : '0%'}}
-                        transition={{duration:0.4}}/>
-                    </div>
-                  )}
-                </React.Fragment>
-              );
-            })}
-          </div>
-        </motion.div>
-
-        {/* ── Detail Card ── */}
-        <AnimatePresence mode="wait">
-          <motion.div key={active}
-            initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} exit={{opacity:0,y:-20}}
-            transition={{duration:0.3,ease:[0.4,0,0.2,1]}}
-            className="relative bg-white rounded-2xl sm:rounded-3xl border border-blue-100 overflow-hidden"
-            style={{boxShadow:`0 16px 50px rgba(37,99,235,0.1)`}}
-          >
-            {/* Top accent progress line */}
-            <motion.div 
-              key={`progress-${active}`}
-              className="h-1 w-full"
-              style={{background:`linear-gradient(90deg,${ca},${cb})`}}
-              initial={{scaleX:0, originX:0}}
-              animate={{scaleX:1}}
-              transition={{duration: isPaused ? 0 : AUTOPLAY_DELAY / 1000, ease: 'linear'}}
-            />
-
-            <div className="grid grid-cols-1 lg:grid-cols-12">
-              {/* Left accent panel */}
-              <div className="lg:col-span-4 p-3.5 sm:p-8 lg:p-10 border-b lg:border-b-0 lg:border-r border-blue-50 flex flex-col gap-2.5 sm:gap-5">
-                <div className="flex items-center gap-2.5 sm:gap-4">
-                  <motion.div
-                    initial={{scale:0.6,rotate:-12}} animate={{scale:1,rotate:0}}
-                    transition={{type:'spring',stiffness:200,damping:16}}
-                    className="w-9 h-9 sm:w-16 sm:h-16 rounded-xl sm:rounded-3xl flex items-center justify-center shrink-0 shadow-xs sm:shadow-xl"
-                    style={{background:`linear-gradient(135deg,${ca},${cb})`,boxShadow:`0 8px 24px rgba(37,99,235,0.25)`}}>
-                    <ActiveIcon className="w-4 h-4 sm:w-8 sm:h-8 text-white"/>
-                  </motion.div>
+                  {/* Title & Short Description */}
                   <div>
-                    <p className="text-[9px] font-black text-blue-400 uppercase tracking-[0.18em] mb-0.5">
-                      {String(active+1).padStart(2,'0')} of {String(services.length).padStart(2,'0')}
+                    <h3 className="text-lg sm:text-xl font-extrabold text-[#0F172A] leading-snug group-hover:text-[#2563EB] transition-colors">
+                      {svc.title}
+                    </h3>
+                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mt-2 font-normal line-clamp-2">
+                      {svc.shortDesc || svc.description}
                     </p>
-                    <span className="text-[9px] sm:text-[10px] font-black px-2 py-0.5 sm:py-1 rounded-full text-white uppercase tracking-widest inline-block"
-                      style={{background:`linear-gradient(135deg,${ca},${cb})`}}>{svc.badge}</span>
+                  </div>
+
+                  {/* Key Capabilities Bullet Points */}
+                  <div className="space-y-2 pt-2 border-t border-slate-100">
+                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+                      Capabilities Included:
+                    </span>
+                    <div className="space-y-1.5">
+                      {svc.features.slice(0, 3).map((f, fIdx) => (
+                        <div key={fIdx} className="flex items-center space-x-2 text-xs font-semibold text-slate-700">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-[#2563EB] shrink-0" />
+                          <span className="truncate">{f}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
-                <div>
-                  <h3 className="text-base sm:text-2xl lg:text-3xl font-extrabold sm:font-black text-[#0B1120] leading-snug sm:leading-tight mb-1 sm:mb-3">{svc.title}</h3>
-                  <p className="text-slate-500 text-xs sm:text-sm leading-snug sm:leading-relaxed line-clamp-2 sm:line-clamp-none">{svc.shortDesc||svc.description}</p>
-                </div>
-              </div>
+                {/* Bottom CTA Action Button */}
+                <div className="pt-5 mt-4 border-t border-slate-100 relative z-10 flex items-center justify-between">
+                  <button
+                    onClick={() => onOpenQuote(svc.title)}
+                    className="flex items-center gap-1.5 text-xs font-extrabold text-[#2563EB] group-hover:text-[#1E3A8A] transition-colors cursor-pointer"
+                  >
+                    <span>Request Proposal</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  </button>
 
-              {/* Right content */}
-              <div className="lg:col-span-8 p-3.5 sm:p-8 lg:p-10">
-                <p className="text-[10px] font-black text-[#2563EB] uppercase tracking-[0.18em] mb-2 sm:mb-4 flex items-center gap-2">
-                  <span className="w-4 sm:w-5 h-px inline-block" style={{background:`linear-gradient(90deg,${ca},${cb})`}}/>
-                  Engineering Capabilities
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-2.5 mb-3 sm:mb-7">
-                  {svc.features.map((f,i)=>(
-                    <motion.div key={i}
-                      initial={{opacity:0,x:14}} animate={{opacity:1,x:0}} transition={{delay:i*0.05}}
-                      whileHover={{x:4}}
-                      className={`items-center gap-2.5 p-2 sm:p-3 rounded-xl bg-blue-50/60 border border-blue-100 hover:border-blue-300 hover:bg-blue-50 transition-all cursor-default group/f ${i >= 2 ? 'hidden sm:flex' : 'flex'}`}>
-                      <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-lg flex items-center justify-center shrink-0"
-                        style={{background:`linear-gradient(135deg,${ca},${cb})`}}>
-                        <CheckCircle2 className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white"/>
-                      </div>
-                      <span className="text-xs sm:text-sm font-semibold text-[#1e293b] group-hover/f:text-[#1D4ED8] transition-colors leading-snug break-words">{f}</span>
-                    </motion.div>
-                  ))}
-                </div>
-                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-2.5 sm:pt-5 border-t border-blue-50">
-                  <motion.button onClick={()=>onOpenQuote(svc.title)}
-                    whileHover={{scale:1.02,boxShadow:`0 12px 30px rgba(37,99,235,0.25)`}} whileTap={{scale:0.98}}
-                    className="relative overflow-hidden group w-full sm:flex-1 flex items-center justify-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3.5 text-white font-black rounded-xl sm:rounded-2xl text-xs sm:text-sm shadow-md transition-all cursor-pointer"
-                    style={{background:`linear-gradient(135deg,${ca},${cb})`}}>
-                    <motion.div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-all duration-300"/>
-                    <span className="relative z-10">Request Custom Proposal</span>
-                    <motion.div className="relative z-10" animate={{x:[0,4,0]}} transition={{duration:1.5,repeat:Infinity}}>
-                      <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4"/>
-                    </motion.div>
-                  </motion.button>
-                  <Link to="/services" className="w-full sm:w-auto">
-                    <motion.div whileHover={{scale:1.02}} whileTap={{scale:0.98}}
-                      className="flex items-center justify-center gap-2 w-full px-4 py-2 sm:px-5 sm:py-3.5 rounded-xl sm:rounded-2xl bg-blue-50 hover:bg-blue-100 border border-blue-200 text-[#1D4ED8] font-bold text-xs sm:text-sm transition-all cursor-pointer">
-                      <ExternalLink className="w-3.5 h-3.5"/><span>All Services</span>
-                    </motion.div>
+                  <Link to="/services">
+                    <span className="text-[10px] font-bold text-slate-400 hover:text-slate-600 transition-colors">
+                      Details
+                    </span>
                   </Link>
                 </div>
-              </div>
-            </div>
-          </motion.div>
-        </AnimatePresence>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Bottom Callout Banner */}
+        <motion.div 
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-12 sm:mt-16 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#0F172A] via-[#1E3A8A] to-[#0F172A] text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-2xl shadow-blue-950/20"
+        >
+          <div className="space-y-1 text-center sm:text-left">
+            <h4 className="text-base sm:text-xl font-extrabold text-white">
+              Need a Tailored Enterprise Software Architecture?
+            </h4>
+            <p className="text-slate-300 text-xs sm:text-sm font-normal">
+              Our expert technical consultants are available to build custom project blueprints for your business.
+            </p>
+          </div>
+
+          <button
+            onClick={() => onOpenQuote('Enterprise Consulting')}
+            className="px-6 py-3.5 bg-gradient-to-r from-[#2563EB] to-[#3B82F6] hover:from-[#1D4ED8] hover:to-[#2563EB] text-white font-extrabold rounded-2xl text-xs sm:text-sm shadow-xl flex items-center gap-2 shrink-0 transition-all active:scale-95 cursor-pointer border border-blue-300/30"
+          >
+            <Sparkles className="w-4 h-4 text-amber-300" />
+            <span>Consult Technical Lead</span>
+          </button>
+        </motion.div>
 
       </div>
     </section>

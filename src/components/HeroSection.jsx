@@ -5,15 +5,102 @@ import { ArrowRight, Sparkles, PhoneCall, ShieldCheck, ChevronDown, Globe, Smart
 import { companyInfo } from '../data/companyData';
 
 const technologies = [
-  { name: 'React', icon: '⚛️' },
-  { name: 'Node.js', icon: '🟢' },
-  { name: 'MongoDB', icon: '🍃' },
-  { name: 'Express.js', icon: '🚀' },
-  { name: 'Tailwind CSS', icon: '🎨' },
-  { name: 'Flutter', icon: '📱' },
-  { name: 'Firebase', icon: '🔥' },
-  { name: 'AWS Cloud', icon: '☁️' }
+  { name: 'React JS', icon: '⚛️', category: 'Frontend' },
+  { name: 'Node.js', icon: '🟢', category: 'Backend Engine' },
+  { name: 'MongoDB', icon: '🍃', category: 'Enterprise DB' },
+  { name: 'Express.js', icon: '⚡', category: 'REST APIs' },
+  { name: 'Tailwind CSS', icon: '🎨', category: 'Modern UI' },
+  { name: 'Flutter', icon: '📱', category: 'Mobile App' },
+  { name: 'Firebase', icon: '🔥', category: 'Cloud DB' },
+  { name: 'AWS Cloud', icon: '☁️', category: 'Infrastructure' },
+  { name: 'TypeScript', icon: '📘', category: 'Type Safe' },
+  { name: 'PostgreSQL', icon: '🐘', category: 'Relational DB' }
 ];
+
+export function TechStackMarquee() {
+  const row1 = technologies.slice(0, 5);
+  const row2 = technologies.slice(5, 10);
+
+  return (
+    <section className="py-10 sm:py-16 bg-gradient-to-b from-[#F8FAFC] via-[#F1F5F9] to-[#F8FAFC] border-y border-blue-100/80 relative overflow-hidden text-[#0F172A]">
+      {/* Edge gradient masks */}
+      <div className="absolute top-0 bottom-0 left-0 w-12 sm:w-32 bg-gradient-to-r from-[#F8FAFC] via-[#F8FAFC]/90 to-transparent z-20 pointer-events-none" />
+      <div className="absolute top-0 bottom-0 right-0 w-12 sm:w-32 bg-gradient-to-l from-[#F8FAFC] via-[#F8FAFC]/90 to-transparent z-20 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Section Header */}
+        <div className="text-center mb-6 sm:mb-10 space-y-2">
+          <motion.span 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-[10px] sm:text-xs font-black uppercase tracking-widest text-[#2563EB] bg-blue-50/90 px-4 py-1.5 rounded-full border border-blue-200 shadow-xs inline-flex items-center gap-1.5"
+          >
+            <ShieldCheck className="w-3.5 h-3.5 text-[#2563EB]" />
+            <span>Powered by Enterprise Technical Stacks</span>
+          </motion.span>
+          <p className="text-xs sm:text-sm font-semibold text-slate-500 max-w-xl mx-auto">
+            High-performance frameworks, cloud platforms, and enterprise databases driving business reliability.
+          </p>
+        </div>
+
+        {/* Ticker Row 1 (Moves Left) */}
+        <div className="overflow-hidden flex relative w-full mb-3">
+          <motion.div
+            animate={{ x: ['0%', '-50%'] }}
+            transition={{ duration: 22, repeat: Infinity, ease: 'linear' }}
+            className="flex items-center space-x-3 sm:space-x-6 shrink-0 whitespace-nowrap py-1"
+          >
+            {[...row1, ...row1, ...row1, ...row1].map((tech, idx) => (
+              <div
+                key={`r1-${idx}`}
+                className="flex items-center space-x-3 bg-white border border-slate-200/90 hover:border-blue-300 px-4 py-2 sm:px-5 sm:py-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer group shrink-0"
+              >
+                <span className="text-lg sm:text-2xl group-hover:scale-110 transition-transform duration-300">{tech.icon}</span>
+                <div className="flex flex-col text-left">
+                  <span className="text-xs sm:text-sm font-extrabold text-[#0F172A] group-hover:text-[#2563EB] transition-colors leading-tight">
+                    {tech.name}
+                  </span>
+                  <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">
+                    {tech.category}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Ticker Row 2 (Moves Right) */}
+        <div className="overflow-hidden flex relative w-full">
+          <motion.div
+            animate={{ x: ['-50%', '0%'] }}
+            transition={{ duration: 24, repeat: Infinity, ease: 'linear' }}
+            className="flex items-center space-x-3 sm:space-x-6 shrink-0 whitespace-nowrap py-1"
+          >
+            {[...row2, ...row2, ...row2, ...row2].map((tech, idx) => (
+              <div
+                key={`r2-${idx}`}
+                className="flex items-center space-x-3 bg-white border border-slate-200/90 hover:border-blue-300 px-4 py-2 sm:px-5 sm:py-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer group shrink-0"
+              >
+                <span className="text-lg sm:text-2xl group-hover:scale-110 transition-transform duration-300">{tech.icon}</span>
+                <div className="flex flex-col text-left">
+                  <span className="text-xs sm:text-sm font-extrabold text-[#0F172A] group-hover:text-[#2563EB] transition-colors leading-tight">
+                    {tech.name}
+                  </span>
+                  <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">
+                    {tech.category}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+      </div>
+    </section>
+  );
+}
 
 export default function HeroSection({ onOpenQuote }) {
   const containerVariants = {
@@ -209,42 +296,5 @@ export default function HeroSection({ onOpenQuote }) {
           </div>
         </motion.div>
       </section>
-  );
-}
-
-export function TechStackMarquee() {
-  return (
-    <section className="py-6 sm:py-14 bg-[#F0F7FF] border-y border-blue-100 relative overflow-hidden">
-      {/* Soft gradient masks on left & right for smooth fading edges */}
-      <div className="absolute top-0 bottom-0 left-0 w-8 sm:w-24 bg-gradient-to-r from-[#F0F7FF] via-[#F0F7FF]/80 to-transparent z-10 pointer-events-none" />
-      <div className="absolute top-0 bottom-0 right-0 w-8 sm:w-24 bg-gradient-to-l from-[#F0F7FF] via-[#F0F7FF]/80 to-transparent z-10 pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-4 sm:mb-8 px-2">
-          <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#2563EB] bg-blue-100/90 px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full border border-blue-200/90 shadow-sm inline-block">
-            Powered by Enterprise Technical Stacks
-          </span>
-        </div>
-        <div className="overflow-hidden flex relative w-full">
-          <motion.div
-            animate={{ x: ['0%', '-50%'] }}
-            transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
-            className="flex items-center space-x-3.5 sm:space-x-12 shrink-0 whitespace-nowrap py-1"
-          >
-            {[...technologies, ...technologies].map((tech, idx) => (
-              <div
-                key={idx}
-                className="flex items-center space-x-2 sm:space-x-3 bg-white/90 border border-blue-100 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl sm:rounded-2xl shadow-xs text-slate-700 hover:text-[#111827] hover:border-blue-300 transition-all duration-300 cursor-pointer group shrink-0"
-              >
-                <span className="text-base sm:text-2xl group-hover:scale-115 transition-transform duration-300">{tech.icon}</span>
-                <span className="text-xs sm:text-sm font-extrabold tracking-tight text-[#111827] group-hover:text-[#2563EB] transition-colors">
-                  {tech.name}
-                </span>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </div>
-    </section>
   );
 }
