@@ -437,24 +437,24 @@ export default function Portfolio() {
                 {allFeaturedProjects.map((study) => (
                   <div
                     key={`m-featured-${study.id}`}
-                    className="w-[86vw] max-w-[320px] shrink-0 snap-center rounded-2xl border border-blue-400/30 bg-gradient-to-b from-[#0F172A] via-[#1E3A8A] to-[#0F172A] text-white p-4 shadow-xl flex flex-col justify-between"
+                    className="w-[86vw] max-w-[320px] shrink-0 snap-center rounded-2xl border border-blue-100 bg-white text-[#111827] p-4 shadow-lg shadow-blue-900/5 flex flex-col justify-between"
                   >
                     {/* Top Image Banner */}
-                    <div className="relative h-36 rounded-xl overflow-hidden bg-slate-950 mb-3">
+                    <div className="relative h-36 rounded-xl overflow-hidden bg-slate-100 mb-3">
                       {study.image ? (
                         <img
                           src={study.image}
                           alt={study.title}
-                          className="w-full h-full object-cover filter brightness-90"
+                          className="w-full h-full object-cover"
                         />
                       ) : (
                         <div className="w-full h-full bg-gradient-to-br from-[#1E3A8A] to-[#2563EB] flex items-center justify-center p-3">
                           <Briefcase className="w-8 h-8 text-blue-200" />
                         </div>
                       )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
 
-                      <span className="absolute top-2.5 left-2.5 text-[8px] font-black uppercase tracking-widest bg-blue-600/90 text-white px-2.5 py-0.5 rounded-full border border-white/20 shadow-md">
+                      <span className="absolute top-2.5 left-2.5 text-[8px] font-extrabold uppercase tracking-widest bg-[#2563EB] text-white px-2.5 py-0.5 rounded-full border border-blue-300/40 shadow-sm">
                         {study.category}
                       </span>
                     </div>
@@ -462,29 +462,29 @@ export default function Portfolio() {
                     {/* Content */}
                     <div className="space-y-2 flex-1 flex flex-col justify-between">
                       <div>
-                        <span className="text-[9px] font-mono text-blue-300 font-bold uppercase tracking-wider block">
+                        <span className="text-[9px] font-bold text-[#2563EB] uppercase tracking-wider block">
                           Client: {study.client}
                         </span>
-                        <h3 className="text-base font-black text-white leading-tight mt-0.5 line-clamp-1">
+                        <h3 className="text-base font-extrabold text-[#111827] leading-tight mt-0.5 line-clamp-1">
                           {study.title}
                         </h3>
-                        <p className="text-blue-100/90 text-xs leading-relaxed line-clamp-2 mt-1 font-medium">
+                        <p className="text-slate-600 text-xs leading-relaxed line-clamp-2 mt-1 font-medium">
                           {study.overview}
                         </p>
                       </div>
 
                       {/* Key Results Badges */}
                       <div className="space-y-1 pt-1">
-                        <span className="text-[8px] font-black text-amber-300 uppercase tracking-wider block">
+                        <span className="text-[8px] font-extrabold text-[#2563EB] uppercase tracking-wider block">
                           Delivered Impact:
                         </span>
                         <div className="grid grid-cols-1 gap-1">
                           {study.results.slice(0, 2).map((res, rIdx) => (
                             <div
                               key={rIdx}
-                              className="flex items-center space-x-1.5 text-[10px] font-bold text-emerald-300 bg-emerald-500/15 px-2 py-0.5 rounded-md border border-emerald-400/30"
+                              className="flex items-center space-x-1.5 text-[10px] font-bold text-[#1E3A8A] bg-blue-50/80 px-2 py-1 rounded-md border border-blue-200"
                             >
-                              <CheckCircle2 className="w-3 h-3 text-emerald-400 shrink-0" />
+                              <CheckCircle2 className="w-3 h-3 text-[#2563EB] shrink-0" />
                               <span className="truncate">{res}</span>
                             </div>
                           ))}
@@ -492,13 +492,13 @@ export default function Portfolio() {
                       </div>
 
                       {/* CTA Button */}
-                      <div className="pt-2 border-t border-white/15">
+                      <div className="pt-2 border-t border-blue-100">
                         <button
                           onClick={() => onOpenQuote(study.title)}
-                          className="w-full py-2.5 px-3 bg-gradient-to-r from-[#2563EB] via-[#3B82F6] to-[#60A5FA] text-white font-black rounded-xl text-xs flex items-center justify-center space-x-1.5 shadow-lg shadow-blue-900/50 active:scale-95 cursor-pointer"
+                          className="w-full py-2.5 px-3 bg-gradient-to-r from-[#2563EB] via-[#3B82F6] to-[#60A5FA] text-white font-extrabold rounded-xl text-xs flex items-center justify-center space-x-1.5 shadow-md shadow-blue-600/20 active:scale-95 cursor-pointer"
                         >
                           <span>Request Case Study & Proposal</span>
-                          <ArrowRight className="w-3.5 h-3.5 text-white" />
+                          <ArrowRight className="w-3.5 h-3.5" />
                         </button>
                       </div>
                     </div>
