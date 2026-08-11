@@ -70,7 +70,7 @@ export default function ServicesSection({ onOpenQuote, limit }) {
 
         {/* ── Progress Steps ── */}
         <motion.div initial={{opacity:0,y:16}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:0.2}}
-          className="relative mb-6 sm:mb-12 overflow-x-auto scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
+          className="hidden sm:block relative mb-6 sm:mb-12 overflow-x-auto scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
           <div className="flex items-start justify-start sm:justify-center min-w-max mx-auto py-1">
             {services.map((s, idx) => {
               const SIcon = iconMap[s.iconName] || Globe;
@@ -97,7 +97,7 @@ export default function ServicesSection({ onOpenQuote, limit }) {
                       )}
                       <SIcon className={`relative z-10 w-4 h-4 sm:w-6 sm:h-6 ${isActive||isDone?'text-white':'text-[#2563EB]'}`}/>
                     </motion.button>
-                    <span className={`text-[9px] sm:text-[10px] font-black uppercase tracking-wide text-center max-w-[62px] sm:max-w-[72px] leading-tight transition-colors ${isActive?'text-[#1D4ED8]':isDone?'text-slate-400':'text-slate-400'}`}>
+                    <span className={`hidden sm:block text-[9px] sm:text-[10px] font-black uppercase tracking-wide text-center max-w-[62px] sm:max-w-[72px] leading-tight transition-colors ${isActive?'text-[#1D4ED8]':isDone?'text-slate-400':'text-slate-400'}`}>
                       {s.title.split(' ').slice(0,2).join(' ')}
                     </span>
                   </div>
