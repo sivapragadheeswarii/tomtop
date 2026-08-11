@@ -137,64 +137,64 @@ export default function ServicesSection({ onOpenQuote, limit }) {
 
             <div className="grid grid-cols-1 lg:grid-cols-12">
               {/* Left accent panel */}
-              <div className="lg:col-span-4 p-5 sm:p-8 lg:p-10 border-b lg:border-b-0 lg:border-r border-blue-50 flex flex-col gap-4 sm:gap-5">
-                <div className="flex items-center gap-3 sm:gap-4">
+              <div className="lg:col-span-4 p-3.5 sm:p-8 lg:p-10 border-b lg:border-b-0 lg:border-r border-blue-50 flex flex-col gap-2.5 sm:gap-5">
+                <div className="flex items-center gap-2.5 sm:gap-4">
                   <motion.div
                     initial={{scale:0.6,rotate:-12}} animate={{scale:1,rotate:0}}
                     transition={{type:'spring',stiffness:200,damping:16}}
-                    className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-3xl flex items-center justify-center shrink-0 shadow-lg sm:shadow-xl"
+                    className="w-9 h-9 sm:w-16 sm:h-16 rounded-xl sm:rounded-3xl flex items-center justify-center shrink-0 shadow-xs sm:shadow-xl"
                     style={{background:`linear-gradient(135deg,${ca},${cb})`,boxShadow:`0 8px 24px rgba(37,99,235,0.25)`}}>
-                    <ActiveIcon className="w-6 h-6 sm:w-8 sm:h-8 text-white"/>
+                    <ActiveIcon className="w-4 h-4 sm:w-8 sm:h-8 text-white"/>
                   </motion.div>
                   <div>
                     <p className="text-[9px] font-black text-blue-400 uppercase tracking-[0.18em] mb-0.5">
                       {String(active+1).padStart(2,'0')} of {String(services.length).padStart(2,'0')}
                     </p>
-                    <span className="text-[9px] sm:text-[10px] font-black px-2.5 py-0.5 sm:py-1 rounded-full text-white uppercase tracking-widest inline-block"
+                    <span className="text-[9px] sm:text-[10px] font-black px-2 py-0.5 sm:py-1 rounded-full text-white uppercase tracking-widest inline-block"
                       style={{background:`linear-gradient(135deg,${ca},${cb})`}}>{svc.badge}</span>
                   </div>
                 </div>
 
                 <div>
-                  <h3 className="text-lg sm:text-2xl lg:text-3xl font-black text-[#0B1120] leading-tight mb-2 sm:mb-3">{svc.title}</h3>
-                  <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">{svc.shortDesc||svc.description}</p>
+                  <h3 className="text-base sm:text-2xl lg:text-3xl font-extrabold sm:font-black text-[#0B1120] leading-snug sm:leading-tight mb-1 sm:mb-3">{svc.title}</h3>
+                  <p className="text-slate-500 text-xs sm:text-sm leading-snug sm:leading-relaxed line-clamp-2 sm:line-clamp-none">{svc.shortDesc||svc.description}</p>
                 </div>
               </div>
 
               {/* Right content */}
-              <div className="lg:col-span-8 p-5 sm:p-8 lg:p-10">
-                <p className="text-[10px] font-black text-[#2563EB] uppercase tracking-[0.18em] mb-3 sm:mb-4 flex items-center gap-2">
-                  <span className="w-5 h-px inline-block" style={{background:`linear-gradient(90deg,${ca},${cb})`}}/>
+              <div className="lg:col-span-8 p-3.5 sm:p-8 lg:p-10">
+                <p className="text-[10px] font-black text-[#2563EB] uppercase tracking-[0.18em] mb-2 sm:mb-4 flex items-center gap-2">
+                  <span className="w-4 sm:w-5 h-px inline-block" style={{background:`linear-gradient(90deg,${ca},${cb})`}}/>
                   Engineering Capabilities
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5 mb-5 sm:mb-7">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-2.5 mb-3 sm:mb-7">
                   {svc.features.map((f,i)=>(
                     <motion.div key={i}
                       initial={{opacity:0,x:14}} animate={{opacity:1,x:0}} transition={{delay:i*0.05}}
                       whileHover={{x:4}}
-                      className="flex items-center gap-2.5 p-2.5 sm:p-3 rounded-xl bg-blue-50/60 border border-blue-100 hover:border-blue-300 hover:bg-blue-50 transition-all cursor-default group/f">
-                      <div className="w-5 h-5 rounded-lg flex items-center justify-center shrink-0"
+                      className={`items-center gap-2.5 p-2 sm:p-3 rounded-xl bg-blue-50/60 border border-blue-100 hover:border-blue-300 hover:bg-blue-50 transition-all cursor-default group/f ${i >= 2 ? 'hidden sm:flex' : 'flex'}`}>
+                      <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-lg flex items-center justify-center shrink-0"
                         style={{background:`linear-gradient(135deg,${ca},${cb})`}}>
-                        <CheckCircle2 className="w-3 h-3 text-white"/>
+                        <CheckCircle2 className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white"/>
                       </div>
                       <span className="text-xs sm:text-sm font-semibold text-[#1e293b] group-hover/f:text-[#1D4ED8] transition-colors leading-snug break-words">{f}</span>
                     </motion.div>
                   ))}
                 </div>
-                <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 pt-4 sm:pt-5 border-t border-blue-50">
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-2.5 sm:pt-5 border-t border-blue-50">
                   <motion.button onClick={()=>onOpenQuote(svc.title)}
                     whileHover={{scale:1.02,boxShadow:`0 12px 30px rgba(37,99,235,0.25)`}} whileTap={{scale:0.98}}
-                    className="relative overflow-hidden group w-full sm:flex-1 flex items-center justify-center gap-2 px-5 py-3.5 text-white font-black rounded-xl sm:rounded-2xl text-xs sm:text-sm shadow-md transition-all"
+                    className="relative overflow-hidden group w-full sm:flex-1 flex items-center justify-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3.5 text-white font-black rounded-xl sm:rounded-2xl text-xs sm:text-sm shadow-md transition-all cursor-pointer"
                     style={{background:`linear-gradient(135deg,${ca},${cb})`}}>
                     <motion.div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-all duration-300"/>
                     <span className="relative z-10">Request Custom Proposal</span>
                     <motion.div className="relative z-10" animate={{x:[0,4,0]}} transition={{duration:1.5,repeat:Infinity}}>
-                      <ArrowRight className="w-4 h-4"/>
+                      <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4"/>
                     </motion.div>
                   </motion.button>
                   <Link to="/services" className="w-full sm:w-auto">
                     <motion.div whileHover={{scale:1.02}} whileTap={{scale:0.98}}
-                      className="flex items-center justify-center gap-2 w-full px-5 py-3.5 rounded-xl sm:rounded-2xl bg-blue-50 hover:bg-blue-100 border border-blue-200 text-[#1D4ED8] font-bold text-xs sm:text-sm transition-all cursor-pointer">
+                      className="flex items-center justify-center gap-2 w-full px-4 py-2 sm:px-5 sm:py-3.5 rounded-xl sm:rounded-2xl bg-blue-50 hover:bg-blue-100 border border-blue-200 text-[#1D4ED8] font-bold text-xs sm:text-sm transition-all cursor-pointer">
                       <ExternalLink className="w-3.5 h-3.5"/><span>All Services</span>
                     </motion.div>
                   </Link>
