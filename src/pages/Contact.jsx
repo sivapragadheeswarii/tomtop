@@ -73,7 +73,6 @@ export default function Contact() {
   const contactItems = [
     { icon: Phone, label: 'Direct Line', value: companyInfo.phone, href: `tel:${companyInfo.phone}`, color: 'text-[#2563EB]', bg: 'bg-blue-50 border-blue-200' },
     { icon: Mail, label: 'Email Address', value: companyInfo.email, href: `mailto:${companyInfo.email}`, color: 'text-[#3B82F6]', bg: 'bg-blue-50 border-blue-200' },
-    { icon: Globe, label: 'Official Website', value: companyInfo.website, href: `https://${companyInfo.website}`, color: 'text-emerald-600', bg: 'bg-emerald-50 border-emerald-200' },
     { icon: MapPin, label: 'Office Address', value: companyInfo.address, href: null, color: 'text-amber-600', bg: 'bg-amber-50 border-amber-200' },
   ];
 
@@ -81,14 +80,14 @@ export default function Contact() {
     <div className="bg-[#F0F7FF] text-[#111827] min-h-screen">
 
       {/* 1. Header Hero Banner */}
-      <section className="relative min-h-screen flex flex-col justify-center items-center pt-24 pb-12 sm:pt-28 sm:pb-16 overflow-hidden border-b border-blue-100 bg-gradient-to-b from-[#DBEAFE] via-[#F0F7FF] to-[#F0F7FF]">
+      <section className="relative min-h-[72vh] sm:min-h-screen flex flex-col justify-center items-center pt-20 pb-10 sm:pt-28 sm:pb-16 overflow-hidden border-b border-blue-100 bg-gradient-to-b from-[#DBEAFE] via-[#F0F7FF] to-[#F0F7FF]">
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src="/images/contact_hero_bg.png"
             alt="TOMTOP SOLUTIONS Corporate Office Support Network"
-            className="w-full h-full object-cover object-center opacity-65 filter contrast-115 brightness-105 saturate-120 pointer-events-none transition-all duration-700"
+            className="w-full h-full object-cover object-center opacity-60 sm:opacity-65 filter contrast-115 brightness-105 saturate-120 pointer-events-none transition-all duration-700"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#F0F7FF]/20 via-[#F0F7FF]/40 to-[#F0F7FF] z-10 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#F0F7FF]/20 via-[#F0F7FF]/50 to-[#F0F7FF] z-10 pointer-events-none" />
         </div>
 
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-3xl h-[420px] bg-white/75 blur-[75px] rounded-full pointer-events-none z-10 hidden sm:block" />
@@ -99,7 +98,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight sm:leading-[1.15] text-[#111827] max-w-4xl mx-auto drop-shadow-sm"
+            className="text-3xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight sm:leading-[1.15] text-[#111827] max-w-4xl mx-auto drop-shadow-xs"
           >
             Start Your Software <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1E3A8A] via-[#1D4ED8] to-[#2563EB]">Project Today</span>
           </motion.h1>
@@ -108,32 +107,32 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="mt-3 sm:mt-6 text-[#374151] text-xs sm:text-xl max-w-xl sm:max-w-2xl mx-auto font-medium leading-relaxed"
+            className="mt-2.5 sm:mt-6 text-[#374151] text-xs sm:text-xl max-w-xl sm:max-w-2xl mx-auto font-medium leading-relaxed"
           >
-            <span className="sm:hidden">Connect with our senior software engineers. Get a free proposal & roadmap.</span>
-            <span className="hidden sm:inline">Connect with Madurai’s senior software engineers & cloud architects. Get a free custom project proposal and architecture roadmap within 24 hours.</span>
+            <span className="sm:hidden">Connect with senior software engineers. Get a free proposal &amp; roadmap.</span>
+            <span className="hidden sm:inline">Connect with Madurai’s senior software engineers &amp; cloud architects. Get a free custom project proposal and architecture roadmap within 24 hours.</span>
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.35 }}
-            className="mt-5 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto"
+            className="mt-5 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3 w-full sm:w-auto"
           >
             <button
               onClick={() => window.scrollTo({ top: window.innerHeight - 80, behavior: 'smooth' })}
-              className="w-full sm:w-auto px-6 py-3 sm:px-7 sm:py-3.5 bg-gradient-to-r from-[#2563EB] via-[#3B82F6] to-[#60A5FA] hover:from-[#1D4ED8] hover:to-[#2563EB] text-white font-bold rounded-2xl shadow-xl shadow-blue-950/30 flex items-center justify-center space-x-2 text-xs sm:text-sm group transition-all transform hover:-translate-y-0.5 active:scale-95 border border-blue-300/30"
+              className="w-full sm:w-auto px-6 py-3 sm:px-7 sm:py-3.5 bg-gradient-to-r from-[#2563EB] via-[#3B82F6] to-[#60A5FA] hover:from-[#1D4ED8] hover:to-[#2563EB] text-white font-bold rounded-xl sm:rounded-2xl shadow-lg shadow-blue-950/20 flex items-center justify-center space-x-2 text-xs sm:text-sm group transition-all transform active:scale-95 border border-blue-300/30 cursor-pointer"
             >
-              <Send className="w-4 h-4 text-white" />
+              <Send className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
               <span>Fill Inquiry Form</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
             </button>
 
             <a
               href={`tel:${companyInfo.phone}`}
-              className="hidden sm:flex w-full sm:w-auto px-7 py-3.5 bg-white/95 hover:bg-white text-[#111827] hover:text-[#2563EB] border border-blue-200 font-semibold rounded-2xl transition-all text-center items-center justify-center space-x-2 text-sm shadow-md backdrop-blur-md active:scale-95"
+              className="w-full sm:w-auto px-6 py-2.5 sm:px-7 sm:py-3.5 bg-white/95 hover:bg-white text-[#111827] hover:text-[#2563EB] border border-blue-200 font-bold rounded-xl sm:rounded-2xl transition-all text-center flex items-center justify-center space-x-2 text-xs sm:text-sm shadow-sm backdrop-blur-md active:scale-95"
             >
-              <Phone className="w-4 h-4 text-[#2563EB]" />
+              <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#2563EB]" />
               <span>Call Tech Team</span>
             </a>
           </motion.div>
@@ -144,21 +143,21 @@ export default function Contact() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
           onClick={() => window.scrollTo({ top: window.innerHeight - 80, behavior: 'smooth' })}
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-1.5 z-10 cursor-pointer"
+          className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-1 z-10 cursor-pointer"
         >
           <span className="text-[9px] sm:text-xs font-bold text-slate-500 uppercase tracking-widest hidden sm:block">
             Scroll to Get in Touch
           </span>
-          <div className="w-8 h-8 rounded-full bg-white border border-blue-200 flex items-center justify-center shadow-sm hover:border-[#2563EB]">
-            <ChevronDown className="w-4 h-4 text-[#2563EB] animate-bounce" />
+          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white border border-blue-200 flex items-center justify-center shadow-xs hover:border-[#2563EB]">
+            <ChevronDown className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#2563EB] animate-bounce" />
           </div>
         </motion.div>
       </section>
 
       {/* 2. SECTION 2 — TWO-COLUMN MAIN BODY */}
-      <section className="py-12 sm:py-24 bg-white border-b border-blue-100 relative overflow-hidden text-[#111827]">
+      <section className="py-10 sm:py-24 bg-white border-b border-blue-100 relative overflow-hidden text-[#111827]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-10 items-start">
 
             {/* ── LEFT: CONTACT FORM ── */}
             <motion.div
@@ -166,11 +165,11 @@ export default function Contact() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-7 rounded-2xl sm:rounded-[28px] border border-blue-100 bg-white backdrop-blur-2xl shadow-xl shadow-blue-900/5 overflow-hidden relative"
+              className="lg:col-span-7 rounded-2xl sm:rounded-[28px] border border-blue-100 bg-white backdrop-blur-2xl shadow-lg sm:shadow-xl shadow-blue-900/5 overflow-hidden relative"
             >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-[#2563EB]/50 to-transparent" />
 
-              <div className="p-5 sm:p-10">
+              <div className="p-4 sm:p-10">
                 <AnimatePresence mode="wait">
                   {submitted ? (
                     <motion.div
@@ -178,12 +177,12 @@ export default function Contact() {
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0 }}
-                      className="flex flex-col items-center justify-center py-12 sm:py-20 text-center space-y-4 sm:space-y-5"
+                      className="flex flex-col items-center justify-center py-10 sm:py-20 text-center space-y-3 sm:space-y-5"
                     >
-                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center shadow-lg shadow-emerald-500/10">
-                        <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-emerald-600" />
+                      <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center shadow-md">
+                        <CheckCircle className="w-7 h-7 sm:w-10 sm:h-10 text-emerald-600" />
                       </div>
-                      <h3 className="text-xl sm:text-2xl font-extrabold text-[#111827]">Message Sent to Mail!</h3>
+                      <h3 className="text-lg sm:text-2xl font-extrabold text-[#111827]">Message Sent to Mail!</h3>
                       <p className="text-slate-600 max-w-xs text-xs sm:text-sm leading-relaxed">
                         Thank you! Your message has been routed directly to <strong className="text-[#2563EB]">info@tomtopsolutions.com</strong>. We will reply within 24 hours.
                       </p>
@@ -194,48 +193,48 @@ export default function Contact() {
                       onSubmit={handleSubmit}
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
-                      className="space-y-4 sm:space-y-6"
+                      className="space-y-3.5 sm:space-y-6"
                     >
                       <div>
-                        <h2 className="text-xl sm:text-2xl font-extrabold text-[#111827]">Send a Message</h2>
-                        <p className="text-xs sm:text-sm text-slate-600 mt-1 sm:mt-1.5">Directly sends your message to info@tomtopsolutions.com</p>
+                        <h2 className="text-lg sm:text-2xl font-extrabold text-[#111827]">Send a Message</h2>
+                        <p className="text-xs text-slate-600 mt-0.5 sm:mt-1.5">Directly sends your message to info@tomtopsolutions.com</p>
                       </div>
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                        <div className="space-y-1 sm:space-y-1.5">
+                        <div className="space-y-1">
                           <label className="text-[10px] sm:text-xs font-bold text-slate-600 uppercase tracking-wider">Full Name *</label>
                           <input
                             type="text" required value={formData.name}
                             onFocus={() => setFocused('name')} onBlur={() => setFocused('')}
                             onChange={e => setFormData({ ...formData, name: e.target.value })}
-                            placeholder="Anand Kumar"
+                            placeholder="John Doe"
                             className={inputClass('name')}
                           />
                         </div>
-                        <div className="space-y-1 sm:space-y-1.5">
+                        <div className="space-y-1">
                           <label className="text-[10px] sm:text-xs font-bold text-slate-600 uppercase tracking-wider">Email Address *</label>
                           <input
                             type="email" required value={formData.email}
                             onFocus={() => setFocused('email')} onBlur={() => setFocused('')}
                             onChange={e => setFormData({ ...formData, email: e.target.value })}
-                            placeholder="anand@company.com"
+                            placeholder="john@company.com"
                             className={inputClass('email')}
                           />
                         </div>
                       </div>
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                        <div className="space-y-1 sm:space-y-1.5">
+                        <div className="space-y-1">
                           <label className="text-[10px] sm:text-xs font-bold text-slate-600 uppercase tracking-wider">Phone Number *</label>
                           <input
                             type="tel" required value={formData.phone}
                             onFocus={() => setFocused('phone')} onBlur={() => setFocused('')}
                             onChange={e => setFormData({ ...formData, phone: e.target.value })}
-                            placeholder="+91 96777 51745"
+                            placeholder="+91 96777 57145"
                             className={inputClass('phone')}
                           />
                         </div>
-                        <div className="space-y-1 sm:space-y-1.5">
+                        <div className="space-y-1">
                           <label className="text-[10px] sm:text-xs font-bold text-slate-600 uppercase tracking-wider">Subject</label>
                           <input
                             type="text" value={formData.subject}
@@ -247,10 +246,10 @@ export default function Contact() {
                         </div>
                       </div>
 
-                      <div className="space-y-1 sm:space-y-1.5">
+                      <div className="space-y-1">
                         <label className="text-[10px] sm:text-xs font-bold text-slate-600 uppercase tracking-wider">Project Details *</label>
                         <textarea
-                          rows="4" required value={formData.message}
+                          rows="3" required value={formData.message}
                           onFocus={() => setFocused('message')} onBlur={() => setFocused('')}
                           onChange={e => setFormData({ ...formData, message: e.target.value })}
                           placeholder="Tell us about your project requirements, timeline, and budget..."
@@ -261,9 +260,9 @@ export default function Contact() {
                       <motion.button
                         type="submit"
                         disabled={isSubmitting}
-                        whileHover={{ scale: 1.02, y: -2 }}
+                        whileHover={{ scale: 1.01, y: -1 }}
                         whileTap={{ scale: 0.97 }}
-                        className="w-full py-3.5 sm:py-4 bg-gradient-to-r from-[#2563EB] via-[#3B82F6] to-[#60A5FA] hover:from-[#1D4ED8] hover:to-[#2563EB] text-white font-bold rounded-xl sm:rounded-2xl shadow-lg shadow-blue-600/30 flex items-center justify-center space-x-2 text-xs sm:text-base transition-all active:scale-95 disabled:opacity-70"
+                        className="w-full py-3 sm:py-4 bg-gradient-to-r from-[#2563EB] via-[#3B82F6] to-[#60A5FA] hover:from-[#1D4ED8] hover:to-[#2563EB] text-white font-black rounded-xl sm:rounded-2xl shadow-md shadow-blue-600/30 flex items-center justify-center space-x-2 text-xs sm:text-base transition-all active:scale-95 disabled:opacity-70 cursor-pointer"
                       >
                         {isSubmitting ? (
                           <>
@@ -290,15 +289,15 @@ export default function Contact() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-5 space-y-4 sm:space-y-5"
+              className="lg:col-span-5 space-y-3.5 sm:space-y-5"
             >
-              <div className="rounded-2xl sm:rounded-[24px] border border-blue-100 bg-white backdrop-blur-2xl p-5 sm:p-7 shadow-xl shadow-blue-900/5 relative overflow-hidden">
+              <div className="rounded-2xl sm:rounded-[24px] border border-blue-100 bg-white backdrop-blur-2xl p-4 sm:p-7 shadow-md sm:shadow-xl shadow-blue-900/5 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-blue-500/5 rounded-full blur-2xl pointer-events-none" />
-                <p className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-[#2563EB] mb-1">Software Engineering Studio</p>
-                <h3 className="text-lg sm:text-xl font-extrabold text-[#111827]">{companyInfo.name}</h3>
-                <p className="text-[10px] sm:text-xs text-slate-500 font-medium mt-0.5">Founded by {companyInfo.founder}</p>
+                <p className="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-widest text-[#2563EB] mb-0.5">Software Engineering Studio</p>
+                <h3 className="text-base sm:text-xl font-extrabold text-[#111827]">{companyInfo.name}</h3>
+                <p className="text-[10px] sm:text-xs text-slate-500 font-medium mt-0.5">Enterprise Software &amp; Cloud Solutions Studio</p>
 
-                <div className="mt-4 sm:mt-5 flex items-center space-x-2 text-[10px] sm:text-xs text-[#111827] bg-blue-50/70 border border-blue-100 px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-xl w-fit">
+                <div className="mt-3 sm:mt-5 flex items-center space-x-2 text-[10px] sm:text-xs text-[#111827] bg-blue-50/70 border border-blue-100 px-3 py-1.5 sm:px-3.5 sm:py-2.5 rounded-xl w-fit">
                   <Clock className="w-3.5 h-3.5 text-[#2563EB] shrink-0" />
                   <span>Business Hours: {companyInfo.hours}</span>
                 </div>
@@ -307,14 +306,14 @@ export default function Contact() {
               {contactItems.map(({ icon: Icon, label, value, href, color, bg }) => (
                 <motion.div
                   key={label}
-                  whileHover={{ y: -3, scale: 1.01 }}
-                  className="rounded-xl sm:rounded-[20px] border border-blue-100 bg-white p-4 sm:p-5 flex items-center space-x-3.5 sm:space-x-4 hover:border-[#60A5FA] transition-all duration-300 shadow-lg shadow-blue-900/5"
+                  whileHover={{ y: -2, scale: 1.01 }}
+                  className="rounded-xl sm:rounded-[20px] border border-blue-100 bg-white p-3.5 sm:p-5 flex items-center space-x-3 sm:space-x-4 hover:border-[#60A5FA] transition-all duration-300 shadow-sm sm:shadow-lg shadow-blue-900/5"
                 >
                   <div className={`w-9 h-9 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl ${bg} border flex items-center justify-center shrink-0`}>
                     <Icon className={`w-4 h-4 sm:w-5 sm:h-5 ${color}`} />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="text-[9px] sm:text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-0.5">{label}</p>
+                    <p className="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-widest text-slate-500 mb-0.5">{label}</p>
                     {href ? (
                       <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer"
                         className={`text-xs sm:text-sm font-bold ${color} hover:underline transition-colors truncate block`}>
@@ -328,23 +327,23 @@ export default function Contact() {
               ))}
 
               <motion.a
-                href="https://wa.me/919677751745"
+                href="https://wa.me/919677757145"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.02, y: -2 }}
+                whileHover={{ scale: 1.01, y: -1 }}
                 whileTap={{ scale: 0.97 }}
-                className="flex items-center justify-center space-x-2.5 sm:space-x-3 w-full py-3.5 sm:py-4 rounded-xl sm:rounded-[20px] bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm shadow-lg shadow-emerald-600/25 transition-all active:scale-95"
+                className="flex items-center justify-center space-x-2 sm:space-x-3 w-full py-3 sm:py-4 rounded-xl sm:rounded-[20px] bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs sm:text-sm shadow-md shadow-emerald-600/25 transition-all active:scale-95"
               >
                 <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
                 <span>Chat on WhatsApp — Instant Response</span>
               </motion.a>
 
-              <div className="rounded-xl sm:rounded-[20px] border border-blue-100 bg-white overflow-hidden shadow-lg shadow-blue-900/5">
-                <div className="px-4 py-3 sm:px-5 sm:py-3.5 border-b border-blue-100 flex items-center space-x-2">
+              <div className="rounded-xl sm:rounded-[20px] border border-blue-100 bg-white overflow-hidden shadow-sm sm:shadow-lg shadow-blue-900/5">
+                <div className="px-3.5 py-2.5 sm:px-5 sm:py-3.5 border-b border-blue-100 flex items-center space-x-2">
                   <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="text-[10px] sm:text-[11px] font-bold text-slate-600 uppercase tracking-wider">Madurai HQ — Live Location</span>
+                  <span className="text-[9px] sm:text-[11px] font-bold text-slate-600 uppercase tracking-wider">Madurai HQ — Live Location</span>
                 </div>
-                <div className="h-36 sm:h-44 relative">
+                <div className="h-32 sm:h-44 relative">
                   <iframe
                     title="TomTop Solutions Location"
                     src="https://maps.google.com/maps?q=Madurai,TamilNadu,India&t=&z=13&ie=UTF8&iwloc=&output=embed"
@@ -366,8 +365,8 @@ export default function Contact() {
             <span className="text-[#2563EB] font-bold text-[9px] sm:text-[10px] uppercase tracking-widest bg-blue-100 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full border border-blue-200 shadow-sm">
               Common Questions
             </span>
-            <h2 className="text-xl sm:text-5xl font-extrabold text-[#111827] mt-2.5 sm:mt-4 tracking-tight">
-              Frequently Asked
+            <h2 className="text-xl sm:text-5xl font-black text-[#111827] mt-2.5 sm:mt-4 tracking-tight">
+              Frequently <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1E3A8A] via-[#2563EB] to-[#3B82F6]">Asked Questions</span>
             </h2>
           </div>
 

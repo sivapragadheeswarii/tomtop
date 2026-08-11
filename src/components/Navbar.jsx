@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Menu, X, ChevronRight, PhoneCall, Sparkles, Home,
-  Info, Layers, Briefcase, Mail, ArrowRight, MessageCircle, Phone
+  Menu, X, ChevronRight, Sparkles, Home,
+  Info, Layers, Briefcase, Mail, ArrowRight, MessageCircle, Phone, Box, GraduationCap
 } from 'lucide-react';
 import { companyInfo } from '../data/companyData';
 import Logo from './Logo';
@@ -27,9 +27,11 @@ export default function Navbar({ onOpenQuote }) {
 
   const navLinks = [
     { name: 'Home', path: '/', icon: Home, desc: 'Enterprise Main Portal' },
-    { name: 'About Us', path: '/about', icon: Info, desc: 'Our Story & Technical HQ' },
-    { name: 'Services', path: '/services', icon: Layers, desc: 'ERP, Web & NVMe Hosting' },
-    { name: 'Portfolio', path: '/portfolio', icon: Briefcase, desc: 'Client Projects & Showcase' },
+    { name: 'About', path: '/about', icon: Info, desc: 'Our Positioning & Mission' },
+    { name: 'Services', path: '/services', icon: Layers, desc: 'Core 6 IT Service Pillars' },
+    { name: 'Products', path: '/products', icon: Box, desc: 'ClearBill, KTS & GuruDesk' },
+    { name: 'Portfolio', path: '/portfolio', icon: Briefcase, desc: 'Client Solutions & Showcase' },
+    { name: 'Careers', path: '/careers', icon: GraduationCap, desc: 'Join Our Team' },
     { name: 'Contact', path: '/contact', icon: Mail, desc: 'Get Free Proposal & Support' }
   ];
 
@@ -179,7 +181,7 @@ export default function Navbar({ onOpenQuote }) {
               </a>
 
               <a
-                href="https://wa.me/919677751745"
+                href="https://wa.me/919677757145"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 hover:border-emerald-400 transition-colors"

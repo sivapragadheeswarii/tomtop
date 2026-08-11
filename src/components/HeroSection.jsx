@@ -97,26 +97,14 @@ export default function HeroSection({ onOpenQuote }) {
               animate="visible"
               className="lg:col-span-7 text-center lg:text-left space-y-4 sm:space-y-6"
             >
-              {/* Animated Studio Badge (Desktop/Tablet Only) */}
-              <motion.div
-                variants={itemVariants}
-                className="hidden sm:inline-flex items-center space-x-2 bg-white/95 border border-blue-300 px-4 py-1.5 rounded-full text-xs font-bold text-[#2563EB] shadow-md backdrop-blur-sm"
-              >
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2563EB]"></span>
-                </span>
-                <span>Top Software Company in Madurai</span>
-              </motion.div>
-
               {/* Business-Focused SEO Headline */}
               <motion.h1
                 variants={itemVariants}
                 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0F172A] leading-tight sm:leading-[1.15] drop-shadow-[0_1px_3px_rgba(255,255,255,0.9)]"
               >
-                Building Scalable{' '}
+                Accelerating Business{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1E3A8A] via-[#1D4ED8] to-[#2563EB]">
-                  Web Apps, ERP & Cloud
+                  Digital Transformation
                 </span>
               </motion.h1>
 
@@ -125,7 +113,7 @@ export default function HeroSection({ onOpenQuote }) {
                 variants={itemVariants}
                 className="text-[#1E293B] text-xs sm:text-base lg:text-lg max-w-xl mx-auto lg:mx-0 font-bold leading-relaxed drop-shadow-[0_1px_2px_rgba(255,255,255,1)]"
               >
-                Engineering high-performance web applications, custom ERP software, mobile apps, and NVMe cloud hosting for modern businesses.
+                Innovative technology solutions, professional IT consulting services, and skilled IT talent for growing businesses.
               </motion.p>
 
               {/* CTA Buttons */}
@@ -226,25 +214,29 @@ export default function HeroSection({ onOpenQuote }) {
 
 export function TechStackMarquee() {
   return (
-    <section className="py-10 sm:py-14 bg-[#F0F7FF] border-y border-blue-100 relative overflow-hidden">
+    <section className="py-6 sm:py-14 bg-[#F0F7FF] border-y border-blue-100 relative overflow-hidden">
+      {/* Soft gradient masks on left & right for smooth fading edges */}
+      <div className="absolute top-0 bottom-0 left-0 w-8 sm:w-24 bg-gradient-to-r from-[#F0F7FF] via-[#F0F7FF]/80 to-transparent z-10 pointer-events-none" />
+      <div className="absolute top-0 bottom-0 right-0 w-8 sm:w-24 bg-gradient-to-l from-[#F0F7FF] via-[#F0F7FF]/80 to-transparent z-10 pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-6 sm:mb-8">
-          <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#2563EB] bg-blue-100/90 px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full border border-blue-200 shadow-sm">
+        <div className="text-center mb-4 sm:mb-8 px-2">
+          <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#2563EB] bg-blue-100/90 px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full border border-blue-200/90 shadow-sm inline-block">
             Powered by Enterprise Technical Stacks
           </span>
         </div>
         <div className="overflow-hidden flex relative w-full">
           <motion.div
             animate={{ x: ['0%', '-50%'] }}
-            transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-            className="flex items-center space-x-8 sm:space-x-14 shrink-0 whitespace-nowrap"
+            transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
+            className="flex items-center space-x-3.5 sm:space-x-12 shrink-0 whitespace-nowrap py-1"
           >
             {[...technologies, ...technologies].map((tech, idx) => (
               <div
                 key={idx}
-                className="flex items-center space-x-2 sm:space-x-3 text-slate-600 hover:text-[#111827] transition-all duration-300 cursor-pointer group"
+                className="flex items-center space-x-2 sm:space-x-3 bg-white/90 border border-blue-100 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl sm:rounded-2xl shadow-xs text-slate-700 hover:text-[#111827] hover:border-blue-300 transition-all duration-300 cursor-pointer group shrink-0"
               >
-                <span className="text-xl sm:text-2xl group-hover:scale-125 transition-transform duration-300">{tech.icon}</span>
+                <span className="text-base sm:text-2xl group-hover:scale-115 transition-transform duration-300">{tech.icon}</span>
                 <span className="text-xs sm:text-sm font-extrabold tracking-tight text-[#111827] group-hover:text-[#2563EB] transition-colors">
                   {tech.name}
                 </span>

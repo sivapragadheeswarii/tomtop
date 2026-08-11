@@ -15,7 +15,7 @@ export default function Home() {
       {/* 1. Executive Hero Banner */}
       <HeroSection onOpenQuote={onOpenQuote} />
 
-      {/* 2. Services Overview */}
+      {/* 2. Featured Core Services (Top 3 Services) */}
       <ServicesSection onOpenQuote={onOpenQuote} limit={3} />
 
       {/* 3. Powered by Enterprise Technical Stacks */}

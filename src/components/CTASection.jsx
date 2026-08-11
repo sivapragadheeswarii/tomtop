@@ -39,7 +39,7 @@ export default function CTASection({ onOpenQuote }) {
             </button>
             
             <a
-              href="https://wa.me/919677751745"
+              href="https://wa.me/919677757145"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm rounded-xl flex items-center justify-center space-x-2.5 shadow-lg transition-all"

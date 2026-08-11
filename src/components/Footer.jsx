@@ -25,7 +25,7 @@ export default function Footer() {
 
             <div className="flex items-center space-x-2 text-xs text-[#60A5FA] font-semibold bg-blue-900/60 p-3 rounded-2xl border border-blue-700/60 max-w-sm backdrop-blur-md">
               <UserCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span>Founder &amp; Tech Lead: {companyInfo.founder || companyInfo.headOfTechnical}</span>
+              <span>Senior Software Engineering &amp; Tech Lead Team</span>
             </div>
 
             {/* Social Icons */}
@@ -67,13 +67,15 @@ export default function Footer() {
             <h4 className="text-white text-xs font-bold uppercase tracking-widest text-[#60A5FA]">
               Navigation
             </h4>
-            <ul className="space-y-2.5 text-xs sm:text-sm">
+            <ul className="space-y-2 text-xs sm:text-sm">
               {[
                 { name: 'Home', path: '/' },
-                { name: 'About Us', path: '/about' },
+                { name: 'About', path: '/about' },
                 { name: 'Services', path: '/services' },
+                { name: 'Products', path: '/products' },
                 { name: 'Portfolio', path: '/portfolio' },
-                { name: 'Contact Us', path: '/contact' }
+                { name: 'Careers', path: '/careers' },
+                { name: 'Contact', path: '/contact' }
               ].map((link) => (
                 <li key={link.name}>
                   <Link
@@ -164,7 +166,7 @@ export default function Footer() {
           <div className="flex items-center space-x-4 sm:space-x-6">
             <a href="#" className="hover:text-[#60A5FA] transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-[#60A5FA] transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-[#60A5FA] transition-colors">SLA Security</a>
+            <Link to="/admin/login" className="hover:text-amber-300 font-bold text-[#60A5FA] transition-colors">Admin Portal 🔒</Link>
           </div>
         </div>
       </div>
