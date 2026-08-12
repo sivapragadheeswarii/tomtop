@@ -183,9 +183,6 @@ export default function Footer() {
         {/* Copyright Bar */}
         <div className="pt-4 sm:pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] sm:text-xs text-blue-300/80 gap-2 sm:gap-4 text-center sm:text-left">
           <p>© {currentYear} {companyInfo.name}. All Rights Reserved.</p>
-          <div className="flex items-center justify-center space-x-4">
-            <Link to="/admin/login" className="hover:text-amber-300 font-bold text-[#60A5FA] transition-colors">Admin Portal 🔒</Link>
-          </div>
         </div>
       </div>
     </footer>
