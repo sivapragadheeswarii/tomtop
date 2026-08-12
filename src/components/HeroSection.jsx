@@ -12,13 +12,13 @@ export default function HeroSection({ onOpenQuote }) {
         muted
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none opacity-35 sm:opacity-40 filter contrast-110 brightness-105"
+        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none opacity-75 sm:opacity-85 filter contrast-110 brightness-105"
       >
         <source src="/videos/home.mp4" type="video/mp4" />
       </video>
 
-      {/* Soft Gradient Mask Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#F0F7FF]/40 via-[#F0F7FF]/70 to-[#F8FAFC] z-10 pointer-events-none" />
+      {/* Heading Focus Mask: Dimmed center via-[#F0F7FF]/75 for text legibility, transparent top for image visibility */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#F0F7FF]/75 to-[#F8FAFC] z-10 pointer-events-none" />
 
       {/* Ambient Spotlight */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-[700px] h-[250px] sm:h-[350px] bg-blue-500/10 blur-[90px] sm:blur-[120px] rounded-full pointer-events-none z-10" />

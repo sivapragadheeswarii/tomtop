@@ -39,9 +39,9 @@ export default function About() {
           <img
             src="/images/about_hero_bg.png"
             alt="Tomtop Solutions IT consultants and engineers in modern office"
-            className="w-full h-full object-cover object-center opacity-50 filter contrast-110 brightness-105 saturate-110 pointer-events-none transition-all duration-700"
+            className="w-full h-full object-cover object-center opacity-90 sm:opacity-95 filter contrast-110 brightness-105 saturate-110 pointer-events-none transition-all duration-700"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#F0F7FF]/30 via-[#F0F7FF]/65 to-[#F8FAFC] z-10 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#F0F7FF]/75 to-[#F8FAFC] z-10 pointer-events-none" />
         </div>
 
         {/* Ambient Spotlight */}
