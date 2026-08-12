@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Lock, Mail, ArrowRight, Sparkles, Server } from 'lucide-react';
+import { ShieldCheck, Lock, Mail, ArrowRight, Sparkles } from 'lucide-react';
 
 export default function AdminLogin() {
   const navigate = useNavigate();
-  const [email, setEmail] = useState('admin@tomtopsolutions.com');
-  const [password, setPassword] = useState('admin123');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -57,7 +57,7 @@ export default function AdminLogin() {
         localStorage.setItem('tomtop_admin_user', JSON.stringify(mockAdmin));
         navigate('/admin/dashboard');
       } else {
-        setError('Invalid credentials (Try: admin@tomtopsolutions.com / admin123)');
+        setError('Invalid credentials');
       }
     }
     setLoading(false);
@@ -138,16 +138,6 @@ export default function AdminLogin() {
             <ArrowRight className="w-4 h-4" />
           </button>
         </form>
-
-        <div className="mt-8 pt-6 border-t border-white/10 text-center text-[11px] text-blue-200/80 space-y-1">
-          <p className="flex items-center justify-center gap-1">
-            <Server className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
-            Backend: <strong className="text-white">Node.js + Express + MongoDB</strong>
-          </p>
-          <p className="text-[10px] text-blue-300/60">
-            Default Credentials: admin@tomtopsolutions.com / admin123
-          </p>
-        </div>
       </motion.div>
     </div>
   );
