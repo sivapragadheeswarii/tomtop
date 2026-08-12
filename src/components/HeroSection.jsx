@@ -1,202 +1,103 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Sparkles, PhoneCall, ShieldCheck, ChevronDown, Globe, Smartphone, Layers, ArrowUpRight } from 'lucide-react';
-import { companyInfo } from '../data/companyData';
+import { ArrowRight, Sparkles, PhoneCall, ChevronDown } from 'lucide-react';
 
 export default function HeroSection({ onOpenQuote }) {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } }
-  };
-
-  const floatingCards = [
-    {
-      title: 'Web Development',
-      subtitle: 'React JS & Vite High-Speed Core',
-      tag: 'Live Active',
-      icon: Globe,
-      color: 'text-[#38BDF8]',
-      badgeBg: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
-      delay: 0,
-      hoverBorder: 'hover:border-[#38BDF8]'
-    },
-    {
-      title: 'Mobile App Dev',
-      subtitle: 'iOS & Android Cross-Platform',
-      tag: 'Flutter Engine',
-      icon: Smartphone,
-      color: 'text-[#2563EB]',
-      badgeBg: 'bg-blue-500/20 text-[#2563EB] border-blue-500/30',
-      delay: 1.2,
-      hoverBorder: 'hover:border-[#2563EB]'
-    },
-    {
-      title: 'ERP Solutions',
-      subtitle: 'Billing, Inventory & HR Engine',
-      tag: 'Custom ERP',
-      icon: Layers,
-      color: 'text-amber-400',
-      badgeBg: 'bg-amber-500/20 text-amber-300 border-amber-500/30',
-      delay: 2.4,
-      hoverBorder: 'hover:border-amber-400'
-    }
-  ];
-
   return (
-    <section className="relative min-h-screen pt-28 pb-16 lg:pt-44 lg:pb-20 text-[#111827] overflow-hidden flex items-center justify-center bg-gradient-to-b from-[#DBEAFE] via-[#F0F7FF] to-[#F0F7FF]">
-      {/* 1. Main Clean Hero Viewport - Soft Blue Gradient Background */}
+    <section className="relative min-h-[100dvh] pt-28 pb-6 sm:pt-36 sm:pb-12 lg:pt-40 lg:pb-24 text-[#0F172A] overflow-hidden flex flex-col justify-between items-center bg-gradient-to-b from-[#EBF3FF] via-[#F0F7FF] to-[#F8FAFC]">
+      {/* Background Video Layer */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none opacity-35 sm:opacity-40 filter contrast-110 brightness-105"
+      >
+        <source src="/videos/home.mp4" type="video/mp4" />
+      </video>
+
+      {/* Soft Gradient Mask Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#F0F7FF]/40 via-[#F0F7FF]/70 to-[#F8FAFC] z-10 pointer-events-none" />
+
+      {/* Ambient Spotlight */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-[700px] h-[250px] sm:h-[350px] bg-blue-500/10 blur-[90px] sm:blur-[120px] rounded-full pointer-events-none z-10" />
+
+      {/* Hero Content Container (Centered Vertically) */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full text-center space-y-4 sm:space-y-8 my-auto">
         
-        {/* Background Video */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none opacity-65 filter contrast-115 brightness-105 saturate-120"
+        {/* Top Centered Pill Badge (Hidden on Mobile) */}
+        <motion.div 
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="hidden sm:inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-blue-200 shadow-md shadow-blue-900/5 text-[#1E3A8A] text-[10px] sm:text-xs font-black uppercase tracking-wide sm:tracking-wider max-w-[95%] mx-auto"
         >
-          <source src="/videos/home.mp4" type="video/mp4" />
-        </video>
-
-        {/* Soft Blue Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#F0F7FF]/20 via-[#F0F7FF]/40 to-[#F0F7FF] z-10 pointer-events-none" />
-
-        {/* Soft Radial Spotlight Behind Left Column Hero Text */}
-        <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-2xl h-[380px] bg-white/75 blur-[75px] rounded-full pointer-events-none z-10 hidden lg:block"></div>
-
-        {/* Hero Content Container */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
-            
-            {/* Left Column Content */}
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-              className="lg:col-span-7 text-center lg:text-left space-y-4 sm:space-y-6"
-            >
-              {/* Business-Focused SEO Headline */}
-              <motion.h1
-                variants={itemVariants}
-                className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0F172A] leading-tight sm:leading-[1.15] drop-shadow-[0_1px_3px_rgba(255,255,255,0.9)]"
-              >
-                Accelerating Business{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1E3A8A] via-[#1D4ED8] to-[#2563EB]">
-                  Digital Transformation
-                </span>
-              </motion.h1>
-
-              {/* Concise SEO Subtitle */}
-              <motion.p
-                variants={itemVariants}
-                className="text-[#1E293B] text-xs sm:text-base lg:text-lg max-w-xl mx-auto lg:mx-0 font-bold leading-relaxed drop-shadow-[0_1px_2px_rgba(255,255,255,1)]"
-              >
-                Innovative technology solutions, professional IT consulting services, and skilled IT talent for growing businesses.
-              </motion.p>
-
-              {/* CTA Buttons */}
-              <motion.div
-                variants={itemVariants}
-                className="pt-1 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-2.5 sm:gap-4"
-              >
-                <button
-                  onClick={() => onOpenQuote()}
-                  className="w-full sm:w-auto px-6 sm:px-7 py-3.5 sm:py-4 bg-gradient-to-r from-[#2563EB] via-[#3B82F6] to-[#60A5FA] hover:from-[#1D4ED8] hover:to-[#2563EB] text-white font-bold rounded-2xl shadow-[0_10px_25px_-5px_rgba(37,99,235,0.35)] flex items-center justify-center space-x-2 text-sm sm:text-base group transition-all transform hover:-translate-y-0.5 active:scale-95 border border-blue-300/40"
-                >
-                  <Sparkles className="w-4 h-4 text-amber-300 animate-pulse" />
-                  <span>Request Free Proposal</span>
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1.5 transition-transform" />
-                </button>
-
-                <Link
-                  to="/contact"
-                  className="w-full sm:w-auto px-6 sm:px-7 py-3.5 sm:py-4 bg-white/90 hover:bg-blue-50 border border-blue-200 text-[#111827] font-semibold rounded-2xl transition-all text-center flex items-center justify-center space-x-2 text-sm sm:text-base hover:border-[#60A5FA] hover:text-[#2563EB] active:scale-95 shadow-sm backdrop-blur-sm"
-                >
-                  <PhoneCall className="w-4 h-4 text-[#2563EB]" />
-                  <span>Contact Technical Team</span>
-                </Link>
-              </motion.div>
-            </motion.div>
-
-            {/* Right Column: Floating White Service Cards (Desktop View) */}
-            <div className="hidden lg:block lg:col-span-5 relative mt-4 lg:mt-0">
-              
-              {/* Soft Ambient Background Glow */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 lg:w-80 lg:h-80 bg-blue-500/15 rounded-full blur-3xl pointer-events-none" />
-
-              <div className="space-y-2.5 sm:space-y-3.5 max-w-sm sm:max-w-md mx-auto lg:max-w-none relative z-20">
-                {floatingCards.map((card, idx) => {
-                  const IconComponent = card.icon;
-                  return (
-                    <motion.div
-                      key={card.title}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ 
-                        opacity: 1, 
-                        y: [0, -4, 0]
-                      }}
-                      transition={{
-                        opacity: { duration: 0.6, delay: 0.3 + idx * 0.15 },
-                        y: { duration: 4 + idx * 0.8, repeat: Infinity, ease: 'easeInOut', delay: card.delay }
-                      }}
-                      whileHover={{ scale: 1.02, y: -4 }}
-                      whileTap={{ scale: 0.98 }}
-                      onClick={() => onOpenQuote(card.title)}
-                      className="p-3.5 sm:p-5 rounded-2xl border border-blue-100 bg-white shadow-xl shadow-blue-900/5 hover:shadow-2xl hover:shadow-blue-600/15 hover:border-[#60A5FA] transition-all duration-300 cursor-pointer group flex items-center justify-between"
-                    >
-                      <div className="flex items-center space-x-3 sm:space-x-4">
-                        <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center shrink-0 group-hover:bg-[#2563EB] transition-colors duration-300">
-                          <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 text-[#2563EB] group-hover:text-white transition-colors" />
-                        </div>
-
-                        <div>
-                          <div className="flex items-center space-x-2 flex-wrap gap-y-0.5">
-                            <h4 className="font-extrabold text-[#111827] text-xs sm:text-sm">
-                              {card.title}
-                            </h4>
-                            <span className="text-[9px] font-bold px-2 py-0.5 rounded-full border bg-blue-50 text-[#2563EB] border-blue-200">
-                              {card.tag}
-                            </span>
-                          </div>
-                          <p className="text-[11px] sm:text-xs text-slate-500 font-medium mt-0.5">
-                            {card.subtitle}
-                          </p>
-                        </div>
-                      </div>
-
-                      <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#2563EB] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all shrink-0 ml-1.5" />
-                    </motion.div>
-                  );
-                })}
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center space-y-1"
-          onClick={() => window.scrollTo({ top: window.innerHeight - 80, behavior: 'smooth' })}
-        >
-          <span className="text-[9px] font-bold uppercase tracking-widest text-blue-700/70 hidden sm:block">Scroll</span>
-          <div className="w-8 h-8 rounded-full bg-white border border-blue-200 flex items-center justify-center hover:border-[#2563EB] shadow-sm cursor-pointer">
-            <ChevronDown className="w-4 h-4 text-[#2563EB]" />
-          </div>
+          <Sparkles className="w-3.5 h-3.5 text-[#2563EB] animate-pulse shrink-0" />
+          <span className="truncate">Next-Gen Enterprise IT &amp; Cloud Solutions</span>
         </motion.div>
-      </section>
+
+        {/* Headline */}
+        <motion.h1 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-3xl xs:text-4xl sm:text-6xl lg:text-7xl font-black text-[#0F172A] tracking-tight leading-[1.15] sm:leading-[1.1] max-w-4xl mx-auto drop-shadow-xs px-1"
+        >
+          Accelerating Business{' '}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1E3A8A] via-[#2563EB] to-[#3B82F6]">
+            Digital Transformation
+          </span>
+        </motion.h1>
+
+        {/* Subtitle */}
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-slate-600 text-xs sm:text-lg max-w-xs xs:max-w-sm sm:max-w-2xl mx-auto font-medium leading-relaxed px-2"
+        >
+          Innovative software solutions, professional IT consulting services, and skilled remote IT talent engineered for growing enterprises.
+        </motion.p>
+
+        {/* Action Buttons */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-3.5 pt-1 sm:pt-2 max-w-xs xs:max-w-sm sm:max-w-none mx-auto w-full"
+        >
+          <button
+            onClick={() => onOpenQuote()}
+            className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-[#1E3A8A] via-[#2563EB] to-[#3B82F6] hover:from-[#1D4ED8] hover:to-[#2563EB] text-white font-black rounded-xl sm:rounded-2xl shadow-xl shadow-blue-600/25 flex items-center justify-center space-x-2 sm:space-x-2.5 text-xs sm:text-base group transition-all transform hover:-translate-y-0.5 active:scale-95 cursor-pointer border border-blue-300/30"
+          >
+            <span>Request Free Proposal</span>
+            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1.5 transition-transform" />
+          </button>
+
+          <Link
+            to="/contact"
+            className="w-full sm:w-auto px-6 sm:px-7 py-3.5 sm:py-4 bg-white/95 hover:bg-blue-50 border border-blue-200 text-[#0F172A] font-bold rounded-xl sm:rounded-2xl transition-all flex items-center justify-center space-x-2 text-xs sm:text-base hover:border-[#3B82F6] hover:text-[#2563EB] active:scale-95 shadow-sm backdrop-blur-md"
+          >
+            <PhoneCall className="w-4 h-4 text-[#2563EB]" />
+            <span>Contact Technical Team</span>
+          </Link>
+        </motion.div>
+
+      </div>
+
+      {/* Scroll Down Indicator (At Bottom Edge of Viewport) */}
+      <motion.div
+        animate={{ y: [0, 5, 0] }}
+        transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+        className="mt-auto pt-4 flex flex-col items-center space-y-1 relative z-20 cursor-pointer"
+        onClick={() => window.scrollTo({ top: window.innerHeight - 80, behavior: 'smooth' })}
+      >
+        <span className="text-[9px] font-bold uppercase tracking-widest text-blue-700/70 hidden sm:block">Scroll</span>
+        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white border border-blue-200 flex items-center justify-center hover:border-[#2563EB] shadow-sm">
+          <ChevronDown className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#2563EB]" />
+        </div>
+      </motion.div>
+    </section>
   );
 }

@@ -79,77 +79,92 @@ export default function Contact() {
   return (
     <div className="bg-[#F0F7FF] text-[#111827] min-h-screen">
 
-      {/* 1. Header Hero Banner */}
-      <section className="relative min-h-[72vh] sm:min-h-screen flex flex-col justify-center items-center pt-20 pb-10 sm:pt-28 sm:pb-16 overflow-hidden border-b border-blue-100 bg-gradient-to-b from-[#DBEAFE] via-[#F0F7FF] to-[#F0F7FF]">
+      {/* 1. Header Hero Banner (Full 100dvh Viewport Constraint) */}
+      <section className="relative h-[100dvh] min-h-[100dvh] sm:min-h-screen flex flex-col justify-between items-center pt-20 pb-4 sm:pt-36 sm:pb-12 lg:pt-40 lg:pb-24 overflow-hidden border-b border-blue-100 bg-gradient-to-b from-[#EBF3FF] via-[#F0F7FF] to-[#F8FAFC]">
+        {/* Background Image */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src="/images/contact_hero_bg.png"
             alt="TOMTOP SOLUTIONS Corporate Office Support Network"
-            className="w-full h-full object-cover object-center opacity-60 sm:opacity-65 filter contrast-115 brightness-105 saturate-120 pointer-events-none transition-all duration-700"
+            className="w-full h-full object-cover object-center opacity-50 filter contrast-110 brightness-105 saturate-110 pointer-events-none transition-all duration-700"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#F0F7FF]/20 via-[#F0F7FF]/50 to-[#F0F7FF] z-10 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#F0F7FF]/30 via-[#F0F7FF]/65 to-[#F8FAFC] z-10 pointer-events-none" />
         </div>
 
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-3xl h-[420px] bg-white/75 blur-[75px] rounded-full pointer-events-none z-10 hidden sm:block" />
+        {/* Ambient Spotlight */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-[700px] h-[250px] sm:h-[350px] bg-blue-500/10 blur-[90px] sm:blur-[120px] rounded-full pointer-events-none z-10" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 text-center flex flex-col items-center justify-center my-auto w-full">
+        {/* Hero Content Container (Centered Vertically) */}
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full text-center space-y-3 sm:space-y-8 my-auto">
 
+          {/* Top Centered Pill Badge (Hidden on Mobile) */}
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="hidden sm:inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-blue-200 shadow-md shadow-blue-900/5 text-[#1E3A8A] text-[10px] sm:text-xs font-black uppercase tracking-wide sm:tracking-wider max-w-[95%] mx-auto"
+          >
+            <Mail className="w-3.5 h-3.5 text-[#2563EB] shrink-0" />
+            <span className="truncate">Direct Engineering Desk &amp; Consultation</span>
+          </motion.div>
+
+          {/* Heading */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-3xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight sm:leading-[1.15] text-[#111827] max-w-4xl mx-auto drop-shadow-xs"
+            className="text-3xl xs:text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.15] sm:leading-[1.1] text-[#0F172A] max-w-4xl mx-auto drop-shadow-xs px-1"
           >
-            Start Your Software <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1E3A8A] via-[#1D4ED8] to-[#2563EB]">Project Today</span>
+            Start Your Software <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1E3A8A] via-[#2563EB] to-[#3B82F6]">Project Today</span>
           </motion.h1>
 
+          {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="mt-2.5 sm:mt-6 text-[#374151] text-xs sm:text-xl max-w-xl sm:max-w-2xl mx-auto font-medium leading-relaxed"
+            className="text-slate-600 text-xs sm:text-lg max-w-xs xs:max-w-sm sm:max-w-2xl mx-auto font-medium leading-relaxed px-2"
           >
-            <span className="sm:hidden">Connect with senior software engineers. Get a free proposal &amp; roadmap.</span>
-            <span className="hidden sm:inline">Connect with Madurai’s senior software engineers &amp; cloud architects. Get a free custom project proposal and architecture roadmap within 24 hours.</span>
+            Connect with Madurai’s senior software engineers &amp; cloud architects. Get a free custom project proposal and architecture roadmap within 24 hours.
           </motion.p>
 
+          {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.35 }}
-            className="mt-5 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3 w-full sm:w-auto"
+            className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3.5 pt-1 sm:pt-2 max-w-xs xs:max-w-sm sm:max-w-none mx-auto w-full"
           >
             <button
               onClick={() => window.scrollTo({ top: window.innerHeight - 80, behavior: 'smooth' })}
-              className="w-full sm:w-auto px-6 py-3 sm:px-7 sm:py-3.5 bg-gradient-to-r from-[#2563EB] via-[#3B82F6] to-[#60A5FA] hover:from-[#1D4ED8] hover:to-[#2563EB] text-white font-bold rounded-xl sm:rounded-2xl shadow-lg shadow-blue-950/20 flex items-center justify-center space-x-2 text-xs sm:text-sm group transition-all transform active:scale-95 border border-blue-300/30 cursor-pointer"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#1E3A8A] via-[#2563EB] to-[#3B82F6] hover:from-[#1D4ED8] hover:to-[#2563EB] text-white font-black rounded-xl sm:rounded-2xl shadow-xl shadow-blue-600/25 flex items-center justify-center space-x-2 sm:space-x-2.5 text-xs sm:text-base group transition-all transform hover:-translate-y-0.5 active:scale-95 cursor-pointer border border-blue-300/30"
             >
-              <Send className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
+              <Send className="w-4 h-4 text-white shrink-0" />
               <span>Fill Inquiry Form</span>
-              <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1.5 transition-transform" />
             </button>
 
             <a
               href={`tel:${companyInfo.phone}`}
-              className="w-full sm:w-auto px-6 py-2.5 sm:px-7 sm:py-3.5 bg-white/95 hover:bg-white text-[#111827] hover:text-[#2563EB] border border-blue-200 font-bold rounded-xl sm:rounded-2xl transition-all text-center flex items-center justify-center space-x-2 text-xs sm:text-sm shadow-sm backdrop-blur-md active:scale-95"
+              className="w-full sm:w-auto px-6 sm:px-7 py-3 sm:py-4 bg-white/95 hover:bg-blue-50 border border-blue-200 text-[#0F172A] font-bold rounded-xl sm:rounded-2xl transition-all flex items-center justify-center space-x-2 text-xs sm:text-base hover:border-[#3B82F6] hover:text-[#2563EB] active:scale-95 shadow-sm backdrop-blur-md"
             >
-              <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#2563EB]" />
+              <Phone className="w-4 h-4 text-[#2563EB]" />
               <span>Call Tech Team</span>
             </a>
           </motion.div>
         </div>
 
+        {/* Scroll Down Indicator */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
           onClick={() => window.scrollTo({ top: window.innerHeight - 80, behavior: 'smooth' })}
-          className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-1 z-10 cursor-pointer"
+          className="mt-auto pt-2 flex flex-col items-center space-y-1 relative z-20 cursor-pointer"
         >
-          <span className="text-[9px] sm:text-xs font-bold text-slate-500 uppercase tracking-widest hidden sm:block">
-            Scroll to Get in Touch
-          </span>
-          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white border border-blue-200 flex items-center justify-center shadow-xs hover:border-[#2563EB]">
-            <ChevronDown className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#2563EB] animate-bounce" />
+          <span className="text-[9px] font-bold uppercase tracking-widest text-blue-700/70 hidden sm:block">Scroll</span>
+          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white border border-blue-200 flex items-center justify-center hover:border-[#2563EB] shadow-sm">
+            <ChevronDown className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#2563EB]" />
           </div>
         </motion.div>
       </section>
