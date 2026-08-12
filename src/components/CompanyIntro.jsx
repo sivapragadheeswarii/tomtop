@@ -57,13 +57,13 @@ export default function CompanyIntro({ onOpenQuote }) {
               Established in 2021, Tomtop Solutions partners with growth-oriented organizations to design, implement, and support mission-critical software applications, resilient cloud ecosystem architectures, and dedicated technical talent.
             </motion.p>
 
-            {/* Feature Checkmark Pills */}
+            {/* Feature Checkmark Pills (Desktop & Tablet Only) */}
             <motion.div
               initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.15 }}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-2.5 pt-1"
+              className="hidden sm:flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-2.5 pt-1"
             >
               <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200/80 text-[11px] sm:text-xs font-bold text-slate-700">
                 <CheckCircle2 className="w-3.5 h-3.5 text-[#2563EB] shrink-0" />
