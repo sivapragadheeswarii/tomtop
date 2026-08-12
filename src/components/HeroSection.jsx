@@ -27,22 +27,14 @@ export default function HeroSection({ onOpenQuote }) {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full text-center space-y-4 sm:space-y-8 my-auto">
         
         {/* Top Centered Pill Badge (Hidden on Mobile) */}
-        <motion.div 
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="hidden sm:inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-blue-200 shadow-md shadow-blue-900/5 text-[#1E3A8A] text-[10px] sm:text-xs font-black uppercase tracking-wide sm:tracking-wider max-w-[95%] mx-auto"
-        >
-          <Sparkles className="w-3.5 h-3.5 text-[#2563EB] animate-pulse shrink-0" />
-          <span className="truncate">Next-Gen Enterprise IT &amp; Cloud Solutions</span>
-        </motion.div>
+       
 
         {/* Headline */}
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-3xl xs:text-4xl sm:text-6xl lg:text-7xl font-black text-[#0F172A] tracking-tight leading-[1.15] sm:leading-[1.1] max-w-4xl mx-auto drop-shadow-xs px-1"
+          className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-black text-[#0F172A] tracking-tight leading-[1.12] sm:leading-[1.1] max-w-4xl mx-auto drop-shadow-xs px-1"
         >
           Accelerating Business{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#1E3A8A] via-[#2563EB] to-[#3B82F6]">
