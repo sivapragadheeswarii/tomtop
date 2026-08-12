@@ -5,7 +5,7 @@ import { ArrowRight, CheckCircle2, Building2, ShieldCheck, Cpu, Users, Award } f
 
 export default function CompanyIntro({ onOpenQuote }) {
   const HIGHLIGHTS = [
-    { icon: Cpu, value: "120+", label: "Software Deployments", desc: "Custom ERPs, Web & Mobile Portals" },
+    { icon: Cpu, value: "15+", label: "Software Deployments", desc: "Custom ERPs, Web & Mobile Portals" },
     { icon: ShieldCheck, value: "99.9%", label: "Cloud SLA Uptime", desc: "Resilient AWS & Cloud Ecosystems" },
     { icon: Users, value: "24/7", label: "Dedicated IT Support", desc: "Managed Remote Talent & PMO" },
     { icon: Award, value: "2021", label: "Est. In Madurai", desc: "Serving Global Enterprises" }
@@ -105,8 +105,8 @@ export default function CompanyIntro({ onOpenQuote }) {
 
           </div>
 
-          {/* ── RIGHT COLUMN: High-Impact Metric Cards Grid (5 cols on desktop) ── */}
-          <div className="lg:col-span-5 grid grid-cols-2 gap-3.5 sm:gap-4">
+          {/* ── RIGHT COLUMN: High-Impact Metric Cards Grid (Desktop Only) ── */}
+          <div className="hidden lg:grid lg:col-span-5 grid-cols-2 gap-3.5 sm:gap-4">
             {HIGHLIGHTS.map((item, idx) => {
               const IconComp = item.icon;
               return (
